@@ -45,9 +45,9 @@
             <p class="mb-4">Ditemukan {{ $candidates->total() }} hasil untuk pencarian "{{ $query }}"</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                @foreach ($candidates as $calon)
+                {{-- @foreach ($candidates as $calon)
                     <x-calon-card :calon="$calon" />
-                @endforeach
+                @endforeach --}}
             </div>
 
             <!-- Pagination -->
