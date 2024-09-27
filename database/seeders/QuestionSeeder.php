@@ -16,7 +16,7 @@ class QuestionSeeder extends Seeder
         $questions = [
             ['type' => 'identify', 'question' => 'Golongan yang memilih untuk tidak memberikan hak suaranya disebut dengan...', 'options' => ["Dapil", "Golput", "Jurkam", "Golongan Abu"], 'answer' => "Golput", 'region_id' => 5],
 
-            ['type' => 'identify', 'question' => 'Alat musik tradisional Jawa Barat yang terbuat dari bambu dan dimainkan secara dipukul adalah...', 'options' => ["Angklung", "Gamelan", "Karinding", "Suling"], 'answer' => "Angklung", 'region_id' => 5],
+            ['type' => 'identify', 'question' => 'Alat musik tradisional Jawa Barat yang terbuat dari bambu dan dimainkan secara dipukul/digoyang adalah...', 'options' => ["Angklung", "Gamelan", "Karinding", "Suling"], 'answer' => "Angklung", 'region_id' => 5],
 
             ['type' => 'identify', 'question' => 'Lembaga yang menyelenggarakan Pilkada adalah...', 'options' => ["KPPS", "KPU", "BAWASLY", "DUKCAPIL"], 'answer' => "KPU", 'region_id' => 5],
 
@@ -111,6 +111,16 @@ class QuestionSeeder extends Seeder
 
             ['type' => 'identify', 'question' => 'Kampung adat yang cukup populer di Kota Cimahi adalah...', 'options' => ["Cirendeu", "Cicariu", "Cikoneng", "Cicarita"], 'answer' => "Cirendeu", 'region_id' => 2],
 
+            ['type' => 'identify', 'question' => 'Di bawah ini merupakan kecamatan yang ada di Kota Cimahi, kecuali...', 'options' => ["Cimahi Timur", "Cimahi Selatan", "Cimahi Tengah", "Cimahi Utara"], 'answer' => "Cimahi Timur", 'region_id' => 2],
+
+            ['type' => 'identify', 'question' => 'Kelurahan Setiamanah terletak di kecamatan...', 'options' => ["Cimahi Timur", "Cimahi Selatan", "Cimahi Tengah", "Cimahi Utara"], 'answer' => "Cimahi Tengah", 'region_id' => 2],
+
+            ['type' => 'identify', 'question' => 'Di bawah ini merupakan beberapa pusat pendidikan tentara yang ada di Kota Cimahi, kecuali...', 'options' => ["Pusdiksos", "Pusdikarmed", "Pusdikpal", "Pusdikif"], 'answer' => "Pusdiksos", 'region_id' => 2],
+
+            ['type' => 'identify', 'question' => 'Seorang atlet badminton yang berasa dari Kota Cimahi adalah...', 'options' => ["Susi Susanti", "Lilyana Natsir", "Jonathan Christie", "Anthony Sinisuka Ginting"], 'answer' => "Anthony Sinisuka Ginting", 'region_id' => 2],
+
+            ['type' => 'identify', 'question' => 'RS yang berada di Jl. Melong Raya, Cimahi Selatan bernama...', 'options' => ["RSUD Cibabat", "RS Avisena", "RS Kasih Bunda", "RS Mitra Anugrah"], 'answer' => "RS Avisena", 'region_id' => 2],
+
 
 
             // kabupaten bandung
@@ -132,6 +142,16 @@ class QuestionSeeder extends Seeder
 
             ['type' => 'identify', 'question' => 'Kecamatan di Kabupaten Bandung yang memiliki jumlah penduduk terpadat adalah...', 'options' => ["Baleendah", "Pasirjambu", "Soreang", " Dayeuh Kolot"], 'answer' => "Baleendah", 'region_id' => 3],
 
+            ['type' => 'identify', 'question' => 'Sebelum Kabupaten Bandung berdiri, daerah Bandung dikenal dengan sebutan...', 'options' => ["Tutur Tinular", "Tatar Sunda", "Tutur Indung", "Tatar Ukur"], 'answer' => "Tatar Ukur", 'region_id' => 3],
+
+            ['type' => 'identify', 'question' => 'Kabupaten Bandung memiliki julukan...', 'options' => ["Raja Bandung", "Bandung Luhung", "Indung Bandung", "Sasakala Bandung"], 'answer' => "Indung Bandung", 'region_id' => 3],
+
+            ['type' => 'identify', 'question' => 'Di bawah ini adalah wilayah di Kabupaten Bandung yang terletak di pegunungan, kecuali...', 'options' => ["Ciwidey", "Pasirjambu", "Kertasari", "Dayeuh Kolot"], 'answer' => "Dayeuh Kolot", 'region_id' => 3],
+
+            ['type' => 'identify', 'question' => 'Di Kabupaten Bandung mengalir Sungai Citarum yang berhulu di...', 'options' => ["Gunung Wayang", "Gunung Tangkuban Parahu", "Ciater Subang", "Situ Cileunca"], 'answer' => "Gunung Wayang", 'region_id' => 3],
+
+            ['type' => 'identify', 'question' => 'Kabupaten Bandung terdiri dari berapa kecamatan...', 'options' => ["30", "31", "32", "33"], 'answer' => "31", 'region_id' => 3],
+
 
 
             // kabupaten bandung barat
@@ -152,6 +172,20 @@ class QuestionSeeder extends Seeder
             ['type' => 'identify', 'question' => 'Kecamatan terluas di Kabupaten Bandung Barat adalah...', 'options' => ["Gunung Halu", "Sindangkerta", "Cijenuk", "Cililin"], 'answer' => "Gunung Halu", 'region_id' => 4],
 
             ['type' => 'identify', 'question' => 'Ibu kota dari Kabupaten Bandung Barat adalah...', 'options' => ["Padalarang", "Ngamprah", "Cihampelas", "Batujajar"], 'answer' => "Ngamprah", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => 'Kabupaten Bandung Barat memiliki julukan...', 'options' => ["Swiss van Java", "Siberia van Java", "California van Java", "German van Java"], 'answer' => "Siberia van Java", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => 'Semboyan Bandung Barat adalah Bandung Barat...', 'options' => ["Hebat", "Cermat", "Hemat", "Bermartabat"], 'answer' => "Cermat", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => 'Kabupaten Bandung Barat memiliki berapa kecamatan...', 'options' => ["15", "16", "17", "18"], 'answer' => "16", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => 'Kelurahan Tenjolaut berada di kecamatan...', 'options' => ["Cililin", "Cipatat", "Cipeundey", "Cikalong Wetan"], 'answer' => "Cikalong Wetan", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => 'Di bawah ini adalah beberapa curug yang ada di Kabupaten Bandung Barat, kecuali...', 'options' => ["Curug Maribaya", "Curug Panganten", "Curug Omas", "Curug Malela"], 'answer' => "Curug Panganten", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => 'Di Kabupaten Bandung Barat terdapat stasiun yang sudah berhenti beroperasi, yaitu...', 'options' => ["Stasiun Cikadongdong", "Stasiun Maswati", "Stasiun Tagogapu", "Stasiun Sasaksaat"], 'answer' => "Stasiun Tagogapu", 'region_id' => 4],
+
+            ['type' => 'identify', 'question' => '40762 merupakan kode pos dari kecamatan...', 'options' => ["Cililin", "Cipatat", "Cipongkor", "Cisarua"], 'answer' => "Cililin", 'region_id' => 4],
 
 
             // ... tambahkan pertanyaan lainnya

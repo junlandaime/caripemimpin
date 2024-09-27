@@ -56,7 +56,7 @@ class HomeController extends Controller
         // $regions = Region::withCount('questions')->get();
         // $questions = Question::where('region_id', $region->id)->inRandomOrder()->get();
 
-        $questions = Question::where('region_id', $region->id)->inRandomOrder()->get()->map(function ($question) {
+        $questions = Question::where('region_id', $region->id)->take(10)->inRandomOrder()->get()->map(function ($question) {
             // Ensure each question has an 'options' key, even if it's empty
             $question->options = $question->options ?: [];
             return $question;
