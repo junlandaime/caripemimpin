@@ -13,7 +13,7 @@ class RegionSeeder extends Seeder
             ['name' => 'Bandung', 'type' => 'Kota'],
             ['name' => 'Cimahi', 'type' => 'Kota'],
             ['name' => 'Bandung', 'type' => 'Kabupaten'],
-            ['name' => 'Bandung', 'type' => 'Kabupaten'],
+            ['name' => 'Bandung Barat', 'type' => 'Kabupaten'],
             ['name' => 'Jawa Barat', 'type' => 'Provinsi'],
             // Tambahkan wilayah lain sesuai kebutuhan
         ];

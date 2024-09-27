@@ -3,12 +3,12 @@
 @section('title', 'Daftar Kandidat')
 
 @section('content')
-    <div class="container mx-auto px-4 lg:px-32" x-data="{ activeTab: 'profil' }">
+    <div class="container mx-auto px-4" x-data="{ activeTab: 'profil' }">
 
-        <section class="bg-gradient-to-br from-green-600 to-blue-600 text-white py-20 rounded-xl">
+        <section class="bg-primary text-white py-20 rounded-xl mb-7">
             <div class="container mx-auto px-4 text-center">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6" x-data x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1 })">
-                    Daftar Kandidat Pilkada Jawa Barat
+                    Daftar Kandidat
                 </h1>
                 <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })">
                     Informasi lengkap seputar Daftar Kandidat Pilkada Bandung Raya dan Provinsi Jawa Barat periode 2024-2029
@@ -16,53 +16,7 @@
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="mb-8 flex justify-center space-x-4" x-data x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2 })">
-                    @foreach ($regions as $region)
-                        <button @click="activeTab = '{{ $region->id }}'"
-                            :class="{ 'bg-green-600 text-white': activeTab === '{{ $region->id }}', 'bg-gray-200 text-gray-700': activeTab !== '{{ $region->id }}' }"
-                            class="px-6 py-2 rounded-full font-semibold transition duration-300">{{ $region->full_name }}</button>
-                    @endforeach
 
-                </div>
-
-
-                @foreach ($regions as $region)
-                    <div x-show="activeTab === '{{ $region->id }}'" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 transform scale-95"
-                        x-transition:enter-end="opacity-100 transform scale-100">
-                        <h2 class="text-2xl font-bold mb-6 text-center">Kandidat Pemipin dan Wakil {{ $region->full_name }}
-                            2024
-                        </h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                            @forelse ($region->candidates as $candidate)
-                                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                                    <img src="{{ $candidate->image_url }}" alt="{{ $candidate->name }}"
-                                        class="w-full h-48 object-cover">
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold mb-2">Pasangan {{ $candidate->name }}</h3>
-                                        <p class="text-gray-600 mb-4">Nama Calon Bupati - Nama Calon Wakil Bupati</p>
-                                        <a href="{{ route('candidates.show', $candidate->id) }}"
-                                            class="text-green-600 hover:underline">Lihat Profil Lengkap</a>
-                                    </div>
-                                </div>
-                            @empty
-                                <p class="col-span-full text-center text-gray-500">Belum ada kandidat terdaftar untuk
-                                    wilayah
-                                    ini.
-                                </p>
-                            @endforelse
-                        </div>
-                    </div>
-                @endforeach
-
-                \
-            </div>
-        </section>
-
-        <h1 class="text-3xl font-bold mb-6">Daftar Kandidat Pilkada Jawa Barat</h1>
 
         <div class="mb-6">
             <form action="{{ route('candidates.search') }}" method="GET" class="flex items-center">
@@ -88,26 +42,27 @@
         @endif
 
 
-        <div id="candidate-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="candidate-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-16">
             @foreach ($candidates as $candidate)
                 <div class="candidate-card bg-white rounded-xl shadow-md overflow-hidden" x-data="candidateModal({{ $candidate->id }})">
                     <div class="relative pb-2/3">
-                        <img class="w-48 h-48 rounded-full object-cover mx-auto" img
-                            src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}">
+                        <img class="w-48 h-48 rounded-3xl object-cover mx-auto" img
+                            src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}">
                     </div>
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold mb-2">{{ $candidate->name }}</h2>
-                        <p class="text-gray-600">{{ $candidate->position }} - {{ $candidate->region->type }}
-                            {{ $candidate->region->name }}</p>
-                        <p class="text-sm mt-2">{{ Str::limit($candidate->short_bio, 100) }}</p>
+                    <div class="p-6 mx-auto text-center">
+                        <h4 class="text-xs text-blue-500 font-semibold mb-2">{{ $candidate->region->type }}
+                            {{ $candidate->region->name }}</h4>
+                        <h2 class="text-xl font-semibold mb-2 mx-auto">{{ $candidate->name }}</h2>
+                        <p class="text-gray-600">Calon {{ $candidate->position }} </p>
+                        {{-- <p class="text-sm mt-2">{{ Str::limit($candidate->short_bio, 100) }}</p> --}}
                         <div class="mt-4 flex justify-between items-center">
                             <button @click="openModal()"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Lihat
+                                class="bg-slate-200 hover:bg-slate-300 text-gray-400 font-semibold py-2 px-4 rounded mx-auto">
+                                Lihat Profil
                             </button>
-                            <span class="text-sm text-gray-500">
+                            {{-- <span class="text-sm text-gray-500">
                                 {{ $candidate->election_date->format('d M Y') }}
-                            </span>
+                            </span> --}}
                         </div>
                     </div>
 
@@ -135,8 +90,8 @@
                                 <div class="flex">
                                     <!-- Left side: Image -->
                                     <div class="w-1/2">
-                                        <img class="w-full h-full object-cover"
-                                            src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}">
+                                        <img class="w-full h-full object-cover" src="{{ Storage::url($candidate->foto) }}"
+                                            alt="{{ $candidate->name }}">
                                     </div>
 
                                     <!-- Right side: Text information -->
@@ -147,12 +102,12 @@
                                             <p class="text-sm text-gray-500"
                                                 x-text="`${candidateData.position || ''} - ${candidateData.region || ''}`">
                                             </p>
-                                            <p class="text-base text-blue-600" x-text="candidateData.party || ''"></p>
+                                            <p class="text-base text-blue-600" x-text="candidateData.partai || ''"></p>
                                             <p class="mt-2 text-sm text-gray-700"
-                                                x-text="candidateData.short_description || 'Loading candidate information...'">
+                                                x-text="candidateData.karir || 'Loading candidate information...'">
                                             </p>
-                                            <p class="mt-2 text-sm text-gray-500"
-                                                x-text="`Election Date: ${candidateData.election_date || ''}`"></p>
+                                            {{-- <p class="mt-2 text-sm text-gray-500"
+                                                x-text="`Election Date: ${candidateData.election_date || ''}`"></p> --}}
                                         </div>
                                         <div class="mt-4 flex justify-end">
                                             <a href="{{ route('candidates.show', $candidate->id) }}" class="mr-2">

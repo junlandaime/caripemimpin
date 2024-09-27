@@ -5,32 +5,48 @@
 @section('content')
     <div class="container mx-auto px-4 py-8" x-data="{ activeTab: 'profil' }">
 
-        <section class="bg-gradient-to-br from-blue-600 to-purple-600 text-white py-20 rounded-3xl">
+        <section class="bg-primary text-white py-20 rounded-3xl">
             <div class="container mx-auto px-4 text-center">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6" x-data x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1 })">Pemilihan Pemimpin
                     {{ $region->name }}
                     2024</h1>
                 <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })">
-                    Informasi lengkap seputar pemilihan Pemimpin dan wakil Pemimpin {{ $region->name }} periode 2024-2029
+                    Informasi lengkap seputar pemilihan
+                    @php
+                        switch ($region->type) {
+                            case 'Kabupaten':
+                                echo 'Bupati dan Wakil Bupati';
+                                break;
+
+                            case 'Kota':
+                                echo 'Walikota dan Wakil Walikota';
+                                break;
+
+                            default:
+                                echo 'Gubernur dan Wakil Gubernur';
+                                break;
+                        }
+                    @endphp
+                    {{ $region->name }} periode 2024-2029
                 </p>
             </div>
         </section>
 
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <div class="mb-8 flex justify-center space-x-4" x-data x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2 })">
+                <div class="mb-8 flex md:flex-row flex-col justify-center space-x-4" x-data x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2 })">
                     <button @click="activeTab = 'profil'"
-                        :class="{ 'bg-blue-600 text-white': activeTab === 'profil', 'bg-gray-200 text-gray-700': activeTab !== 'profil' }"
+                        :class="{ 'bg-primary text-white': activeTab === 'profil', 'bg-gray-200 text-gray-700': activeTab !== 'profil' }"
                         class="px-6 py-2 rounded-full font-semibold transition duration-300">Profil
                         {{ $region->name }}</button>
                     <button @click="activeTab = 'kandidat'"
-                        :class="{ 'bg-blue-600 text-white': activeTab === 'kandidat', 'bg-gray-200 text-gray-700': activeTab !== 'kandidat' }"
+                        :class="{ 'bg-primary text-white': activeTab === 'kandidat', 'bg-gray-200 text-gray-700': activeTab !== 'kandidat' }"
                         class="px-6 py-2 rounded-full font-semibold transition duration-300">Kandidat</button>
                     <button @click="activeTab = 'jadwal'"
-                        :class="{ 'bg-blue-600 text-white': activeTab === 'jadwal', 'bg-gray-200 text-gray-700': activeTab !== 'jadwal' }"
+                        :class="{ 'bg-primary text-white': activeTab === 'jadwal', 'bg-gray-200 text-gray-700': activeTab !== 'jadwal' }"
                         class="px-6 py-2 rounded-full font-semibold transition duration-300">Jadwal</button>
                     <button @click="activeTab = 'statistik'"
-                        :class="{ 'bg-blue-600 text-white': activeTab === 'statistik', 'bg-gray-200 text-gray-700': activeTab !== 'statistik' }"
+                        :class="{ 'bg-primary text-white': activeTab === 'statistik', 'bg-gray-200 text-gray-700': activeTab !== 'statistik' }"
                         class="px-6 py-2 rounded-full font-semibold transition duration-300">Statistik</button>
                 </div>
 
@@ -83,7 +99,7 @@
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2">Pasangan {{ $candidate->name }}</h3>
                                     <p class="text-gray-600 mb-4">Nama Calon Pemimpin - Nama Calon Wakil Pemimpin</p>
-                                    <a href="#" class="text-blue-600 hover:underline">Lihat Profil Lengkap</a>
+                                    <a href="#" class="text-primary hover:underline">Lihat Profil Lengkap</a>
                                 </div>
                             </div>
                         @empty
@@ -104,7 +120,7 @@
                         <ul class="space-y-4">
                             <li class="flex items-center">
                                 <div
-                                    class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
+                                    class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
                                     1</div>
                                 <div>
                                     <h3 class="font-semibold">Pendaftaran Pasangan Calon</h3>
@@ -113,7 +129,7 @@
                             </li>
                             <li class="flex items-center">
                                 <div
-                                    class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
+                                    class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
                                     2</div>
                                 <div>
                                     <h3 class="font-semibold">Masa Kampanye</h3>
@@ -122,7 +138,7 @@
                             </li>
                             <li class="flex items-center">
                                 <div
-                                    class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
+                                    class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
                                     3</div>
                                 <div>
                                     <h3 class="font-semibold">Masa Tenang</h3>
@@ -131,7 +147,7 @@
                             </li>
                             <li class="flex items-center">
                                 <div
-                                    class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
+                                    class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
                                     4</div>
                                 <div>
                                     <h3 class="font-semibold">Hari Pemungutan Suara</h3>
@@ -140,7 +156,7 @@
                             </li>
                             <li class="flex items-center">
                                 <div
-                                    class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
+                                    class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">
                                     5</div>
                                 <div>
                                     <h3 class="font-semibold">Pengumuman Hasil</h3>
@@ -158,7 +174,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="bg-white rounded-lg shadow-md p-6 text-center">
                             <h3 class="text-xl font-semibold mb-2">Total Pemilih Terdaftar</h3>
-                            <p class="text-4xl font-bold text-blue-600">33.500.000</p>
+                            <p class="text-4xl font-bold text-primary">33.500.000</p>
                         </div>
                         <div class="bg-white rounded-lg shadow-md p-6 text-center">
                             <h3 class="text-xl font-semibold mb-2">Pemilih Laki-laki</h3>
@@ -196,7 +212,7 @@
                     <div>
                         <h2 class="text-2xl font-semibold mb-4">Statistik Pemilihan</h2>
                         <p><strong>Jumlah Kandidat:</strong> {{ $region->candidates->count() }}</p>
-                        <p><strong>Pemilihan Akan Datang:</strong> {{ $upcomingElections->count() }}</p>
+                        {{-- <p><strong>Pemilihan Akan Datang:</strong> {{ $upcomingElections->count() }}</p> --}}
                         <p><strong>Total Pemilih Terdaftar:</strong> {{ number_format($region->registered_voters) }}</p>
                         <p><strong>Partisipasi Pemilih Terakhir:</strong>
                             {{ number_format($region->last_election_turnout, 2) }}%</p>
@@ -250,9 +266,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($upcomingElections as $election)
+                        {{-- @forelse ($upcomingElections as $election)
                             <tr>
-                                {{-- <td class="py-3 px-4">{{ $election->date->format('d F Y') }}</td> --}}
+                                <td class="py-3 px-4">{{ $election->date->format('d F Y') }}</td>
                                 <td class="py-3 px-4">{{ $election->position }}</td>
                                 <td class="py-3 px-4">{{ $election->candidates_count }}</td>
                             </tr>
@@ -262,7 +278,7 @@
                                     akan
                                     datang.</td>
                             </tr>
-                        @endforelse
+                        @endforelse --}}
                     </tbody>
                 </table>
             </div>

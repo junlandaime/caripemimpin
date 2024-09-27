@@ -10,14 +10,22 @@ class Candidate extends Model
     use HasFactory;
 
     protected $fillable = [
+        'prename',
         'name',
-        'position',
-        'party',
+        'aftername',
+        'ttl',
+        'domisili',
         'region_id',
-        'short_bio',
-        'full_bio',
-        'image_url',
-        'election_date',
+        'agama',
+        'position',
+        'partai',
+        'riwayatpen',
+        'prestasi',
+        'karir',
+        'akun',
+        'nominal',
+        'foto',
+        // 'election_date',
     ];
 
     public function region()
@@ -25,19 +33,19 @@ class Candidate extends Model
         return $this->belongsTo(Region::class);
     }
 
-    protected $casts = [
-        'election_date' => 'date',
-    ];
+    // protected $casts = [
+    //     'election_date' => 'date',
+    // ];
 
     public function getShortDescriptionAttribute()
     {
         return substr($this->short_bio, 0, 100) . '...';
     }
 
-    public function scopeUpcoming($query)
-    {
-        return $query->where('election_date', '>', now());
-    }
+    // public function scopeUpcoming($query)
+    // {
+    //     return $query->where('election_date', '>', now());
+    // }
 
     public function scopeByRegion($query, $region)
     {
@@ -47,5 +55,20 @@ class Candidate extends Model
     public function scopeRandom($query)
     {
         return $query->inRandomOrder();
+    }
+
+    public function pasanganKetua()
+    {
+        return $this->hasOne(Pair::class, 'pemimpin_id');
+    }
+
+    public function pasanganWakil()
+    {
+        return $this->hasOne(Pair::class, 'wakil_id');
+    }
+
+    public function getFullNameAttribute()
+    {
+        return $this->prename . ' ' . $this->name . '' . $this->aftername;
     }
 }

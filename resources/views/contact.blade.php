@@ -3,12 +3,14 @@
 @section('title', 'Hubungi Kami - Pilkada Jawa Barat')
 
 @section('content')
-    <div class="bg-blue-600 text-white py-16">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-4">Hubungi Kami</h1>
-            <p class="text-xl">Kami siap mendengar pertanyaan, saran, atau masukan Anda</p>
+    <section class="bg-primary text-white py-20 rounded-3xl">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6" x-data x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1 })">Hubungi Kami</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })">
+                Kami siap mendengar pertanyaan, saran, atau masukan Anda
+            </p>
         </div>
-    </div>
+    </section>
 
     <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">

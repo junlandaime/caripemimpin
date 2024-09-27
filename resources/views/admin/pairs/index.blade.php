@@ -3,22 +3,22 @@
 @section('title', 'Daftar Kandidat')
 
 @section('content')
-    <div x-data="candidatesFilter()" x-init="init()" class="container mx-auto px-4">
-        <h1 class="text-3xl font-bold mb-6">Daftar Kandidat</h1>
-        <a href="{{ route('admin.candidates.create') }}"
+    <div x-data="pairsFilter()" x-init="init()" class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold mb-6">Daftar Pasangan</h1>
+        <a href="{{ route('admin.pairs.create') }}"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Tambah Kandidat
+            Tambah Pasangan
         </a>
 
-        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {{-- <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Pasangan</label>
                     <input type="text" x-model="filters.name" @input="applyFilters()" id="name"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 </div>
                 <div>
-                    <label for="position" class="block text-gray-700 text-sm font-bold mb-2">Posisi</label>
+                    <label for="position" class="block text-gray-700 text-sm font-bold mb-2">No Urut</label>
                     <select x-model="filters.position" @change="applyFilters()" id="position"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         <option value="">Semua Posisi</option>
@@ -65,31 +65,35 @@
                     Reset Filter
                 </button>
             </div>
-        </div>
+        </div> --}}
 
         <div class="bg-white shadow-md rounded my-6" x-show="!loading">
             <table class="min-w-full table-auto">
                 <thead>
                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                        <th class="py-3 px-6 text-left">Nama</th>
-                        <th class="py-3 px-6 text-left">Posisi</th>
+                        <th class="py-3 px-6 text-left">No Urut</th>
+                        <th class="py-3 px-6 text-left">Nama Pemimpin</th>
+                        <th class="py-3 px-6 text-left">Nama Wakil</th>
                         <th class="py-3 px-6 text-left">Partai</th>
+                        <th class="py-3 px-6 text-left"></th>
                         <th class="py-3 px-6 text-left">Wilayah</th>
                         <th class="py-3 px-6 text-center">Tanggal Pemilihan</th>
                         <th class="py-3 px-6 text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-600 text-sm font-light">
-                    <template x-for="candidate in filteredCandidates" :key="candidate.id">
+                    <template x-for="pair in filteredPairs" :key="pair.id">
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
-                            <td class="py-3 px-6 text-left whitespace-nowrap" x-text="candidate.name"></td>
-                            <td class="py-3 px-6 text-left" x-text="candidate.position"></td>
-                            <td class="py-3 px-6 text-left" x-text="candidate.party"></td>
-                            <td class="py-3 px-6 text-left" x-text="candidate.region.name"></td>
-                            <td class="py-3 px-6 text-center" x-text="formatDate(candidate.election_date)"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.nomor_urut"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.pemimpin.name"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.wakil.name"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.party"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.region.type"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.region.name"></td>
+                            <td class="py-3 px-6 text-center" x-text="formatDate(pair.election_date)"></td>
                             <td class="py-3 px-6 text-center">
                                 <div class="flex item-center justify-center">
-                                    <a :href="'/admin/candidates/' + candidate.id"
+                                    <a :href="'/admin/pairs/' + pair.id"
                                         class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor">
@@ -99,7 +103,7 @@
                                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                         </svg>
                                     </a>
-                                    <a :href="'/admin/candidates/' + candidate.id + '/edit'"
+                                    <a :href="'/admin/pairs/' + pair.id + '/edit'"
                                         class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor">
@@ -133,10 +137,10 @@
 
 @push('scripts')
     <script>
-        function candidatesFilter() {
+        function pairsFilter() {
             return {
-                candidates: @json($candidates),
-                filteredCandidates: [],
+                pairs: @json($pairs),
+                filteredPairs: [],
                 filters: {
                     name: '',
                     position: '',
@@ -148,7 +152,7 @@
                 loading: false,
 
                 init() {
-                    this.filteredCandidates = this.candidates;
+                    this.filteredPairs = this.pairs;
                 },
 
                 applyFilters() {
@@ -156,18 +160,18 @@
                     // In a real application, you would make an AJAX call here
                     // For this example, we'll simulate an API call with setTimeout
                     setTimeout(() => {
-                        this.filteredCandidates = this.candidates.filter(candidate => {
+                        this.filteredPairs = this.pairs.filter(pair => {
                             return (
-                                (this.filters.name === '' || candidate.name.toLowerCase().includes(this
+                                (this.filters.name === '' || pair.name.toLowerCase().includes(this
                                     .filters.name.toLowerCase())) &&
-                                (this.filters.position === '' || candidate.position === this.filters
+                                (this.filters.position === '' || pair.position === this.filters
                                     .position) &&
-                                (this.filters.party === '' || candidate.party === this.filters.party) &&
-                                (this.filters.region_id === '' || candidate.region.id == this.filters
+                                (this.filters.party === '' || pair.party === this.filters.party) &&
+                                (this.filters.region_id === '' || pair.region.id == this.filters
                                     .region_id) &&
-                                (this.filters.date_from === '' || new Date(candidate.election_date) >=
+                                (this.filters.date_from === '' || new Date(pair.election_date) >=
                                     new Date(this.filters.date_from)) &&
-                                (this.filters.date_to === '' || new Date(candidate.election_date) <=
+                                (this.filters.date_to === '' || new Date(pair.election_date) <=
                                     new Date(this.filters.date_to))
                             );
                         });
@@ -198,7 +202,7 @@
 
                 deleteCandidate(candidate) {
                     if (confirm(`Apakah Anda yakin ingin menghapus kandidat ${candidate.name}?`)) {
-                        fetch(`/admin/candidates/${candidate.id}`, {
+                        fetch(`/admin/pairs/${candidate.id}`, {
                                 method: 'DELETE',
                                 headers: {
                                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
@@ -210,7 +214,7 @@
                             .then(response => response.json())
                             .then(data => {
                                 if (data.success) {
-                                    this.candidates = this.candidates.filter(c => c.id !== candidate.id);
+                                    this.pairs = this.pairs.filter(c => c.id !== candidate.id);
                                     alert('Kandidat berhasil dihapus.');
                                 } else {
                                     alert('Gagal menghapus kandidat: ' + data.message);

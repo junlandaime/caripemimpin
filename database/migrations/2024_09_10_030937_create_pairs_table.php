@@ -14,9 +14,21 @@ return new class extends Migration
         Schema::create('pairs', function (Blueprint $table) {
             $table->id();
             $table->enum('nomor_urut', ['1', '2', '3', '4', '5']);
-            $table->enum('jabatan', ['Pemimpin', 'Wakil']);
+            $table->string('party');
+            $table->unsignedBigInteger('region_id');
+
+            $table->unsignedBigInteger('pemimpin_id');
+            $table->unsignedBigInteger('wakil_id');
+            $table->text('short_bio');
+            $table->longText('full_bio');
+            $table->string('visi');
+            $table->string('misi');
+            $table->string('image_url')->nullable();
+            $table->date('election_date');
 
             $table->timestamps();
+
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
         });
     }
 

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Candidate;
 use App\Models\Region;
+use App\Models\Question;
+use App\Models\Candidate;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -14,12 +15,12 @@ class HomeController extends Controller
     public function index()
     {
         // Get upcoming elections
-        $upcomingElections = Candidate::select('region_id', 'position', 'election_date')
-            ->distinct()
-            ->where('election_date', '>', now())
-            ->orderBy('election_date')
-            ->take(5)
-            ->get();
+        // $upcomingElections = Candidate::select('region_id', 'position', 'election_date')
+        //     ->distinct()
+        //     ->where('election_date', '>', now())
+        //     ->orderBy('election_date')
+        //     ->take(5)
+        //     ->get();
 
         // Get featured candidates
         $featuredCandidates = Candidate::inRandomOrder()
@@ -28,18 +29,40 @@ class HomeController extends Controller
 
         // Get list of regions
         $regions = Region::inRandomOrder()
+            ->with('pairs')
             ->get();
 
         // Get total candidates count
         $totalCandidates = Candidate::count();
 
-        return view('home', compact('upcomingElections', 'featuredCandidates', 'regions', 'totalCandidates'));
+        return view('home', compact('featuredCandidates', 'regions', 'totalCandidates'));
     }
 
     public function about()
     {
         // $regions = Region::withCount('candidates')->paginate(15);
         return view('about');
+    }
+
+    public function kuis()
+    {
+        $regions = Region::withCount('questions')->get();
+        $questions = Question::inRandomOrder()->get();
+        return view('quiz', compact('questions', 'regions'));
+    }
+
+    public function kuismulai(Region $region)
+    {
+        // $regions = Region::withCount('questions')->get();
+        // $questions = Question::where('region_id', $region->id)->inRandomOrder()->get();
+
+        $questions = Question::where('region_id', $region->id)->inRandomOrder()->get()->map(function ($question) {
+            // Ensure each question has an 'options' key, even if it's empty
+            $question->options = $question->options ?: [];
+            return $question;
+        });
+
+        return view('kuis', compact('questions', 'region'));
     }
 
     public function cek()

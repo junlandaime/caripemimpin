@@ -32,6 +32,8 @@ use App\Http\Controllers\PairController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/cek', [HomeController::class, 'cek'])->name('cek');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/kuis', [HomeController::class, 'kuis'])->name('kuis');
+Route::get('/kuis/{region}', [HomeController::class, 'kuismulai'])->name('kuis.mulai');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/voter-guide', [HomeController::class, 'voterGuide'])->name('voter.guide');

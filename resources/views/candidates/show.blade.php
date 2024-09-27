@@ -8,8 +8,8 @@
             <div class="p-6 md:p-8">
                 <div class="flex flex-col md:flex-row">
                     <div class="md:w-1/3 mb-6 md:mb-0">
-                        @if ($candidate->image_url)
-                            <img src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}"
+                        @if ($candidate->foto)
+                            <img src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}"
                                 class="w-full h-auto rounded-lg shadow-md">
                         @else
                             <div class="w-full h-64 bg-gray-300 flex items-center justify-center rounded-lg">
@@ -18,21 +18,36 @@
                         @endif
                     </div>
                     <div class="md:w-2/3 md:pl-8">
-                        <h1 class="text-3xl font-bold mb-2">{{ $candidate->name }}</h1>
-                        <p class="text-xl text-gray-600 mb-4">{{ $candidate->position }} - {{ $candidate->party }}</p>
-                        <p class="text-gray-700 mb-4">{{ $candidate->short_bio }}</p>
+                        <h1 class="text-3xl font-bold mb-2">{{ $candidate->full_name }}</h1>
+                        <p class="text-xl text-gray-600 mb-4">Calon {{ $candidate->position }} - {{ $candidate->partai }}
+                        </p>
+                        <p class="text-gray-700 mb-4">Tempat, Tanggal Lahir : {{ $candidate->ttl }}</p>
+                        <p class="text-gray-700 mb-4">Domisili : {{ $candidate->domisili }}</p>
+                        <p class="text-gray-700 mb-4">Agama : {{ $candidate->agama }}</p>
                         <div class="bg-blue-100 rounded-lg p-4 mb-6">
                             <h2 class="text-lg font-semibold text-blue-800 mb-2">Informasi Pemilihan</h2>
                             <p><strong>Wilayah:</strong> {{ $candidate->region->name }}</p>
-                            <p><strong>Tanggal Pemilihan:</strong> {{ $candidate->election_date->format('d F Y') }}</p>
+                            {{-- <p><strong>Tanggal Pemilihan:</strong> {{ $candidate->election_date->format('d F Y') }}</p> --}}
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-8">
-                    <h2 class="text-2xl font-bold mb-4">Biografi Lengkap</h2>
+                    <h2 class="text-2xl font-bold mb-4">Riwayat Pendidikan</h2>
                     <div class="prose max-w-none">
-                        {!! nl2br(e($candidate->full_bio)) !!}
+                        {!! nl2br(e($candidate->riwayatpen)) !!}
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h2 class="text-2xl font-bold mb-4">Prestasi</h2>
+                    <div class="prose max-w-none">
+                        {!! nl2br(e($candidate->prestasi)) !!}
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h2 class="text-2xl font-bold mb-4">Karir</h2>
+                    <div class="prose max-w-none">
+                        {!! nl2br(e($candidate->karir)) !!}
                     </div>
                 </div>
 

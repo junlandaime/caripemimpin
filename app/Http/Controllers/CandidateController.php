@@ -19,7 +19,7 @@ class CandidateController extends Controller
         $candidates = Candidate::with('region')->get();
         $regions = Region::all();
         $positions = Candidate::distinct('position')->pluck('position');
-        $parties = Candidate::distinct('party')->pluck('party');
+        $parties = Candidate::distinct('partai')->pluck('partai');
 
         return view('admin.candidates.index', compact('candidates', 'regions', 'positions', 'parties'));
     }
@@ -30,9 +30,10 @@ class CandidateController extends Controller
         $candidates = Candidate::when($region, function ($query, $region) {
             return $query->byRegion($region);
         })
-            ->upcoming()
-            ->orderBy('name', 'ASC')
-            ->paginate(10);
+            // ->upcoming()
+            ->inRandomOrder()
+            // ->orderBy('name', 'ASC')
+            ->paginate(9);
 
         $regions = Region::all();
         return view('candidates.index', compact('candidates', 'regions'));
@@ -122,12 +123,13 @@ class CandidateController extends Controller
         $candidate = Candidate::with('region')->findOrFail($id);
         return response()->json([
             'id' => $candidate->id,
-            'name' => $candidate->name,
+            'name' => $candidate->full_name,
             'position' => $candidate->position,
-            'party' => $candidate->party,
+            'party' => $candidate->partai,
             'region' => $candidate->region->name,
-            'short_description' => $candidate->short_bio,
-            'election_date' => $candidate->election_date->format('d M Y')
+            'karir' => $candidate->karir,
+            // 'short_description' => $candidate->short_bio,
+            // 'election_date' => $candidate->election_date->format('d M Y')
         ]);
     }
 

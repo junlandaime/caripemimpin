@@ -13,14 +13,22 @@ return new class extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->id();
+            $table->string('prename')->nullable();
             $table->string('name');
+            $table->string('aftername')->nullable();
+            $table->string('ttl')->nullable();
+            $table->string('domisili')->nullable();
+            $table->string('agama');
             $table->string('position');
-            $table->string('party');
+            $table->string('partai');
             $table->unsignedBigInteger('region_id');
-            $table->text('short_bio');
-            $table->longText('full_bio');
-            $table->string('image_url')->nullable();
-            $table->date('election_date');
+            $table->longText('riwayatpen')->nullable();
+            $table->longText('prestasi')->nullable();
+            $table->longText('karir')->nullable();
+            $table->string('akun');
+            $table->text('nominal');
+            $table->string('foto')->nullable();
+            // $table->date('election_date');
             $table->timestamps();
 
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');

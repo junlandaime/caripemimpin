@@ -28,13 +28,40 @@
                     @enderror
                 </div>
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="position">
-                        Posisi
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="region_id">
+                        Bupati/Walikota/Gubernur
                     </label>
-                    <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('position') border-red-500 @enderror"
-                        id="position" type="text" name="position" value="{{ old('position') }}" required>
-                    @error('position')
+                    <select
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('region_id') border-red-500 @enderror"
+                        id="pemimpin_id" name="pemimpin_id" required>
+                        <option value="">Pilih Bupati/Walikota/Gubernur</option>
+                        @foreach ($candidates as $candidate)
+                            <option value="{{ $candidate->id }}"
+                                {{ old('pemimpin_id') == $candidate->id ? 'selected' : '' }}>
+                                {{ $candidate->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('pemimpin_id')
+                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="region_id">
+                        Wakil Bupati/Walikota/Gubernur
+                    </label>
+                    <select
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('region_id') border-red-500 @enderror"
+                        id="wakil_id" name="wakil_id" required>
+                        <option value="">Pilih wakil</option>
+                        @foreach ($candidates as $candidate)
+                            <option value="{{ $candidate->id }}"
+                                {{ old('wakil_id') == $candidate->id ? 'selected' : '' }}>
+                                {{ $candidate->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('wakil_id')
                         <p class="text-red-500 text-xs italic">{{ $message }}</p>
                     @enderror
                 </div>
@@ -49,6 +76,7 @@
                         <p class="text-red-500 text-xs italic">{{ $message }}</p>
                     @enderror
                 </div>
+
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="region_id">
                         Wilayah
@@ -102,12 +130,35 @@
                     @enderror
                 </div>
                 <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="visi">
+                        Visi
+                    </label>
+                    <textarea
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('visi') border-red-500 @enderror"
+                        id="visi" name="visi" rows="6">{{ old('visi') }}</textarea>
+                    @error('visi')
+                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="misi">
+                        Misi
+                    </label>
+                    <textarea
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('misi') border-red-500 @enderror"
+                        id="misi" name="misi" rows="6">{{ old('misi') }}</textarea>
+                    @error('misi')
+                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="election_date">
                         Tanggal Pemilihan
                     </label>
                     <input
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('election_date') border-red-500 @enderror"
-                        id="election_date" type="date" name="election_date" value="{{ old('election_date') }}" required>
+                        id="election_date" type="date" name="election_date" value="{{ old('election_date') }}"
+                        required>
                     @error('election_date')
                         <p class="text-red-500 text-xs italic">{{ $message }}</p>
                     @enderror

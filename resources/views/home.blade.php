@@ -2,77 +2,92 @@
 
 @section('title', 'Beranda - Pilkada Jawa Barat')
 
+@push('styles')
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+@endpush
+
 @section('content')
     <!-- Hero Section -->
 
 
-    <x-animations.slide-in direction="right" class="mb-12">
-        <section id="hero"
-            class="bg-gradient-to-br from-blue-600 to-purple-600 text-white min-h-screen flex items-center rounded-3xl">
-            <div class="container mx-auto px-4 text-center relative overflow-hidden">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, y: 30, ease: 'back' })">Pilkada Jawa Barat 2024</h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, delay: 0.5, y: 30, ease: 'back' })">Suarakan Aspirasi, Wujudkan Perubahan
-                </p>
-                {{-- <a href="{{ route('register') }}"
-                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300">Jawa
-                    Barat</a>
-                <a href="{{ route('register') }}"
-                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300">Kabupaten
-                    Bandung</a>
-                <a href="{{ route('register') }}"
-                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300">Kota
-                    Bandung</a>
-                <a href="{{ route('register') }}"
-                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300">Kabupaten
-                    Bandung Barat</a>
-                <a href="{{ route('register') }}"
-                    class="mt-4 inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300">Kota
-                    Cimahi</a> --}}
-                <div class="mt-12 space-x-4 opacity-0 py-10" x-init="gsap.to($el, { opacity: 1, duration: 1, delay: 1, y: 30, ease: 'back' })">
+    <x-animations.slide-in direction="right" class="mb-3">
+
+        <section class="relative h-screen flex items-center bg-gray-900 overflow-hidden rounded-3xl">
+            <div class="absolute inset-0 z-0">
+                <img src="{{ asset('back.jpg') }}" alt="Background" class="w-full h-full object-cover opacity-50 rounded-3xl">
+            </div>
+            <div
+                class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full md:w-1/2 text-white mb-8 md:mb-0" x-data="{ show: false }" x-init="setTimeout(() => show = true, 300)"
+                    x-show="show" x-transition:enter="transition ease-out duration-1000"
+                    x-transition:enter-start="opacity-0 transform -translate-x-12"
+                    x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Suarakan Aspirasi</h1>
+                    <p class="text-xl mb-8">Wujudkan Perubahan</p>
                     @foreach ($regions as $region)
                         <a href="{{ route('regions.show', $region) }}"
-                            class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-blue-600 transition duration-300 inline-block">{{ $region->full_name }}</a>
+                            class="bg-primary text-slate-200 px-8 py-3 my-1 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 inline-block">{{ $region->full_name }}</a>
                     @endforeach
-                    {{--  --}}
                 </div>
-                <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
-                    {{-- <img src="https://picsum.photos/seed/hero/800/400" alt="Ilustrasi Pilkada"
-                        class="w-full rounded-t-3xl shadow-2xl float"> --}}
+                <div class="w-full md:w-1/2 relative" x-data="{ show: false }" x-init="setTimeout(() => show = true, 600)">
+                    <div class="w-40 h-40 md:w-80 md:h-80 bg-primary rounded-full absolute top-0 right-0 transform translate-x-1/3 -translate-y-1/3"
+                        x-show="show" x-transition:enter="transition ease-out duration-1000"
+                        x-transition:enter-start="opacity-0 transform scale-50"
+                        x-transition:enter-end="opacity-100 transform scale-100"></div>
+                    <img src="{{ asset('find.png') }}" alt="Featured Image"
+                        class="md:w-full w-1/2 rounded-3xl shadow-2xl relative z-10" x-show="show"
+                        x-transition:enter="transition ease-out duration-1000 delay-300"
+                        x-transition:enter-start="opacity-0 transform translate-y-12"
+                        x-transition:enter-end="opacity-100 transform translate-y-0">
                 </div>
             </div>
+
+
         </section>
 
     </x-animations.slide-in>
 
-    <section id="calon" class="py-32 bg-gray-100" x-data="{ activeTab: 'jawabarat' }">
+    <section id="calon" class="py-20 bg-gray-100" x-data="{ activeTab: 'jawabarat' }">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 80%' } })">Pasangan Calon</h2>
-            <div class="mb-8 flex justify-center space-x-4" x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
+            <div class="mb-8 flex md:flex-row flex-col justify-center space-x-4" x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
                 @foreach ($regions as $region)
                     <button @click="activeTab = '{{ $region->id }}'"
-                        :class="{ 'bg-blue-600 text-white': activeTab === '{{ $region->id }}', 'bg-gray-200 text-gray-700': activeTab !== '{{ $region->id }}' }"
-                        class="px-6 py-3 rounded-full font-semibold transition duration-300 inline-block">{{ $region->full_name }}</button>
+                        :class="{ 'bg-primary text-white': activeTab === '{{ $region->id }}', 'bg-gray-200 text-gray-700': activeTab !== '{{ $region->id }}' }"
+                        class="px-6 py-3 rounded-full font-semibold transition duration-300 inline lg:inline-block">{{ $region->full_name }}</button>
                 @endforeach
 
-                {{-- <button @click="activeTab = 'jawabarat'"
-                    :class="{ 'bg-blue-600 text-white': activeTab === 'jawabarat', 'bg-gray-200 text-gray-700': activeTab !== 'jawabarat' }"
-                    class="px-6 py-3 rounded-full font-semibold transition duration-300">Jawa Barat</button>
-                <button @click="activeTab = 'bandung'"
-                    :class="{ 'bg-blue-600 text-white': activeTab === 'bandung', 'bg-gray-200 text-gray-700': activeTab !== 'bandung' }"
-                    class="px-6 py-3 rounded-full font-semibold transition duration-300">Kota Bandung</button> --}}
             </div>
 
             @foreach ($regions as $region)
                 <div x-show="activeTab === '{{ $region->id }}'" x-transition:enter="transition ease-out duration-300"
                     x-transition:enter-start="opacity-0 transform scale-95"
                     x-transition:enter-end="opacity-100 transform scale-100" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    @forelse ($region->candidates as $candidate)
+                    @forelse ($region->pairs as $candidate)
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden" x-init="gsap.from($el, { opacity: 0, x: -50, duration: 0.8, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
-                            <img src="{{ $candidate->image_url }}" alt="{{ $candidate->name }}"
+                            <img src="{{ $candidate->image_url }}" alt="{{ $candidate->pasangan }}"
                                 class="w-full h-64 object-cover">
                             <div class="p-6">
-                                <h3 class="text-2xl font-semibold mb-2">{{ $candidate->name }}</h3>
-                                <p class="text-gray-600 mb-4">Visi: Jawa Barat Maju dan Sejahtera</p>
+                                <h3 class="text-2xl font-semibold mb-2">Pasangan No Urut
+                                    {{ $candidate->nomor_urut }}</h3>
+                                <h3 class="text-2xl font-semibold mb-2">{{ $candidate->pasangan }}</h3>
+                                <p class="text-gray-600 mb-4">Visi: {{ $candidate->visi }}</p>
                                 <a href="#"
                                     class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition duration-300">Profil
                                     Lengkap</a>
@@ -90,102 +105,47 @@
         </div>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <x-animations.fade-in delay="200">
-            <x-card title="Creative Challenges">
-                <p class="text-gray-600">Participate in exciting challenges and competitions to showcase your skills.</p>
-            </x-card>
-        </x-animations.fade-in>
-        <x-animations.fade-in delay="400">
-            <x-card title="Learn & Grow">
-                <p class="text-gray-600">Access tutorials, workshops, and resources to enhance your creative abilities.</p>
-            </x-card>
-        </x-animations.fade-in>
-        <x-animations.fade-in delay="600">
-            <x-card title="Connect & Collaborate">
-                <p class="text-gray-600">Meet like-minded individuals and collaborate on amazing projects.</p>
-            </x-card>
-        </x-animations.fade-in>
-    </div>
-
-    <x-animations.slide-in direction="left">
-        <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Featured Games</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            @foreach (range(1, 4) as $index)
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="{{ asset('images/game-placeholder.jpg') }}" alt="Game {{ $index }}"
-                        class="w-full h-32 object-cover">
-                    <div class="p-4">
-                        <h3 class="font-semibold text-gray-800">Game Title {{ $index }}</h3>
-                        <p class="text-sm text-gray-600">Brief description of the game.</p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </x-animations.slide-in>
-
-    <div class="relative bg-indigo-800">
-        <div class="absolute inset-0">
-            <img class="w-full h-full object-cover"
-                src="https://awsimages.detik.net.id/community/media/visual/2022/07/13/wisata-di-jawa-barat-5.jpeg?w=1024"
-                alt="Pemandangan Jawa Barat">
-            <div class="absolute inset-0 bg-indigo-800 mix-blend-multiply" aria-hidden="true"></div>
-        </div>
-        <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">CariPemimpin</h1>
-            <p class="mt-6 text-xl text-indigo-100 max-w-3xl">Temukan dan pelajari tentang calon pemimpin di Jawa Barat.
-                Buat
-                keputusan cerdas untuk masa depan daerah kita.</p>
-            <div class="mt-10 max-w-sm sm:flex sm:max-w-none">
-                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                    <a href="{{ route('candidates.index') }}"
-                        class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8">Lihat
-                        Kandidat</a>
-                    <a href="{{ route('regions.index') }}"
-                        class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 hover:bg-indigo-600 sm:px-8">Pilih
-                        Daerah</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Featured Candidates Section -->
     <div class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Kandidat Terkini</h2>
+            <div class="text-center" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 70%' } })">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Random Kandidat Terkini</h2>
                 <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Kenali calon pemimpin yang akan membangun
-                    masa depan Jawa Barat</p>
+                    masa depan Bandung Raya dan Provinsi Jawa Barat</p>
             </div>
-            <div class="mt-12 grid gap-16 lg:grid-cols-4 lg:max-w-none">
+            <div class="mt-12 grid gap-16 lg:grid-cols-4 lg:max-w-none" x-init="gsap.from($el.children, { opacity: 0, y: 50, duration: 0.8, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 70%' } })">
                 @foreach ($featuredCandidates as $candidate)
-                    <div
-                        class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                        <div class="relative pb-48 overflow-hidden">
-                            <img class ="absolute inset-0 h-full w-full
+                    <x-animations.fade-in delay="{{ $candidate->id * 200 }}">
+                        <div
+                            class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                            <div class="relative pb-48 overflow-hidden">
+                                <img class ="absolute inset-0 h-full w-full
                             object-cover"
-                                src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}">
-                        </div>
-                        <div class="p-4">
-                            <h2 class="mt-2 mb-2 font-bold text-xl">{{ $candidate->name }}</h2>
-                            <p class="text-sm text-gray-600 mb-2">{{ $candidate->position }}
-                                {{ $candidate->region->name }}
-                            </p>
-                            <p class="text-sm text-indigo-600 font-semibold mb-4">{{ $candidate->party }}</p>
-                            <p class="text-sm text-gray-700 mb-4">{{ Str::limit($candidate->short_bio, 100) }}</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-semibold text-gray-600">Umur: {{ $candidate->age }} tahun</span>
-
+                                    src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}">
                             </div>
+                            <div class="p-4">
+                                <h2 class="mt-2 mb-2 font-bold text-xl">{{ $candidate->name }}</h2>
+                                <p class="text-sm text-gray-600 mb-2">Calon {{ $candidate->position }}
+                                    {{ $candidate->region->name }}
+                                </p>
+                                <p class="text-sm text-primary font-semibold mb-4">{{ $candidate->partai }}</p>
+                                <p class="text-sm text-gray-700 mb-4">{{ Str::limit($candidate->short_bio, 100) }}</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-semibold text-gray-600">{{ $candidate->region->full_name }}
+                                    </span>
+
+                                </div>
+                            </div>
+
+
                         </div>
-
-
-                    </div>
+                    </x-animations.fade-in>
                 @endforeach
             </div>
             <div class="mt-12 text-center">
                 <a href="{{ route('candidates.index') }}"
-                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary">
                     Lihat Semua Kandidat
                 </a>
             </div>
@@ -216,7 +176,7 @@
                     class="mt-10 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 lg:mt-0 lg:col-span-2">
                     <div>
                         <dt>
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -232,7 +192,7 @@
 
                     <div>
                         <dt>
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -248,7 +208,7 @@
 
                     <div>
                         <dt>
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -264,7 +224,7 @@
 
                     <div>
                         <dt>
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -286,15 +246,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-2xl font-bold mb-4">Pemilihan Terdekat</h2>
-                <ul class="space-y-4">
+                {{-- <ul class="space-y-4">
                     @foreach ($upcomingElections as $election)
                         <li>
                             <span class="font-semibold">{{ $election->region->name }}</span><br>
                             <span class="text-gray-600">{{ $election->position }}</span><br>
-                            {{-- <span class="text-sm text-blue-600">{{ $election->date->format('d F Y') }}</span> --}}
+                            <span class="text-sm text-blue-600">{{ $election->date->format('d F Y') }}</span>
                         </li>
                     @endforeach
-                </ul>
+                </ul> --}}
                 {{-- <a href="{{ route('elections.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat semua
                     pemilihan</a> --}}
             </div>

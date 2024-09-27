@@ -25,6 +25,16 @@ class Region extends Model
         return $this->hasMany(Candidate::class);
     }
 
+    public function pairs()
+    {
+        return $this->hasMany(Pair::class);
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
     /**
      * Get the upcoming elections for the region.
      */

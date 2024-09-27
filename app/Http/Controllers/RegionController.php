@@ -87,9 +87,9 @@ class RegionController extends Controller
     public function show(Region $region)
     {
         $candidates = $region->candidates()->paginate(10);
-        $upcomingElections = $region->upcomingElections()->get();
+        // $upcomingElections = $region->upcomingElections()->get();
 
-        return view('regions.show', compact('region', 'candidates', 'upcomingElections'));
+        return view('regions.show', compact('region', 'candidates'));
     }
 
     /**
