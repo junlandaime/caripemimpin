@@ -81,7 +81,7 @@
                     x-transition:enter-end="opacity-100 transform scale-100" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     @forelse ($region->pairs as $candidate)
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden" x-init="gsap.from($el, { opacity: 0, x: -50, duration: 0.8, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
-                            <img src="{{ $candidate->image_url }}" alt="{{ $candidate->pasangan }}"
+                            <img src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->pasangan }}"
                                 class="w-full h-64 object-cover">
                             <div class="p-6">
                                 <h3 class="text-2xl font-semibold mb-2">Pasangan No Urut
@@ -111,6 +111,8 @@
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 70%' } })">
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Random Kandidat Terkini</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-xs text-gray-500 sm:mt-4">Muat ulang halaman untuk melihat secara acak
+                    kandidat lainnya</p>
                 <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">Kenali calon pemimpin yang akan membangun
                     masa depan Bandung Raya dan Provinsi Jawa Barat</p>
             </div>

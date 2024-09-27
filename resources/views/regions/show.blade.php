@@ -92,7 +92,7 @@
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                        @forelse ($region->candidates as $candidate)
+                        @forelse ($region->pairs as $candidate)
                             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                                 <img src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}"
                                     class="w-full h-48 object-cover">

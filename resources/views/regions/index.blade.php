@@ -34,15 +34,15 @@
                                 <h3 class="text-2xl font-semibold mb-2"
                                     x-text=" daerah.type.charAt(0).toUpperCase() + daerah.type.slice(1) + ' ' + daerah.name">
                                 </h3>
-                                <p class="text-gray-600 mb-4"
-                                    x-text="daerah.type.charAt(0).toUpperCase() + daerah.type.slice(1)"></p>
+                                {{-- <p class="text-gray-600 mb-4"
+                                    x-text="daerah.type.charAt(0).toUpperCase() + daerah.type.slice(1)"></p> --}}
                                 <div class="space-y-2">
-                                    <p><span class="font-semibold">Jumlah Pemilih:</span> <span
+                                    {{-- <p><span class="font-semibold">Jumlah Pemilih:</span> <span
                                             x-text="daerah.population.toLocaleString()"></span></p>
                                     <p><span class="font-semibold">Kursi Diperebutkan:</span> <span
                                             x-text="daerah.id"></span></p>
                                     <p><span class="font-semibold">Incumbent:</span> <span x-text="daerah.incumbent"></span>
-                                    </p>
+                                    </p> --}}
                                 </div>
                                 <a :href="'/regions/' + daerah.id"
                                     class="mt-4 inline-block bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-900 transition duration-300">Detail</a>
