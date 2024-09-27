@@ -77,6 +77,18 @@ class QuestionSeeder extends Seeder
 
             ['type' => 'identify', 'question' => 'Mall pertama di Kota Bandung adalah...', 'options' => ["BEC", "BIP", "PVJ", "Ciwalk"], 'answer' => "BIP", 'region_id' => 1],
 
+            ['type' => 'identify', 'question' => 'Aksara Sunda dari Kota Bandung adalah ', 'options' => ["ᮊᮧᮒ ᮘᮔ᮪ᮓᮥᮀ", "ᮘᮔ᮪ᮓᮥᮀ", "ᮘᮔ᮪ᮓᮥᮀ ᮊᮥᮜᮧᮔ᮪", "ᮎᮤᮙᮠᮤ"], 'answer' => "ᮊᮧᮒ ᮘᮔ᮪ᮓᮥᮀ", 'region_id' => 1],
+
+            ['type' => 'identify', 'question' => 'Kota Bandung menjadi kota terbesar ke... di Indonesia', 'options' => ["Satu", "Dua", "Tiga", "Empat"], 'answer' => "Tiga", 'region_id' => 1],
+
+            ['type' => 'identify', 'question' => 'Selain Kota Kembang, Kota Bandung memiliki julukan lain, yakni...', 'options' => ["Swiss van Java", "Paris van Java", "California van Java", "German van Java"], 'answer' => "Paris van Java", 'region_id' => 1],
+
+            ['type' => 'identify', 'question' => 'Semboyan Kota Bandung adalah..', 'options' => ["Bermartabat", "Berwibawa", "Berdikari", "Bernuansa Islami"], 'answer' => "Bermartabat", 'region_id' => 1],
+
+            ['type' => 'identify', 'question' => 'Bentuk morfologi Kota Bandung diibaratkan sebagai...', 'options' => ["Terompet raksasa", "panci raksasa", "piring raksasa", "mangkuk raksasa"], 'answer' => "mangkuk raksasa", 'region_id' => 1],
+
+            ['type' => 'identify', 'question' => 'Kota Bandung terdiri dari berapa kecamatan...', 'options' => ["25", "30", "35", "40"], 'answer' => "30", 'region_id' => 1],
+
 
 
 
@@ -114,7 +126,7 @@ class QuestionSeeder extends Seeder
 
             ['type' => 'identify', 'question' => 'Di sebelah Barat, Kabupaten Bandung berbatasan langsung dengan Kabupaten Bandung Barat dan Kabupaten...', 'options' => ["Cianjur", "Bogor", "Garut", "Karawang"], 'answer' => "Cianjur", 'region_id' => 3],
 
-            ['type' => 'identify', 'question' => 'Ibu Kota Kabupaten Bandung terletak di...', 'options' => ["Baleendah", "Pasirjambu", "Soreang", " Dayeuh Kolot"], 'answer' => "Dustira", 'region_id' => 3],
+            ['type' => 'identify', 'question' => 'Ibu Kota Kabupaten Bandung terletak di...', 'options' => ["Baleendah", "Pasirjambu", "Soreang", " Dayeuh Kolot"], 'answer' => "Soreang", 'region_id' => 3],
 
             ['type' => 'identify', 'question' => 'Gunung tertinggi di Kabupaten Bandung adalah...', 'options' => ["Gunung Geulis", "Gunung Patuha", "Gunung Malabar", "Gunung Puntang"], 'answer' => "Gunung Patuha", 'region_id' => 3],
 

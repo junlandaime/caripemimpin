@@ -114,6 +114,80 @@
                 }
         </script>
         <script>
+            // function quizApp() {
+            //     return {
+            //         questions: @json($questions),
+            //         currentQuestionIndex: 0,
+            //         score: 0,
+            //         quizStarted: false,
+            //         quizFinished: false,
+            //         showFeedback: false,
+            //         feedbackMessage: '',
+            //         isCorrect: false,
+            //         userAnswer: '',
+
+            //         get currentQuestion() {
+            //             return this.questions[this.currentQuestionIndex];
+            //         },
+
+            //         startQuiz() {
+            //             this.quizStarted = true;
+            //             this.shuffleQuestions();
+            //         },
+
+            //         shuffleQuestions() {
+            //             for (let i = this.questions.length - 1; i > 0; i--) {
+            //                 const j = Math.floor(Math.random() * (i + 1));
+            //                 [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
+            //             }
+            //         },
+
+            //         // selectAnswer(selected) {
+            //         //     this.checkAnswer(selected);
+            //         // },
+
+            //         selectAnswer(selected) {
+            //             if (this.currentQuestion.type === 'identify') {
+            //                 this.checkAnswer(selected);
+            //             }
+            //         },
+            //         submitAnswer() {
+            //             this.checkAnswer(this.userAnswer);
+            //         },
+
+            //         checkAnswer(userAnswer) {
+            //             const correct = userAnswer.toLowerCase() === this.currentQuestion.answer.toLowerCase();
+            //             this.isCorrect = correct;
+            //             this.showFeedback = true;
+            //             this.feedbackMessage = correct ? "Benar!" :
+            //                 `Maaf, jawaban belum benar`;
+            //             if (correct) this.score++;
+            //         },
+
+            //         nextQuestion() {
+            //             this.showFeedback = false;
+            //             this.userAnswer = '';
+            //             if (this.currentQuestionIndex < this.questions.length - 1) {
+            //                 this.currentQuestionIndex++;
+            //             } else {
+            //                 this.quizFinished = true;
+            //             }
+            //         },
+
+            //         restartQuiz() {
+            //             this.currentQuestionIndex = 0;
+            //             this.score = 0;
+            //             this.quizFinished = false;
+            //             this.showFeedback = false;
+            //             this.userAnswer = '';
+            //             this.shuffleQuestions();
+            //         }
+
+
+            //     }
+
+            // }
+
             function quizApp() {
                 return {
                     questions: @json($questions),
@@ -121,9 +195,6 @@
                     score: 0,
                     quizStarted: false,
                     quizFinished: false,
-                    showFeedback: false,
-                    feedbackMessage: '',
-                    isCorrect: false,
                     userAnswer: '',
 
                     get currentQuestion() {
@@ -142,33 +213,23 @@
                         }
                     },
 
-                    // selectAnswer(selected) {
-                    //     this.checkAnswer(selected);
-                    // },
-
                     selectAnswer(selected) {
                         if (this.currentQuestion.type === 'identify') {
-                            this.checkAnswer(selected);
+                            this.checkAnswerAndProgress(selected);
                         }
                     },
+
                     submitAnswer() {
-                        this.checkAnswer(this.userAnswer);
+                        this.checkAnswerAndProgress(this.userAnswer);
                     },
 
-                    checkAnswer(userAnswer) {
+                    checkAnswerAndProgress(userAnswer) {
                         const correct = userAnswer.toLowerCase() === this.currentQuestion.answer.toLowerCase();
-                        this.isCorrect = correct;
-                        this.showFeedback = true;
-                        this.feedbackMessage = correct ? "Benar!" :
-                            `Maaf, jawaban belum benar`;
                         if (correct) this.score++;
-                    },
 
-                    nextQuestion() {
-                        this.showFeedback = false;
-                        this.userAnswer = '';
                         if (this.currentQuestionIndex < this.questions.length - 1) {
                             this.currentQuestionIndex++;
+                            this.userAnswer = '';
                         } else {
                             this.quizFinished = true;
                         }
@@ -178,14 +239,10 @@
                         this.currentQuestionIndex = 0;
                         this.score = 0;
                         this.quizFinished = false;
-                        this.showFeedback = false;
                         this.userAnswer = '';
                         this.shuffleQuestions();
                     }
-
-
                 }
-
             }
         </script>
     @endsection
