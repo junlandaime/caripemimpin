@@ -26,14 +26,14 @@ class RegionController extends Controller
         $totalRegencies = Region::where('type', 'kabupaten')->count();
 
         $regions = Region::with('candidates')
-            ->select('id', 'name', 'type', 'population', 'created_at')
+            ->select('id', 'name', 'type',  'created_at')
             ->get()
             ->map(function ($region) {
                 return [
                     'id' => $region->id,
                     'name' => $region->name,
                     'type' => $region->type,
-                    'population' => $region->population,
+                    // 'population' => $region->population,
                     'created_at' => $region->created_at->toDateString()
                 ];
             });
