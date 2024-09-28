@@ -290,13 +290,13 @@
                             <p class="text-4xl font-bold text-purple-600">{{ $region->ketdprd }}</p>
                         </div>
                     </div>
-                    <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+                    {{-- <div class="mt-8 bg-white rounded-lg shadow-md p-6">
                         <h3 class="text-xl font-semibold mb-4">Distribusi Pemilih per Kabupaten/Kota</h3>
                         <div class="h-64 bg-gray-200 rounded-lg">
                             <!-- Di sini Anda dapat menambahkan grafik atau visualisasi data -->
                             <p class="text-center py-24">Grafik distribusi pemilih akan ditampilkan di sini</p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
