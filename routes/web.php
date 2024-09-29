@@ -43,7 +43,7 @@ Route::get('/candidates/{candidate:slug}', [CandidateController::class, 'show'])
 Route::get('/candidates/p/search', [CandidateController::class, 'search'])->name('candidates.search');
 
 Route::get('/pasangan', [PairController::class, 'frontindex'])->name('pasangan.index');
-Route::get('/pasangan/{pair}', [PairController::class, 'show'])->name('pairs.show');
+Route::get('/pasangan/{pair:slug}', [PairController::class, 'show'])->name('pairs.show');
 Route::get('/pasangan/p/search', [PairController::class, 'search'])->name('pairs.search');
 
 Route::get('/regions', [RegionController::class, 'frontindex'])->name('regions.index');

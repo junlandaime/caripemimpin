@@ -91,8 +91,25 @@
             <div x-show="mobileMenuOpen" class="mt-4 md:hidden">
                 <a href="{{ route('home') }}"
                     class="block py-2 {{ request()->routeIs('home') ? 'font-bold' : 'hover:bg-slate-400' }}">Beranda</a>
-                <a href="{{ route('candidates.index') }}"
-                    class="block py-2 {{ request()->routeIs('candidates.*') ? 'font-bold' : 'hover:bg-slate-400' }}">Kandidat</a>
+                {{-- <a href="{{ route('candidates.index') }}"
+                    class="block py-2 {{ request()->routeIs('candidates.*') ? 'font-bold' : 'hover:bg-slate-400' }}">Kandidat</a> --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="{{ request()->routeIs('candidates.*') || request()->routeIs('pasangan.*') ? 'font-bold' : 'hover:bg-slate-400' }} w-full text-left py-2 hover:bg-slate-400">
+                        Kandidat
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <ul x-show="open" class="pl-4">
+                        <li><a href="{{ route('pasangan.index') }}" class="block py-2 hover:bg-slate-400">Kandidat
+                                Pasangan</a></li>
+                        <li><a href="{{ route('candidates.index') }}" class="block py-2 hover:bg-slate-400">Kandidat
+                                Perorang</a>
+                        </li>
+                    </ul>
+                </div>
                 {{-- <a href="{{ route('regions.index') }}"
                     class="block py-2 {{ request()->routeIs('regions.*') ? 'font-bold' : 'hover:bg-slate-400' }}">Wilayah</a> --}}
                 <div x-data="{ open: false }">
@@ -101,7 +118,8 @@
                         Wilayah dan Games
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
                     <ul x-show="open" class="pl-4">

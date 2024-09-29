@@ -94,7 +94,7 @@
             @foreach ($pairs as $candidate)
                 <div class="candidate-card bg-white rounded-xl shadow-md overflow-hidden" x-data="candidateModal({{ $candidate->id }})">
                     <div class="relative pb-2/3">
-                        <img class="w-48 h-48 rounded-3xl object-cover mx-auto" img
+                        <img class="w-64 h-48 rounded-3xl object-cover mx-auto" img
                             src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}">
                     </div>
                     <div class="p-6">
@@ -154,13 +154,13 @@
                                             </p>
                                             <p class="text-base text-blue-600" x-text="candidateData.party || ''"></p>
                                             <p class="mt-2 text-sm text-gray-700"
-                                                x-text="candidateData.visi || 'Loading candidate information...'">
+                                                x-html="candidateData.visi || 'Loading candidate information...'">
                                             </p>
                                             <p class="mt-2 text-sm text-gray-500"
                                                 x-text="`Election Date: ${candidateData.election_date || ''}`"></p>
                                         </div>
                                         <div class="mt-4 flex justify-end">
-                                            <a href="{{ route('pairs.show', $candidate->id) }}" class="mr-2">
+                                            <a href="{{ route('pairs.show', $candidate) }}" class="mr-2">
                                                 <button
                                                     class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
                                                     Detail

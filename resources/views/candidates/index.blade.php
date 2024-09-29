@@ -46,7 +46,7 @@
             @foreach ($candidates as $candidate)
                 <div class="candidate-card bg-white rounded-xl shadow-md overflow-hidden" x-data="candidateModal({{ $candidate->id }})">
                     <div class="relative pb-2/3">
-                        <img class="w-48 h-48 rounded-3xl object-cover mx-auto mt-8" img
+                        <img class="w-48 h-64 rounded-3xl object-cover mx-auto mt-8" img
                             src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}">
                     </div>
                     <div class="p-6 mx-auto text-center">

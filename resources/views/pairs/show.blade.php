@@ -11,7 +11,7 @@
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, y: 30, ease: 'back' })">
                     {{ $pair->pemimpin->name }} -
                     {{ $pair->wakil->name }}</h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, delay: 0.5, y: 30, ease: 'back' })">Suarakan Aspirasi, Wujudkan Perubahan
+                <p class="text-xl md:text-2xl mb-8 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, delay: 0.5, y: 30, ease: 'back' })">{{ $pair->visi }}
                 </p>
 
                 <div class="mx-auto h-full w-full max-w-4xl my-10">
@@ -35,7 +35,7 @@
                     x-transition:enter-end="opacity-100 transform scale-100" class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center" x-init="gsap.from($el, { opacity: 0, x: -50, duration: 0.8, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
                         <img src="{{ Storage::url($pair->pemimpin->foto) }}" alt="{{ $pair->pemimpin->name }}"
-                            class="w-80 h-80 object-cover rounded-3xl mx-auto">
+                            class="w-80 h-96 object-cover rounded-3xl mx-auto">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold mb-2">{{ $pair->pemimpin->name }}</h3>
                             <p class="text-gray-600 mb-4">Calon {{ $pair->pemimpin->position }} -
@@ -47,7 +47,7 @@
                     </div>
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center" x-init="gsap.from($el, { opacity: 0, x: 50, duration: 0.8, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
                         <img src="{{ Storage::url($pair->wakil->foto) }}" alt="{{ $pair->wakil->name }}"
-                            class="w-80 h-80 object-cover rounded-3xl mx-auto">
+                            class="w-80 h-96 object-cover rounded-3xl mx-auto">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold mb-2">{{ $pair->wakil->name }}</h3>
                             <p class="text-gray-600 mb-4">Calon {{ $pair->wakil->position }} - {{ $pair->wakil->partai }}

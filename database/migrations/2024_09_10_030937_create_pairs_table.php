@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->enum('nomor_urut', ['1', '2', '3', '4', '5']);
             $table->string('party');
+            $table->string('slug');
             $table->unsignedBigInteger('region_id');
 
             $table->unsignedBigInteger('pemimpin_id');
