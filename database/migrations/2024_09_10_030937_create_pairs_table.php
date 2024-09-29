@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('wakil_id');
             $table->text('short_bio');
             $table->longText('full_bio');
-            $table->string('visi');
-            $table->string('misi');
+            $table->longText('visi');
+            $table->longText('misi');
             $table->string('image_url')->nullable();
             $table->date('election_date');
 

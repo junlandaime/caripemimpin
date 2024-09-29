@@ -72,7 +72,7 @@
                             class="w-full h-48 object-cover">
                         <div class="p-6 text-white">
                             <h3 class="text-2xl font-semibold mb-2">Visi</h3>
-                            <p class="mb-4">{{ $pair->visi }}</p>
+                            <p class="mb-4">{!! nl2br(e($pair->visi)) !!}</p>
 
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                             class="w-full h-48 object-cover">
                         <div class="p-6 text-white">
                             <h3 class="text-2xl font-semibold mb-2">Misi</h3>
-                            <p class="mb-4">{{ $pair->misi }}</p>
+                            <p class="mb-4">{!! nl2br(e($pair->misi)) !!}</p>
 
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                 <h2 class="text-4xl font-bold text-center mb-16" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 80%' } })">Infografis Pasangan</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-init="gsap.from($el.children, { opacity: 0, y: 50, duration: 0.8, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
                     <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                        <div class="text-4xl font-bold text-blue-600 mb-2">5</div>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">{{ count(explode(',', $pair->party)) }}</div>
                         <div class="text-xl font-semibold mb-2">Partai Pengusung</div>
                         <p class="text-gray-600">{{ $pair->party }}
                         </p>
@@ -171,7 +171,7 @@
             </div>
         </section>
 
-        <section id="edukasi" class="py-32 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+        <section id="edukasi" class="py-32 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 80%' } })">Edukasi Pemilih</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-init="gsap.from($el.children, { opacity: 0, y: 50, duration: 0.8, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">

@@ -351,8 +351,7 @@ Fakultas Hukum Universitas Bengkulu (tidak selesai)
 runner-up pemilihan Model Indonesia pada tahun 2008 yang diadakan oleh desainer batik ternama Ramli (peserta berpakaian daerah terbaik, serta meraih gelar duta persahabatan)', 'karir' => '-', 'akun' => '@gilangdirga', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/image1.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
 
-            ['prename' => 'KH.', 'name' => 'Aa Maulana ZA', 'aftername' => '', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => 'Ketua Rois Syuriah 
-Ketua Tanfidziyah PCNU KBB', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/image17.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
+            ['prename' => '', 'name' => 'Asep Ilyas', 'aftername' => '', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => '', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/asepil.jpeg', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
             ['prename' => 'Drs. H.', 'name' => ' Asep Ismail', 'aftername' => ', Msi', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => 'Pensiunan Aparatur Sipil Negara (ASN) yang terakhir berdinas sebagai Kepala Kantor Kementerian Agama (Kemenag) Bandung Barat', 'akun' => '@h.asepismail', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/image16 - Copy.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
@@ -455,16 +454,16 @@ Kepala Dinas Pendidikan Pemuda dan Olahraga Kota Cimahi (2016—2018)
 Asisten Perekonomian dan Pembangunan Setda Kota Cimahi (2018—2019)
 Sekretaris Daerah Kota Cimahi (2019—2022, 2023—sekarang)
 Penjabat Wali Kota Cimahi (2022—2023)
-', 'akun' => '@dikdikcimahi', 'nominal' => '', 'partai' => 'Partai Demokrat', 'foto' => 'candidates/noimage.jpg', 'region_id' => 2, 'position' => 'Walikota'],
+', 'akun' => '@dikdikcimahi', 'nominal' => '', 'partai' => 'Partai Demokrat', 'foto' => 'candidates/dikdik.png', 'region_id' => 2, 'position' => 'Walikota'],
 
             ['prename' => '', 'name' => 'Bilal Insan M. Priatna', 'aftername' => ', S.E', 'ttl' => '1996', 'domisili' => '', 'agama' => 'Islam', 'riwayatpen' => '
 ', 'prestasi' => '', 'karir' => '
-', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/noimage.jpg', 'region_id' => 2, 'position' => 'Walikota'],
+', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/bilal.jpeg', 'region_id' => 2, 'position' => 'Walikota'],
 
-            ['prename' => '', 'name' => ' Ngatiyana', 'aftername' => ', S.A.P', 'ttl' => '5 Juli 1961', 'domisili' => '', 'agama' => 'Islam', 'riwayatpen' => '
+            ['prename' => '', 'name' => 'Ngatiyana', 'aftername' => ', S.A.P', 'ttl' => '5 Juli 1961', 'domisili' => '', 'agama' => 'Islam', 'riwayatpen' => '
 ', 'prestasi' => '', 'karir' => 'Karir Militer dimulai pada tahun 1983 TNI Angkatan Darat
 Wakil Wali Kota Cimahi ke 4 2017 - 2020, Pelaksana Tugas Wali Kota Cimahi 2020 - 2022 - Wali Kota Cimahi 2020
-', 'akun' => '@letkolpum.ngatiyana', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/noimage.jpg', 'region_id' => 2, 'position' => 'Walikota'],
+', 'akun' => '@letkolpum.ngatiyana', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/Ngatiyana.jpg', 'region_id' => 2, 'position' => 'Walikota'],
 
 
 
@@ -477,11 +476,11 @@ PT OMEDATA ELECTRONICS        TEKNISI        1998        2024
 CV MITRA UNGGUL        DIREKTUR OPERASIONAL        2004        2009
 CV MITRA INSAN MANDIRI        DIREKTUR UTAMA        2006        2012
 
-Ketua pimpinan cabang (DPC) pks Cangkuang 2003 - Ketua DPC PKS Gununghalu 2005 - Ketua cabang dakwah 3 di dewan pewakilan daerah (DPD) Kabupaten Bandung Barat sd 2023. Ketua Komisi IV DPRD Kabupaten Bandung Barat Fraksi PKS. ', 'akun' => '@bagjasetiawan_', 'nominal' => '', 'partai' => 'PKS', 'foto' => 'candidates/noimage.jpg', 'region_id' => 2, 'position' => 'Wakil Walikota'],
+Ketua pimpinan cabang (DPC) pks Cangkuang 2003 - Ketua DPC PKS Gununghalu 2005 - Ketua cabang dakwah 3 di dewan pewakilan daerah (DPD) Kabupaten Bandung Barat sd 2023. Ketua Komisi IV DPRD Kabupaten Bandung Barat Fraksi PKS. ', 'akun' => '@bagjasetiawan_', 'nominal' => '', 'partai' => 'PKS', 'foto' => 'candidates/bagja.jpeg', 'region_id' => 2, 'position' => 'Wakil Walikota'],
             ['prename' => 'H.', 'name' => 'A Mulyana', 'aftername' => ', S.H., M.Pd., MH.Kes', 'ttl' => 'Majalaya, 07 April 1959', 'domisili' => '', 'agama' => 'Islam', 'riwayatpen' => 'SD PUI thn 1972 - 1975 - SMPN Majalaya Thn 1975 - SPR RS Imanuel Thn 1980 - Sekolah Tinggi Hukum Bandung 1991 - Pasca Sarjana UPI Tahn 2002 - Pasca Sarjana Universitas Katolik Soegijapranada Sekamarang Thn 2015
-', 'prestasi' => '', 'karir' => 'Dinas Kesehatan Kota Madya Bandung - Dinas Kesehatan Provinsi Jawa Barat', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/noimage.jpg', 'region_id' => 2, 'position' => 'Wakil Walikota'],
+', 'prestasi' => '', 'karir' => 'Dinas Kesehatan Kota Madya Bandung - Dinas Kesehatan Provinsi Jawa Barat', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/amulyana.jpg', 'region_id' => 2, 'position' => 'Wakil Walikota'],
             ['prename' => '', 'name' => 'Adhitia Yudhisthira', 'aftername' => '', 'ttl' => '25 November 1990', 'domisili' => '', 'agama' => 'Islam', 'riwayatpen' => 'SDN Andir Kidul 1 - SMPN 5 Bandung - SMA Negeri 8 Bandung - Universitas Widyatama
-', 'prestasi' => '', 'karir' => '', 'akun' => '@adhitiayudisthira', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/noimage.jpg', 'region_id' => 2, 'position' => 'Wakil Walikota'],
+', 'prestasi' => '', 'karir' => '', 'akun' => '@adhitiayudisthira', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/adhi.jpg', 'region_id' => 2, 'position' => 'Wakil Walikota'],
         ];
 
         foreach ($candidates as $candidate) {

@@ -131,7 +131,7 @@ class PairController extends Controller
             // ->upcoming()
             ->inRandomOrder()
             // ->orderBy('name', 'ASC')
-            ->paginate(9);
+            ->paginate(18);
 
         $regions = Region::all();
         return view('pairs.index', compact('pairs', 'regions'));

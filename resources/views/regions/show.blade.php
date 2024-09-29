@@ -113,7 +113,8 @@
                                     </h3>
                                     <p class="text-gray-600 mb-4">{{ $candidate->pemimpin->name }} -
                                         {{ $candidate->wakil->name }}</p>
-                                    <a href="#" class="text-primary hover:underline">Lihat Profil Lengkap</a>
+                                    <a href="{{ route('pairs.show', $candidate) }}"
+                                        class="text-primary hover:underline">Lihat Profil Lengkap</a>
                                 </div>
                             </div>
                         @empty
