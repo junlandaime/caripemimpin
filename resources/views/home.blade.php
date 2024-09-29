@@ -121,7 +121,7 @@
                     <x-animations.fade-in delay="{{ $candidate->id * 200 }}">
                         <div
                             class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out">
-                            <div class="relative pb-64 overflow-auto">
+                            <div class="relative pb-48 overflow-auto">
                                 <img class ="absolute inset-0 h-full w-full
                             object-cover"
                                     src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}">
