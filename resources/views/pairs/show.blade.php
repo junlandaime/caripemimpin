@@ -171,7 +171,7 @@
             </div>
         </section>
 
-        <section id="edukasi" class="py-32 bg-gradient-to-br from-primary to-secondary text-white rounded-3xl">
+        <section id="edukasi" class="py-32 bg-primary text-white rounded-3xl">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 80%' } })">Edukasi Pemilih</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8" x-init="gsap.from($el.children, { opacity: 0, y: 50, duration: 0.8, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
