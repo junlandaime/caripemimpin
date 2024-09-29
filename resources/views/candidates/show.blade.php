@@ -12,7 +12,7 @@
     {{ Str::limit($candidate->karir, 200) }}
 @endsection
 
-@section('og_image', 'https://caripemimpin.id/storage/candidates/' . $candidate->foto)
+@section('og_image', 'https://caripemimpin.id/storage/' . $candidate->foto)
 
 @section('additional_meta_tags')
 
