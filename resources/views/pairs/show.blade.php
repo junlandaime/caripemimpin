@@ -12,7 +12,7 @@
     {{ Str::limit($pair->visi, 200) }}
 @endsection
 
-@section('og_image', 'https://caripemimpin.id/storage/' . $pair->foto)
+@section('og_image', 'https://caripemimpin.id/storage/' . $pair->image_url)
 
 @section('additional_meta_tags')
 
