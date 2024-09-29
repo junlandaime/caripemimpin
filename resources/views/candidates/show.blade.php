@@ -51,41 +51,8 @@
                     </div>
                 </div>
 
-                <div class="mt-8">
-                    <h2 class="text-2xl font-bold mb-4">Visi & Misi</h2>
-                    <div class="bg-gray-100 rounded-lg p-6">
-                        <h3 class="text-xl font-semibold mb-2">Visi</h3>
-                        <p class="mb-4">{{ $candidate->vision ?? 'Belum tersedia' }}</p>
-                        <h3 class="text-xl font-semibold mb-2">Misi</h3>
-                        @if ($candidate->mission)
-                            <ul class="list-disc pl-5">
-                                @foreach (explode("\n", $candidate->mission) as $missionItem)
-                                    <li class="mb-2">{{ $missionItem }}</li>
-                                @endforeach
-                            </ul>
-                        @else
-                            <p>Belum tersedia</p>
-                        @endif
-                    </div>
-                </div>
 
-                <div class="mt-8">
-                    <h2 class="text-2xl font-bold mb-4">Program Unggulan</h2>
-                    @if ($candidate->key_programs)
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            @foreach (json_decode($candidate->key_programs) as $program)
-                                <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-                                    <h3 class="text-lg font-semibold mb-2">{{ $program->title }}</h3>
-                                    <p>{{ $program->description }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    @else
-                        <p>Belum ada program unggulan yang ditambahkan.</p>
-                    @endif
-                </div>
-
-                <div class="mt-8">
+                {{-- <div class="mt-8">
                     <h2 class="text-2xl font-bold mb-4">Pengalaman & Pendidikan</h2>
                     <div class="space-y-4">
                         @if ($candidate->experience)
@@ -115,7 +82,7 @@
                             </div>
                         @endif
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 

@@ -127,7 +127,7 @@ class CandidateController extends Controller
             'position' => $candidate->position,
             'party' => $candidate->partai,
             'region' => $candidate->region->name,
-            'karir' => $candidate->karir,
+            'karir' => nl2br(e($candidate->karir)),
             // 'short_description' => $candidate->short_bio,
             // 'election_date' => $candidate->election_date->format('d M Y')
         ]);

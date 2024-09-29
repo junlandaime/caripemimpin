@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Region;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 
 class RegionSeeder extends Seeder
 {
@@ -78,6 +79,8 @@ class RegionSeeder extends Seeder
         ];
 
         foreach ($regions as $region) {
+            $region['slug'] = Str::slug($region['type'] . '' . $region['name']);
+
             Region::create($region);
         }
     }

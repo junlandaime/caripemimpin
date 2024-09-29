@@ -68,10 +68,7 @@ class PairController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pair $pair)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -122,5 +119,64 @@ class PairController extends Controller
     public function destroy(Pair $pair)
     {
         //
+    }
+
+
+    public function frontindex(Request $request)
+    {
+        $region = $request->query('region');
+        $pairs = Pair::when($region, function ($query, $region) {
+            return $query->byRegion($region);
+        })
+            // ->upcoming()
+            ->inRandomOrder()
+            // ->orderBy('name', 'ASC')
+            ->paginate(9);
+
+        $regions = Region::all();
+        return view('pairs.index', compact('pairs', 'regions'));
+    }
+
+    public function show(Pair $pair)
+    {
+        return view('pairs.show', compact('pair'));
+    }
+
+    public function search(Request $request)
+    {
+        // dd($request);
+        $query = $request->input('query');
+        $paris = Pair::where('name', 'like', "%{$query}%")
+            // ->orWhere('position', 'like', "%{$query}%")
+            // ->orWhere('party', 'like', "%{$query}%")
+            // ->orWhere('region', 'like', "%{$query}%")
+            ->paginate(10);
+
+        return view('pairs.index', compact('paris', 'query'));
+    }
+
+    public function getShortInfo($id)
+    {
+        // return response()->json([
+        //     'name' => $candidate->name,
+        //     'position' => $candidate->position,
+        //     'party' => $candidate->party,
+        //     'short_description' => $candidate->short_description,
+        //     'image_url' => $candidate->image_url,
+        // ]);
+
+        $candidate = Pair::with('region')->findOrFail($id);
+        return response()->json([
+            'id' => $candidate->id,
+            'pemimpin' => $candidate->pemimpin->name,
+            'wakil' => $candidate->wakil->name,
+            'party' => $candidate->party,
+            'region' => $candidate->region->full_name,
+            'nomor_urut' => $candidate->nomor_urut,
+            'visi' => nl2br(e($candidate->visi)),
+            'misi' => nl2br(e($candidate->misi)),
+            // 'short_description' => $candidate->short_bio,
+            // 'election_date' => $candidate->election_date->format('d M Y')
+        ]);
     }
 }

@@ -33,17 +33,21 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/cek', [HomeController::class, 'cek'])->name('cek');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/kuis', [HomeController::class, 'kuis'])->name('kuis');
-Route::get('/kuis/{region}', [HomeController::class, 'kuismulai'])->name('kuis.mulai');
+Route::get('/kuis/{region:slug}', [HomeController::class, 'kuismulai'])->name('kuis.mulai');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/voter-guide', [HomeController::class, 'voterGuide'])->name('voter.guide');
 
 Route::get('/candidates', [CandidateController::class, 'frontindex'])->name('candidates.index');
-Route::get('/candidates/{candidate}', [CandidateController::class, 'show'])->name('candidates.show');
+Route::get('/candidates/{candidate:slug}', [CandidateController::class, 'show'])->name('candidates.show');
 Route::get('/candidates/p/search', [CandidateController::class, 'search'])->name('candidates.search');
 
+Route::get('/pasangan', [PairController::class, 'frontindex'])->name('pasangan.index');
+Route::get('/pasangan/{pair}', [PairController::class, 'show'])->name('pairs.show');
+Route::get('/pasangan/p/search', [PairController::class, 'search'])->name('pairs.search');
+
 Route::get('/regions', [RegionController::class, 'frontindex'])->name('regions.index');
-Route::get('/regions/{region}', [RegionController::class, 'show'])->name('regions.show');
+Route::get('/regions/{region:slug}', [RegionController::class, 'show'])->name('regions.show');
 Route::get('/regions/type/{type}', [RegionController::class, 'byType'])->name('regions.byType');
 Route::get('/regions/search', [RegionController::class, 'search'])->name('regions.search');
 Route::get('/regions/statistics', [RegionController::class, 'statistics'])->name('regions.statistics');

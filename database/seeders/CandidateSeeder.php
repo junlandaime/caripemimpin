@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Candidate;
 use App\Models\Region;
+use App\Models\Candidate;
 use Faker\Factory as Faker;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 
 class CandidateSeeder extends Seeder
 {
@@ -429,7 +430,7 @@ SMP Negri 33 Bandung 1988-1991
 SMA Negri 11 Bandung 1991-1994
 Institut Teknologi Bandung (ITB) 2001
 Institut Teknologi Bandung (ITB) 2004 Magister
-', 'prestasi' => '', 'karir' => ': 1. Sekertaris DPD Partai Keadilan Sejahtera Kab. Bandung
+', 'prestasi' => '', 'karir' => '1. Sekertaris DPD Partai Keadilan Sejahtera Kab. Bandung
 2. Anggota DPRD Kab. Bandung F PKS 2009-2014
 3. Sekretaris Fraksi PKS DPRD Kab. Bandung 2009-2014
 4. Ketua Komisi D DPRD Kab. Bandung 2009-2014
@@ -484,6 +485,8 @@ Ketua pimpinan cabang (DPC) pks Cangkuang 2003 - Ketua DPC PKS Gununghalu 2005 -
         ];
 
         foreach ($candidates as $candidate) {
+            $candidate['slug'] = Str::slug($candidate['name']);
+
             Candidate::create($candidate);
         }
     }

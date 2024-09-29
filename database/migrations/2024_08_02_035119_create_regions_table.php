@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug');
             $table->enum('type', ['Kota', 'Kabupaten', 'Provinsi']);
             $table->string('bendera')->nullable();
             $table->string('lambang')->nullable();

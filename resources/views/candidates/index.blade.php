@@ -46,7 +46,7 @@
             @foreach ($candidates as $candidate)
                 <div class="candidate-card bg-white rounded-xl shadow-md overflow-hidden" x-data="candidateModal({{ $candidate->id }})">
                     <div class="relative pb-2/3">
-                        <img class="w-48 h-48 rounded-3xl object-cover mx-auto" img
+                        <img class="w-48 h-48 rounded-3xl object-cover mx-auto mt-8" img
                             src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}">
                     </div>
                     <div class="p-6 mx-auto text-center">
@@ -104,13 +104,13 @@
                                             </p>
                                             <p class="text-base text-blue-600" x-text="candidateData.partai || ''"></p>
                                             <p class="mt-2 text-sm text-gray-700"
-                                                x-text="candidateData.karir || 'Loading candidate information...'">
+                                                x-html="candidateData.karir || 'Loading candidate information...'">
                                             </p>
                                             {{-- <p class="mt-2 text-sm text-gray-500"
                                                 x-text="`Election Date: ${candidateData.election_date || ''}`"></p> --}}
                                         </div>
                                         <div class="mt-4 flex justify-end">
-                                            <a href="{{ route('candidates.show', $candidate->id) }}" class="mr-2">
+                                            <a href="{{ route('candidates.show', $candidate->slug) }}" class="mr-2">
                                                 <button
                                                     class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
                                                     Detail

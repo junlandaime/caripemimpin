@@ -8,7 +8,7 @@
         <section class="bg-primary text-white py-20 rounded-xl">
             <div class="container mx-auto px-4 text-center">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6" x-data x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1 })">
-                    Daftar Kandidat Pilkada Jawa Barat
+                    Daftar Kandidat Pasangan
                 </h1>
                 <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })">
                     Informasi lengkap seputar Daftar Kandidat Pilkada Bandung Raya dan Provinsi Jawa Barat periode 2024-2029
@@ -16,7 +16,7 @@
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        {{-- <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <div class="mb-8 flex justify-center space-x-4" x-data x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2 })">
                     @foreach ($regions as $region)
@@ -46,7 +46,7 @@
                                             {{ $candidate->wakil->name }}</h3>
                                         <p class="text-gray-600 mb-4">Pasangan Nomor Urut
                                             {{ $candidate->nomor_urut }}</p>
-                                        <a href="{{ route('candidates.show', $candidate->id) }}"
+                                        <a href="{{ route('pairs.show', $candidate->id) }}"
                                             class="text-green-600 hover:underline">Lihat Profil Lengkap</a>
                                     </div>
                                 </div>
@@ -62,19 +62,19 @@
 
                 \
             </div>
-        </section>
+        </section> --}}
 
-        <h1 class="text-3xl font-bold mb-6">Daftar Kandidat Pilkada Jawa Barat</h1>
+        <h1 class="text-3xl font-bold my-6">Daftar Kandidat Pasangan Pilkada Bandung Raya dan Jawa Barat</h1>
 
-        <div class="mb-6">
-            <form action="{{ route('candidates.search') }}" method="GET" class="flex items-center">
+        {{-- <div class="mb-6">
+            <form action="{{ route('pairs.search') }}" method="GET" class="flex items-center">
                 <input type="text" name="query" placeholder="Cari kandidat..." class="form-input flex-grow mr-2">
                 <button type="submit" class="btn btn-primary">Cari</button>
             </form>
         </div>
 
-        @if (Route::is('candidates.search'))
-            <p class="mb-4">Ditemukan {{ $candidates->total() }} hasil untuk pencarian "{{ $query }}"</p>
+        @if (Route::is('pairs.search'))
+            <p class="mb-4">Ditemukan {{ $pairs->total() }} hasil untuk pencarian "{{ $query }}"</p>
         @else
             <div class="mb-6">
                 <label for="region-filter" class="block mb-2">Filter berdasarkan wilayah:</label>
@@ -87,21 +87,21 @@
                     @endforeach
                 </select>
             </div>
-        @endif
+        @endif --}}
 
 
         <div id="candidate-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            @foreach ($candidates as $candidate)
+            @foreach ($pairs as $candidate)
                 <div class="candidate-card bg-white rounded-xl shadow-md overflow-hidden" x-data="candidateModal({{ $candidate->id }})">
                     <div class="relative pb-2/3">
-                        <img class="w-48 h-48 rounded-full object-cover mx-auto" img
+                        <img class="w-48 h-48 rounded-3xl object-cover mx-auto" img
                             src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}">
                     </div>
                     <div class="p-6">
-                        <h2 class="text-xl font-semibold mb-2">{{ $candidate->name }}</h2>
-                        <p class="text-gray-600">{{ $candidate->position }} - {{ $candidate->region->type }}
-                            {{ $candidate->region->name }}</p>
-                        <p class="text-sm mt-2">{{ Str::limit($candidate->short_bio, 100) }}</p>
+                        <h2 class="text-xl font-semibold mb-2">{{ $candidate->pemimpin->name }} -
+                            {{ $candidate->wakil->name }}</h2>
+                        <p class="text-gray-600">{{ $candidate->region->full_name }}</p>
+                        <p class="text-sm mt-2">{{ Str::limit($candidate->party, 200) }}</p>
                         <div class="mt-4 flex justify-between items-center">
                             <button @click="openModal()"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -138,26 +138,29 @@
                                     <!-- Left side: Image -->
                                     <div class="w-1/2">
                                         <img class="w-full h-full object-cover"
-                                            src="{{ Storage::url($candidate->image_url) }}" alt="{{ $candidate->name }}">
+                                            src="{{ Storage::url($candidate->image_url) }}"
+                                            alt="{{ $candidate->pemimpin->name }} -
+                            {{ $candidate->wakil->name }}">
                                     </div>
 
                                     <!-- Right side: Text information -->
                                     <div class="w-1/2 bg-white p-6">
                                         <h3 class="text-lg leading-6 font-medium text-gray-900"
-                                            x-text="candidateData.name || 'Loading...'"></h3>
+                                            x-text="`${candidateData.pemimpin || ''} - ${candidateData.wakil || 'Loading...'}`">
+                                        </h3>
                                         <div class="mt-2">
                                             <p class="text-sm text-gray-500"
-                                                x-text="`${candidateData.position || ''} - ${candidateData.region || ''}`">
+                                                x-text="`${'Pasangan Nomor Urut'} ${candidateData.nomor_urut || ''} - ${candidateData.region || ''}`">
                                             </p>
                                             <p class="text-base text-blue-600" x-text="candidateData.party || ''"></p>
                                             <p class="mt-2 text-sm text-gray-700"
-                                                x-text="candidateData.short_description || 'Loading candidate information...'">
+                                                x-text="candidateData.visi || 'Loading candidate information...'">
                                             </p>
                                             <p class="mt-2 text-sm text-gray-500"
                                                 x-text="`Election Date: ${candidateData.election_date || ''}`"></p>
                                         </div>
                                         <div class="mt-4 flex justify-end">
-                                            <a href="{{ route('candidates.show', $candidate->id) }}" class="mr-2">
+                                            <a href="{{ route('pairs.show', $candidate->id) }}" class="mr-2">
                                                 <button
                                                     class="inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm">
                                                     Detail
@@ -178,9 +181,9 @@
         </div>
 
         <div class="mt-6">
-            {{ $candidates->links() }}
+            {{ $pairs->links() }}
         </div>
-        @if ($candidates->isEmpty() && Route::is('candidates.search'))
+        @if ($pairs->isEmpty() && Route::is('pairs.search'))
             <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8" role="alert">
                 <p class="font-bold">Tidak ada hasil</p>
                 <p>Maaf, tidak ada calon yang cocok dengan kata kunci "{{ $query ? $query : '' }}". Silakan coba dengan
@@ -188,7 +191,7 @@
                     kunci
                     lain.</p>
             </div>
-        @elseif ($candidates->isEmpty())
+        @elseif ($pairs->isEmpty())
             <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-8" role="alert">
                 <p class="font-bold">Tidak ada hasil</p>
                 <p>Maaf, tidak ada calon pada daerah tersebut.</p>
@@ -212,7 +215,7 @@
                     this.isOpen = false;
                 },
                 fetchCandidateData() {
-                    fetch(`/api/candidates/${this.candidateId}`)
+                    fetch(`/api/pairs/${this.candidateId}`)
                         .then(response => response.json())
                         .then(data => {
                             this.candidateData = data;

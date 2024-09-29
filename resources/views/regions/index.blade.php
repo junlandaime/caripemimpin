@@ -44,7 +44,7 @@
                                     <p><span class="font-semibold">Incumbent:</span> <span x-text="daerah.incumbent"></span>
                                     </p> --}}
                                 </div>
-                                <a :href="'/regions/' + daerah.id"
+                                <a :href="'/regions/' + daerah.slug"
                                     class="mt-4 inline-block bg-primary text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-900 transition duration-300">Detail</a>
                             </div>
                         </div>

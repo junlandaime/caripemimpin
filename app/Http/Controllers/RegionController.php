@@ -18,28 +18,7 @@ class RegionController extends Controller
         return view('admin.regions.index', compact('regions'));
     }
 
-    public function frontindex()
-    {
-        // $regions = Region::withCount('candidates')->get();
-        $totalRegions = Region::count();
-        $totalCities = Region::where('type', 'kota')->count();
-        $totalRegencies = Region::where('type', 'kabupaten')->count();
 
-        $regions = Region::with('candidates')
-            ->select('id', 'name', 'type',  'created_at')
-            ->get()
-            ->map(function ($region) {
-                return [
-                    'id' => $region->id,
-                    'name' => $region->name,
-                    'type' => $region->type,
-                    // 'population' => $region->population,
-                    'created_at' => $region->created_at->toDateString()
-                ];
-            });
-
-        return view('regions.index', compact('regions', 'totalRegions', 'totalCities', 'totalRegencies'));
-    }
 
     public function create()
     {
@@ -79,6 +58,30 @@ class RegionController extends Controller
         $region->update($validatedData);
 
         return redirect()->route('admin.regions.index')->with('success', 'Wilayah berhasil diperbarui.');
+    }
+
+    public function frontindex()
+    {
+        // $regions = Region::withCount('candidates')->get();
+        $totalRegions = Region::count();
+        $totalCities = Region::where('type', 'kota')->count();
+        $totalRegencies = Region::where('type', 'kabupaten')->count();
+
+        $regions = Region::with('candidates')
+            ->select('id', 'name', 'type', 'slug',  'created_at')
+            ->get()
+            ->map(function ($region) {
+                return [
+                    'id' => $region->id,
+                    'name' => $region->name,
+                    'slug' => $region->slug,
+                    'type' => $region->type,
+                    // 'population' => $region->population,
+                    'created_at' => $region->created_at->toDateString()
+                ];
+            });
+
+        return view('regions.index', compact('regions', 'totalRegions', 'totalCities', 'totalRegencies'));
     }
 
     /**

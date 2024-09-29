@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PairController;
 use App\Http\Controllers\CandidateController;
 
 Route::get('/user', function (Request $request) {
@@ -9,6 +10,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/candidates/{id}', [CandidateController::class, 'getShortInfo']);
+Route::get('/pairs/{id}', [PairController::class, 'getShortInfo']);
 
 // Route::get('/candidates/search', [CandidateController::class, 'search']);
 // Route::get('/candidates/{candidate}', [CandidateController::class, 'show']);

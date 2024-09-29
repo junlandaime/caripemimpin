@@ -34,8 +34,27 @@
                 <nav class="hidden md:flex space-x-4">
                     <a href="{{ route('home') }}"
                         class=" {{ request()->routeIs('home') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Beranda</a>
-                    <a href="{{ route('candidates.index') }}"
-                        class=" {{ request()->routeIs('candidates.*') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Kandidat</a>
+                    {{-- <a href="{{ route('candidates.index') }}"
+                        class=" {{ request()->routeIs('candidates.*') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Kandidat</a> --}}
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.away="open = false"
+                            class="{{ request()->routeIs('candidates.*') || request()->routeIs('pasangan.*') ? 'font-bold' : 'hover:bg-slate-400' }} hover:bg-slate-400 px-3 py-2 rounded">
+                            Kandidat
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul x-show="open" x-transition
+                            class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg z-50">
+                            <li><a href="{{ route('pasangan.index') }}"
+                                    class="block px-4 py-2 hover:bg-gray-100">Kandidat
+                                    Pasangan</a></li>
+                            <li><a href="{{ route('candidates.index') }}"
+                                    class="block px-4 py-2 hover:bg-gray-100">Kandidat Perorang</a></li>
+                        </ul>
+                    </div>
                     {{-- <a href="{{ route('regions.index') }}"
                         class=" {{ request()->routeIs('regions.*') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Wilayah</a> --}}
                     <div class="relative" x-data="{ open: false }">
@@ -88,7 +107,8 @@
                     <ul x-show="open" class="pl-4">
                         <li><a href="{{ route('regions.index') }}" class="block py-2 hover:bg-slate-400">Daftar
                                 Wilayah</a></li>
-                        <li><a href="{{ route('kuis') }}" class="block py-2 hover:bg-slate-400">Games Kuis Wilayah</a>
+                        <li><a href="{{ route('kuis') }}" class="block py-2 hover:bg-slate-400">Games Kuis
+                                Wilayah</a>
                         </li>
                     </ul>
                 </div>

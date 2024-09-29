@@ -88,7 +88,7 @@
                                     {{ $candidate->nomor_urut }}</h3>
                                 <h3 class="text-2xl font-semibold mb-2">{{ $candidate->pasangan }}</h3>
                                 <p class="text-gray-600 mb-4">Visi: {{ $candidate->visi }}</p>
-                                <a href="#"
+                                <a href="{{ route('pairs.show', $candidate) }}"
                                     class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition duration-300">Profil
                                     Lengkap</a>
                             </div>
@@ -245,10 +245,10 @@
     </div>
 
     <div class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {{-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-2xl font-bold mb-4">Pemilihan Terdekat</h2>
-                {{-- <ul class="space-y-4">
+                <ul class="space-y-4">
                     @foreach ($upcomingElections as $election)
                         <li>
                             <span class="font-semibold">{{ $election->region->name }}</span><br>
@@ -256,13 +256,13 @@
                             <span class="text-sm text-blue-600">{{ $election->date->format('d F Y') }}</span>
                         </li>
                     @endforeach
-                </ul> --}}
-                {{-- <a href="{{ route('elections.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat semua
-                    pemilihan</a> --}}
+                </ul>
+                <a href="{{ route('elections.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat semua
+                    pemilihan</a>
             </div>
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-2xl font-bold mb-4">Kandidat Terpopuler</h2>
-                {{-- <ul class="space-y-4">
+                <ul class="space-y-4">
                     @foreach ($popularCandidates as $candidate)
                         <li class="flex items-center">
                             <img src="{{ $candidate->photo_url }}" alt="{{ $candidate->name }}"
@@ -274,13 +274,13 @@
                             </div>
                         </li>
                     @endforeach
-                </ul> --}}
+                </ul>
                 <a href="{{ route('candidates.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat
                     semua kandidat</a>
             </div>
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-2xl font-bold mb-4">Statistik Pilkada</h2>
-                {{-- <ul class="space-y-2">
+                <ul class="space-y-2">
                     <li>Total Wilayah: <span class="font-semibold">{{ $statistics['total_regions'] }}</span></li>
                     <li>Total Kandidat: <span class="font-semibold">{{ $statistics['total_candidates'] }}</span></li>
                     <li>Pemilih Terdaftar: <span
@@ -289,9 +289,9 @@
                             class="font-semibold">{{ number_format($statistics['avg_turnout'], 2) }}%</span></li>
                 </ul>
                 <a href="{{ route('regions.statistics') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat
-                    statistik lengkap</a> --}}
+                    statistik lengkap</a>
             </div>
-        </div>
+        </div> --}}
 
         <div class="mb-12">
             <h2 class="text-3xl font-bold mb-6">Peta Wilayah Pilkada</h2>
