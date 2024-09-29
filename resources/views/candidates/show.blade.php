@@ -2,6 +2,22 @@
 
 @section('title', $candidate->name)
 
+@section('meta_description')
+    {{ Str::limit($candidate->karir, 160) }}
+@endsection
+
+@section('og_title', $candidate->name . ' - Cari Pemimpin')
+
+@section('og_description')
+    {{ Str::limit($candidate->karir, 200) }}
+@endsection
+
+@section('og_image', 'https://caripemimpin.id/storage/candidates/' . $candidate->foto)
+
+@section('additional_meta_tags')
+
+@endsection
+
 @section('content')
     <div class="container mx-auto px-4 py-8">
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">

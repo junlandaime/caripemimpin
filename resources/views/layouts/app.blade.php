@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Pilkada Jawa Barat') - pilkada.caripemimpin</title>
+    <title>@yield('title', 'Pilkada Bandung Raya dan Jawa Barat') - caripemimpin.id</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,6 +14,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
     <link rel="icon" href="{{ asset('favicon.png') }}">
+
+    {{-- meta text --}}
+    <!-- Meta tags untuk SEO dan sharing -->
+    <meta name="description"
+        content="CariPemimpin.id adalah platform edukasi politik yang menyediakan informasi netral dan transparan tentang calon kepala daerah di Indonesia. Cerdas memilih untuk masa depan yang lebih baik.">
+    <meta name="keywords"
+        content="caripemimpin, Cari Pemimpin, caripemimpinid, Cari Pemimpin id, caripemimpinid, pilkada Kota Bandung, pilkada Jawa Barat, pilkada Kota Cimahi, pilkada Kabupaten Bandung, pilkada Kabupaten Bandung, edukasi politik, calon kepala daerah, pemilihan umum, demokrasi Indonesia, informasi kandidat">
+    <meta name="author" content="Tim CariPemimpin.id">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('og_title', 'CariPemimpin.id - Informasi Transparan Calon Kepala Daerah')">
+    <meta property="og:description" content="@yield('og_description', 'Temukan informasi lengkap dan netral tentang calon kepala daerah di Indonesia. Buat keputusan cerdas untuk memilih pemimpin masa depan.')">
+    <meta property="og:image" content="@yield('og_image', 'https://caripemimpin.id/back.jpg')">
+    {{-- 
+    <meta property="og:title" content="">
+    <meta property="og:description"
+        content="Temukan informasi lengkap dan netral tentang calon kepala daerah di Indonesia. Buat keputusan cerdas untuk memilih pemimpin masa depan.">
+    <meta property="og:image" content="https://caripemimpin.id/back.jpg">
+    <meta property="og:url" content="https://caripemimpin.id">
+    <meta name="twitter:card" content="summary_large_image"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -99,7 +121,8 @@
                         Kandidat
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
                     <ul x-show="open" class="pl-4">

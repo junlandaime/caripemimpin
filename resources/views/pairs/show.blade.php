@@ -1,7 +1,22 @@
 @extends('layouts.app')
 
-@section('title', $pair->name)
+@section('title', $pair->pasangan)
 
+@section('meta_description')
+    {{ Str::limit($pair->visi, 160) }}
+@endsection
+
+@section('og_title', $pair->pasangan . ' - Cari Pemimpin')
+
+@section('og_description')
+    {{ Str::limit($pair->visi, 200) }}
+@endsection
+
+@section('og_image', 'https://caripemimpin.id/storage/pairs/' . $pair->foto)
+
+@section('additional_meta_tags')
+
+@endsection
 
 @section('content')
 
