@@ -72,27 +72,28 @@
                                 <li><strong>Motto:</strong> {{ $region->motto }}</li>
                                 <li><strong>Semboyan:</strong> {{ $region->semboyan }}</li>
                                 <li><strong>Hari Jadi:</strong> {{ $region->harjad }}</li>
+                                <li class="mt-8">
+                                    <h3 class="font-bold">Julukan {{ $region->full_name }}</h3>
+                                    <p class="text-gray-700">
+                                        {!! nl2br(e($region->julukan)) !!}
+                                    </p>
+                                </li>
+                                <li class="mt-8">
+                                    <h3 class="font-bold">Agama di {{ $region->full_name }}</h3>
+                                    <p class="text-gray-700">
+                                        {!! nl2br(e($region->agama)) !!}
+                                    </p>
+                                </li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="flex justify-center items-center">
                             <img src="{{ Storage::url($region->bendera) }}" alt="Bendera {{ $region->full_name }}"
-                                class="rounded-lg shadow-md my-10">
+                                class="rounded-lg shadow-md mx-10">
                             <img src="{{ Storage::url($region->lambang) }}" alt="Lambang {{ $region->full_name }}"
-                                class="rounded-lg shadow-md">
+                                class="rounded-lg shadow-md mx-10">
                         </div>
                     </div>
-                    <div class="mt-8">
-                        <h3 class="text-xl font-bold mb-4">Julukan {{ $region->full_name }}</h3>
-                        <p class="text-gray-700">
-                            {!! nl2br(e($region->julukan)) !!}
-                        </p>
-                    </div>
-                    <div class="mt-8">
-                        <h3 class="text-xl font-bold mb-4">Agama di {{ $region->full_name }}</h3>
-                        <p class="text-gray-700">
-                            {!! nl2br(e($region->agama)) !!}
-                        </p>
-                    </div>
+
                 </div>
 
                 <div x-show="activeTab === 'kandidatpasangan'" x-transition:enter="transition ease-out duration-300"
@@ -306,7 +307,7 @@
 
 
 
-        <div class="mb-8">
+        <div class="m-8">
             <h2 class="text-2xl font-bold mb-4">Peta Wilayah</h2>
             <div class="bg-white shadow-md rounded-lg p-6">
                 <div id="map" class="h-96"></div>
