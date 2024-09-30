@@ -57,7 +57,7 @@
                                 <p class="text-gray-600 mb-4">{{ $candidate->region->full_name }}</p>
                                 <a href="{{ route('pairs.show', $candidate->pasanganWakil ? $candidate->pasanganWakil : $candidate->pasanganKetua) }}"
                                     class="text-primary hover:underline">Lihat
-                                    Profil Lengkap</a>
+                                     lebih lengkap</a>
                             </div>
                         </div>
                     </div>
