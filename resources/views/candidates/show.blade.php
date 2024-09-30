@@ -43,27 +43,42 @@
                         <div class="bg-blue-100 rounded-lg p-4 mb-6">
                             <h2 class="text-lg font-semibold text-blue-800 mb-2">Informasi Pemilihan</h2>
                             <p><strong>Wilayah:</strong> {{ $candidate->region->name }}</p>
+                            <p><strong>Media Sosial:</strong> {{ $candidate->akun }}</p>
                             {{-- <p><strong>Tanggal Pemilihan:</strong> {{ $candidate->election_date->format('d F Y') }}</p> --}}
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden w-1/2">
+                            <img src="{{ Storage::url($candidate->pasanganWakil ? $candidate->pasanganWakil->image_url : $candidate->pasanganKetua->image_url) }}"
+                                alt="{{ $candidate->pasanganWakil ? $candidate->pasanganWakil->nomor_urut : $candidate->pasanganKetuanomor_urut }}"
+                                class="w-full h-full object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Pasangan Nomor Urut
+                                    {{ $candidate->pasanganWakil ? $candidate->pasanganWakil->nomor_urut : $candidate->pasanganKetua->nomor_urut }}
+                                </h3>
+                                <p class="text-gray-600 mb-4">{{ $candidate->region->full_name }}</p>
+                                <a href="{{ route('pairs.show', $candidate->pasanganWakil ? $candidate->pasanganWakil : $candidate->pasanganKetua) }}"
+                                    class="text-primary hover:underline">Lihat
+                                    Profil Lengkap</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-8">
+                <div class="-mt-20">
                     <h2 class="text-2xl font-bold mb-4">Riwayat Pendidikan</h2>
                     <div class="prose max-w-none">
-                        {!! nl2br(e($candidate->riwayatpen)) !!}
+                        {!! $candidate->riwayatpen ? nl2br(e($candidate->riwayatpen)) : 'Data Belum Tersedia' !!}
                     </div>
                 </div>
                 <div class="mt-8">
                     <h2 class="text-2xl font-bold mb-4">Prestasi</h2>
                     <div class="prose max-w-none">
-                        {!! nl2br(e($candidate->prestasi)) !!}
+                        {!! $candidate->prestasi ? nl2br(e($candidate->prestasi)) : 'Data Belum Tersedia' !!}
                     </div>
                 </div>
                 <div class="mt-8">
                     <h2 class="text-2xl font-bold mb-4">Karir</h2>
                     <div class="prose max-w-none">
-                        {!! nl2br(e($candidate->karir)) !!}
+                        {!! $candidate->karir ? nl2br(e($candidate->karir)) : 'Data Belum Tersedia' !!}
                     </div>
                 </div>
 
