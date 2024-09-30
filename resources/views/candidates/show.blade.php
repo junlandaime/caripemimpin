@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="-mt-20">
+                <div class="md:-mt-20">
                     <h2 class="text-2xl font-bold mb-4">Riwayat Pendidikan</h2>
                     <div class="prose max-w-none">
                         {!! $candidate->riwayatpen ? nl2br(e($candidate->riwayatpen)) : 'Data Belum Tersedia' !!}

@@ -20,7 +20,7 @@ class PairController extends Controller
         $pairs = Pair::with(['pemimpin', 'wakil', 'region'])->get();
         $regions = Region::all();
         $positions = Candidate::distinct('position')->pluck('position');
-        $parties = Candidate::distinct('party')->pluck('party');
+        $parties = Candidate::distinct('partai')->pluck('partai');
 
         return view('admin.pairs.index', compact('candidates', 'regions', 'positions', 'parties', 'pairs'));
     }
