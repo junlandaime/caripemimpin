@@ -46,7 +46,7 @@
                             <p><strong>Media Sosial:</strong> {{ $candidate->akun }}</p>
                             {{-- <p><strong>Tanggal Pemilihan:</strong> {{ $candidate->election_date->format('d F Y') }}</p> --}}
                         </div>
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden w-1/2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden md:w-1/2">
                             <img src="{{ Storage::url($candidate->pasanganWakil ? $candidate->pasanganWakil->image_url : $candidate->pasanganKetua->image_url) }}"
                                 alt="{{ $candidate->pasanganWakil ? $candidate->pasanganWakil->nomor_urut : $candidate->pasanganKetuanomor_urut }}"
                                 class="w-full h-full object-cover">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="md:-mt-20">
+                <div class="mt-10 ">
                     <h2 class="text-2xl font-bold mb-4">Riwayat Pendidikan</h2>
                     <div class="prose max-w-none">
                         {!! $candidate->riwayatpen ? nl2br(e($candidate->riwayatpen)) : 'Data Belum Tersedia' !!}
