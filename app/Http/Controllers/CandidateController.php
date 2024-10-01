@@ -6,6 +6,7 @@ use App\Models\Region;
 use App\Models\Candidate;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\CandidateView;
 use Illuminate\Support\Facades\Storage;
 
 class CandidateController extends Controller
@@ -102,8 +103,21 @@ class CandidateController extends Controller
     /**
      * Display the specified candidate.
      */
-    public function show(Candidate $candidate)
+    public function show(Candidate $candidate, Request $request)
     {
+        $viewed = $request->session()->get('viewed_candidates', []);
+        if (!in_array($candidate->id, $viewed)) {
+            $candidateView = new CandidateView();
+            $candidateView->candidate_id = $candidate->id;
+            $candidateView->ip_address = $request->ip();
+            $candidateView->user_agent = $request->userAgent();
+            $candidateView->save();
+
+            $viewed[] = $candidate->id;
+            $request->session()->put('viewed_candidates', $viewed);
+
+            $candidate->increment('views');
+        }
         return view('candidates.show', compact('candidate'));
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pair;
 use App\Models\Region;
+use App\Models\PairView;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -137,8 +138,21 @@ class PairController extends Controller
         return view('pairs.index', compact('pairs', 'regions'));
     }
 
-    public function show(Pair $pair)
+    public function show(Pair $pair, Request $request)
     {
+        $viewed = $request->session()->get('viewed_pairs', []);
+        if (!in_array($pair->id, $viewed)) {
+            $pairView = new PairView();
+            $pairView->pair_id = $pair->id;
+            $pairView->ip_address = $request->ip();
+            $pairView->user_agent = $request->userAgent();
+            $pairView->save();
+
+            $viewed[] = $pair->id;
+            $request->session()->put('viewed_pairs', $viewed);
+
+            $pair->increment('views');
+        }
         return view('pairs.show', compact('pair'));
     }
 

@@ -54,6 +54,7 @@ return new class extends Migration
             $table->string('fauna')->nullable();
             $table->string('situs')->nullable();
             $table->timestamps();
+            $table->unsignedInteger('views')->default(0);
 
             $table->unique(['name', 'type']);
         });

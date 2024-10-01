@@ -74,6 +74,7 @@
                         <th class="py-3 px-6 text-left">Nama</th>
                         <th class="py-3 px-6 text-left">Posisi</th>
                         <th class="py-3 px-6 text-left">Partai</th>
+                        <th class="py-3 px-6 text-left">Views</th>
                         <th class="py-3 px-6 text-left">Wilayah</th>
                         <th class="py-3 px-6 text-center">Tanggal Pemilihan</th>
                         <th class="py-3 px-6 text-center">Aksi</th>
@@ -84,7 +85,8 @@
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
                             <td class="py-3 px-6 text-left whitespace-nowrap" x-text="candidate.name"></td>
                             <td class="py-3 px-6 text-left" x-text="candidate.position"></td>
-                            <td class="py-3 px-6 text-left" x-text="candidate.party"></td>
+                            <td class="py-3 px-6 text-left" x-text="candidate.partai"></td>
+                            <td class="py-3 px-6 text-left" x-text="candidate.views"></td>
                             <td class="py-3 px-6 text-left" x-text="candidate.region.name"></td>
                             <td class="py-3 px-6 text-center" x-text="formatDate(candidate.election_date)"></td>
                             <td class="py-3 px-6 text-center">

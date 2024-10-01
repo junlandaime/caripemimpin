@@ -54,7 +54,8 @@ Sekolah Tinggi Akuntansi Negara (STAN)
 2019 - sekarang: Anggota DPR-RI
 ', 'akun' => '@syaikhu_ahmad_', 'nominal' => 'Rp5.271.684.274(2022)', 'partai' => 'Partai Keadilan Sejahtera', 'foto' => 'candidates/image8.jpg', 'region_id' => 5, 'position' => 'Gubernur'],
 
-            ['prename' => 'H.', 'name' => 'Dedi Mulyadi', 'aftername' => ', S.H., M.M', 'ttl' => 'Subang, 12 April 1971', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => 'SD Subakti (1984)
+            ['prename' => 'H.', 'name' => 'Dedi Mulyadi', 'aftername' => ', S.H., M.M', 'ttl' => 'Subang, 12 April 1971', 'domisili' => 'Lembur Pakuan Desa Sukasari, Kecamatan Dawuan, Kabupaten Subang
+', 'agama' => 'Islam', 'riwayatpen' => 'SD Subakti (1984)
 SMP Kalijati (1987)
 SMAN 1 Purwadadi (1990)
 Sekolah Tinggi Hukum Purnawarman
@@ -96,13 +97,13 @@ Wakil Ketua KNPI Kabupaten Tasikmalaya
 2014-2015 Wakil Bupati Ciamis 
 2016-2021 Bupati Pangandaran 
 2017-2022 Ketua Umum KORAL AUP/STP Pusat 
-', 'akun' => '@wiradinatajeje', 'nominal' => 'Rp3.828.441.818 (2022)', 'partai' => 'Partai Demokrasi Perjuangan Indonesia', 'foto' => 'candidates/Jeje_Wiradinata.jpg', 'region_id' => 5, 'position' => 'Gubernur'],
+', 'akun' => '@wiradinatajeje', 'nominal' => 'Rp 2.910.763.245 (2024)', 'partai' => 'Partai Demokrasi Perjuangan Indonesia', 'foto' => 'candidates/Jeje_Wiradinata.jpg', 'region_id' => 5, 'position' => 'Gubernur'],
 
 
 
 
 
-            ['prename' => 'Dr.-Ing. H.', 'name' => 'Ilham Akbar Habibie', 'aftername' => ', Dipl.Ing., M.B.A.', 'ttl' => 'Aachen, 16 Mei 1963', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '1969–1973: Elementary School Windmuehlenweg, Hamburg, Jerman Barat
+            ['prename' => 'Dr.-Ing. H.', 'name' => 'Ilham Akbar Habibie', 'aftername' => ', Dipl.Ing., M.B.A.', 'ttl' => 'Aachen, 16 Mei 1963', 'domisili' => 'Jalan Sersan Bajuri, Kota Bandung', 'agama' => 'Islam', 'riwayatpen' => '1969–1973: Elementary School Windmuehlenweg, Hamburg, Jerman Barat
 1973–1981: High School Hochrad, Hamburg, Jerman Barat
 1981–1986: Universitas Teknik München, Jerman Barat (Faculty of Mechanical Engineering, Sub-Faculty Aeronautical Engineering)
 1987: Diploma–Ingenieur (Universitas Teknik München, Jerman Barat) dengan predikat cum laude
@@ -123,7 +124,7 @@ Ketua Umum Ikatan Saudagar Muslim se-Indonesia (ISMI) 2012–2017, 2018–2023
 
 ', 'akun' => '@ilham.a.habibie', 'nominal' => 'US$330 juta (2019)', 'partai' => 'Partai Nasional Demokrat', 'foto' => 'candidates/image6.jpg', 'region_id' => 5, 'position' => 'Wakil Gubernur'],
 
-            ['prename' => 'H.', 'name' => 'Erwan Setiawan', 'aftername' => ', S.E.', 'ttl' => 'Bandung, 29 Juli 1970', 'domisili' => '-', 'agama' => '-', 'riwayatpen' => '1977-1983 SD Santo Yusup
+            ['prename' => 'H.', 'name' => 'Erwan Setiawan', 'aftername' => ', S.E.', 'ttl' => 'Bandung, 29 Juli 1970', 'domisili' => 'Dusun Ciluluk, Desa Margajaya, Kec. Tanjungsari, Sumedang', 'agama' => 'Islam', 'riwayatpen' => '1977-1983 SD Santo Yusup
 1983-1986 SMP BPI 1
 1986-1989 SMA BPI 1
 1996 (lulus) Politeknik Industri dan Niaga Bandung
@@ -138,7 +139,7 @@ Ketua Umum Ikatan Saudagar Muslim se-Indonesia (ISMI) 2012–2017, 2018–2023
 
 ', 'akun' => '@erwansetiawan54', 'nominal' => 'Rp22.865.000.000 (2022)', 'partai' => 'Partai Golongan Karya', 'foto' => 'candidates/image18.jpg', 'region_id' => 5, 'position' => 'Wakil Gubernur'],
 
-            ['prename' => 'Hj.', 'name' => 'Gitalis Dwi Natarina', 'aftername' => ', S.Pd.M.Sos.', 'ttl' => 'Garut, 10 Oktober 1985', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => 'Seni Musik UPI
+            ['prename' => 'Hj.', 'name' => 'mais Dwi Natarina', 'aftername' => ', S.Pd.M.Sos.', 'ttl' => 'Garut, 10 Oktober 1985', 'domisili' => 'Pasirwangi, Kab, Garut', 'agama' => 'Islam', 'riwayatpen' => 'Seni Musik UPI
 Dakwah dan Penyiaran UIN Bandung
 
 ', 'prestasi' => '1993 Juara 1 Lomba Nyanyi Solo Pekan Olahraga dan Seni - PORSENI Kabupaten Garut 
@@ -154,7 +155,7 @@ Juara 1 Lomba Nyanyi Qasidah & Gambus Kabupaten Garut
 
 ', 'akun' => '@gita_kdi', 'nominal' => 'Bukan penyelenggara negara', 'partai' => 'Partai Kebangkitan Bangsa', 'foto' => 'candidates/image12.jpg', 'region_id' => 5, 'position' => 'Wakil Gubernur'],
 
-            ['prename' => 'H.', 'name' => 'Ronal Sunandar Surapradja', 'aftername' => '', 'ttl' => 'Bandung, 26 Mei 1977', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '1992 SMPN 1 Cimahi
+            ['prename' => 'H.', 'name' => 'Ronal Sunandar Surapradja', 'aftername' => '', 'ttl' => 'Bandung, 26 Mei 1977', 'domisili' => 'Bintaro, Jakarta Selatan', 'agama' => 'Islam', 'riwayatpen' => '1992 SMPN 1 Cimahi
 2001 Universitas Padjadjaran
 ', 'prestasi' => '', 'karir' => '2004-2008 Pemain Sketsa Komedi Extravaganza
 Aktor Film
@@ -258,7 +259,7 @@ Pada 2016, Dandan tercatat memiliki utang sebesar Rp339.807.031. Jika diakumulas
 2021-2021 Komisaris PT. AEN
 ', 'akun' => '@dhaniwirianata', 'nominal' => '-', 'partai' => 'Partai Gerakan Indonesia Raya', 'foto' => 'candidates/image2.jpg', 'region_id' => 1, 'position' => 'Wakil Walikota'],
 
-            ['prename' => 'Hj.', 'name' => 'Yena Iskandar Ma’soem', 'aftername' => ', S.Si., MMPRS., apt', 'ttl' => 'Bandung, 12 November 1973', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '1997 (lulus) Farmasi Universitas Padjadjaran
+            ['prename' => 'Hj.', 'name' => 'Yena Iskandar Ma’soem', 'aftername' => ', S.Si., MMPRS., apt', 'ttl' => 'Bandung, 12 November 1973', 'domisili' => 'Arcamanik, Kota Bandung', 'agama' => 'Islam', 'riwayatpen' => '1997 (lulus) Farmasi Universitas Padjadjaran
 1998 (lulus) Program Profesi Apoteker
 2002 (lulus) Magister Manajemen Rumah Sakit Universitas Padjadjaran
 ', 'prestasi' => '2015 Effective Leadership dari Hexpharm Jaya
@@ -294,9 +295,11 @@ Erwin tercatat memiliki utang sebesar Rp4.655.000.000. Jika diakumulasikan denga
 
             // Kab Bandung Barat
             // Bupati
-            ['prename' => 'H.', 'name' => 'Didik Agus Triwiyono', 'aftername' => ', M.Pd.', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '2010 - 2012| S2 UNIVERSITAS PENDIDIKAN INDONESIA
-1987 - 1992| S1 INSTITUT TEKNOLOGI BANDUNG
-1984 - 1987| SMA SMAN 1 TUBAN 
+            ['prename' => 'H.', 'name' => 'Didik Agus Triwiyono', 'aftername' => ', M.Pd.', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '1975-1981 SDN Grabagan 2
+1981-1984 SMPN Rengel
+1984 - 1987 SMAN 1 Tuban
+1987 - 1992 S1 Institut Teknologi Bandung
+2010 - 2012 S2 Universitas Pendidikan Indonesia
 ', 'prestasi' => '', 'karir' => '2014 - 2023| DIREKTUR UTAMA PT FITHRAH INSANI INVESTAMA
 2014 - 2019| KETUA FRAKSI, KETUA HARIAN BADAN ANGGARAN DPRD
 2009 - 2014| WAKIL KETUA DPRD 
@@ -315,11 +318,12 @@ Erwin tercatat memiliki utang sebesar Rp4.655.000.000. Jika diakumulasikan denga
 1988 - 1992| ASISTEN LABORATORIUM INSTITUT TEKNOLOGI BANDUNG
 ', 'akun' => '@didik_at dan @didik.kbb', 'nominal' => '', 'partai' => 'Partai Keadilan Sejahtera', 'foto' => 'candidates/image7.png', 'region_id' => 4, 'position' => 'Bupati'],
 
-            ['prename' => 'Ir.', 'name' => 'Sundaya', 'aftername' => ', M.M.', 'ttl' => 'Bandung, 20 Agustus 1972', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => 'Ketua Komisi II DPRD Kabupaten Bandung Barat, Fraksi Partai Gerindra
+            ['prename' => 'Ir.', 'name' => 'Sundaya', 'aftername' => ', M.M.', 'ttl' => 'Bandung, 20 Agustus 1972', 'domisili' => 'Bandung Barat', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => 'Ketua Komisi II DPRD Kabupaten Bandung Barat, Fraksi Partai Gerindra
 ', 'akun' => '', 'nominal' => '', 'partai' => 'Partai Gerakan Indonesia Raya', 'foto' => 'candidates/image20.png', 'region_id' => 4, 'position' => 'Bupati'],
 
             ['prename' => '', 'name' => 'Ritchie Ismail', 'aftername' => '', 'ttl' => 'Jakarta, 22 April 1983', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => 'sekolah Islam sejak TK hingga SMP
 S1 Broadcasting Universitas Padjadjaran', 'prestasi' => '', 'karir' => 'Musisi dan Aktor
+Drummer Grup Band Govinda
 ', 'akun' => '@ritchieismail', 'nominal' => '', 'partai' => 'Partai Amanat Nasional', 'foto' => 'candidates/image22.png', 'region_id' => 4, 'position' => 'Bupati'],
 
             ['prename' => '', 'name' => 'Edi Rusyandi', 'aftername' => '', 'ttl' => 'Cipongkor, Kabupaten Bandung Barat, 19 Januari 1982', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => 'Pendidikan Formal
@@ -344,18 +348,33 @@ Pesantren Mahasiswa Al Ihsan Cibiru Hilir', 'prestasi' => '', 'karir' => '2004 -
 
 
             //Wakil Bupati
-            ['prename' => '', 'name' => 'Gilang Dirga', 'aftername' => '', 'ttl' => 'Jakarta, 17 Agustus 1989', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => 'SMA Negeri 5 Bengkulu
+            ['prename' => '', 'name' => 'Gilang Dirgahari', 'aftername' => '', 'ttl' => 'Jakarta, 17 Agustus 1989', 'domisili' => 'Bekasi, Jawa Barat', 'agama' => 'Islam', 'riwayatpen' => 'SMA Negeri 5 Bengkulu
 SMA Negeri 8 Bengkulu
 Fakultas Hukum Universitas Bengkulu (tidak selesai) 
-', 'prestasi' => 'runner-up di ajang pencarian bakat DAcademy Celebrity yang ditayangkan di Indosiar
-runner-up pemilihan Model Indonesia pada tahun 2008 yang diadakan oleh desainer batik ternama Ramli (peserta berpakaian daerah terbaik, serta meraih gelar duta persahabatan)', 'karir' => '', 'akun' => '@gilangdirga', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/image1.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
+', 'prestasi' => 'Runner-up  D’Academy Celebrity
+Runner-up Pemilihan Model Indonesia 
+', 'karir' => '2008 Model
+2009 Bermain peran
+2009 Peserta Komedi Extravaganza
+2024 Anggota DPR RI Dapil DKI Jakarta I Fraksi PPP', 'akun' => '@gilangdirga', 'nominal' => 'Rp.7.014.600.000', 'partai' => 'PPP', 'foto' => 'candidates/image1.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
 
-            ['prename' => '', 'name' => 'Asep Ilyas', 'aftername' => '', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => '', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/asepil.jpeg', 'region_id' => 4, 'position' => 'Wakil Bupati'],
+            ['prename' => '', 'name' => 'Asep Ilyas', 'aftername' => '', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => 'Aparatur Sipil Negara', 'akun' => '', 'nominal' => 'Rp.2.013.361.469', 'partai' => '', 'foto' => 'candidates/asepil.jpeg', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
             ['prename' => 'Drs. H.', 'name' => ' Asep Ismail', 'aftername' => ', Msi', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => 'Pensiunan Aparatur Sipil Negara (ASN) yang terakhir berdinas sebagai Kepala Kantor Kementerian Agama (Kemenag) Bandung Barat', 'akun' => '@h.asepismail', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/image16 - Copy.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
-            ['prename' => '', 'name' => ' Unjang Asari', 'aftername' => '', 'ttl' => '', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '', 'prestasi' => '', 'karir' => '', 'akun' => '@unjang_asari', 'nominal' => '', 'partai' => 'Partai Kebangkitan Nasional', 'foto' => 'candidates/unjang.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
+            ['prename' => '', 'name' => 'Unjang Asy’ari', 'aftername' => '', 'ttl' => '7 September 1977', 'domisili' => '-', 'agama' => 'Islam', 'riwayatpen' => '1997-2004 S1 UIN Sunan Gunung Djati Bandung', 'prestasi' => '', 'karir' => '2001-2002 Ketua Cabang PC PMII Bandung Raya
+2002-2003 Wakil Ketua PKC PMII Jawa Barat
+2005-2007 Sekretaris LBH Nusantara
+2007-2011 Wakil Sekretaris GP Ansor Jawa Barat
+2007-2011 Wakil Sekretaris DPD KNPI Jwa Barat
+2009-2012 Wakil Direktur PT Mahardika Parahyangan
+2015-2019 Tenaga Ahli Kementerian Desa dan Transmigrasi
+2021 Tenaga Sukarela Kemnaker RI
+2021 Ketua DKN Garda Bangsa
+2022-sekarang Wakil Ketua DPW PKB
+2023 Advokasi Petani Cianjur Maleber-Baros
+2023 Advokasi Pedagang Kaki Lima Kota Bandung', 'akun' => '@unjang_asari', 'nominal' => 'Rp.5.738.241.747', 'partai' => 'Partai Kebangkitan Bangksa', 'foto' => 'candidates/unjang.png', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
             ['prename' => '', 'name' => ' Ade Sudrajat', 'aftername' => '', 'ttl' => '', 'domisili' => '-', 'agama' => '', 'riwayatpen' => '', 'prestasi' => '', 'karir' => '', 'akun' => '', 'nominal' => '', 'partai' => '', 'foto' => 'candidates/ade.jpg', 'region_id' => 4, 'position' => 'Wakil Bupati'],
 
@@ -378,7 +397,6 @@ Politik
 
 Wakil Bupati Bandung
 Partai Politik
-
 
 
 Poni SCTV (1994)

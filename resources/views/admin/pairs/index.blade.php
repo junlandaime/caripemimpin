@@ -74,6 +74,7 @@
                         <th class="py-3 px-6 text-left">No Urut</th>
                         <th class="py-3 px-6 text-left">Nama Pemimpin</th>
                         <th class="py-3 px-6 text-left">Nama Wakil</th>
+                        <th class="py-3 px-6 text-left">Views</th>
                         <th class="py-3 px-6 text-left">Partai</th>
                         <th class="py-3 px-6 text-left"></th>
                         <th class="py-3 px-6 text-left">Wilayah</th>
@@ -87,6 +88,7 @@
                             <td class="py-3 px-6 text-left" x-text="pair.nomor_urut"></td>
                             <td class="py-3 px-6 text-left" x-text="pair.pemimpin.name"></td>
                             <td class="py-3 px-6 text-left" x-text="pair.wakil.name"></td>
+                            <td class="py-3 px-6 text-left" x-text="pair.views"></td>
                             <td class="py-3 px-6 text-left" x-text="pair.party"></td>
                             <td class="py-3 px-6 text-left" x-text="pair.region.type"></td>
                             <td class="py-3 px-6 text-left" x-text="pair.region.name"></td>

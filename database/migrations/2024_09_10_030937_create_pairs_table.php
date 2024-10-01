@@ -26,6 +26,7 @@ return new class extends Migration
             $table->longText('misi');
             $table->string('image_url')->nullable();
             $table->date('election_date');
+            $table->unsignedInteger('views')->default(0);
 
             $table->timestamps();
 

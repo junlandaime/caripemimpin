@@ -45,6 +45,7 @@
                 <thead>
                     <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                         <th class="py-3 px-6 text-left">Nama</th>
+                        <th class="py-3 px-6 text-left">Views</th>
                         <th class="py-3 px-6 text-left">Tipe</th>
                         <th class="py-3 px-6 text-center">Populasi</th>
                         <th class="py-3 px-6 text-center">Jumlah Kandidat</th>
@@ -55,6 +56,7 @@
                     <template x-for="region in filteredRegions" :key="region.id">
                         <tr class="border-b border-gray-200 hover:bg-gray-100">
                             <td class="py-3 px-6 text-left whitespace-nowrap" x-text="region.name"></td>
+                            <td class="py-3 px-6 text-left" x-text="region.views"></td>
                             <td class="py-3 px-6 text-left" x-text="region.type"></td>
                             <td class="py-3 px-6 text-center" x-text="formatNumber(region.population)"></td>
                             <td class="py-3 px-6 text-center" x-text="region.candidates_count"></td>

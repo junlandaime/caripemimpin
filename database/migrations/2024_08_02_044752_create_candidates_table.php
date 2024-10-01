@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('foto')->nullable();
             // $table->date('election_date');
             $table->timestamps();
+            $table->unsignedInteger('views')->default(0);
 
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
         });

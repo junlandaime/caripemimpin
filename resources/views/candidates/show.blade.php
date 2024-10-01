@@ -40,9 +40,12 @@
                         <p class="text-gray-700 mb-4">Tempat, Tanggal Lahir : {{ $candidate->ttl }}</p>
                         <p class="text-gray-700 mb-4">Domisili : {{ $candidate->domisili }}</p>
                         <p class="text-gray-700 mb-4">Agama : {{ $candidate->agama }}</p>
+                        <p class="text-gray-700 mb-4">Jumlah Kekayaan : {{ $candidate->nominal }}</p>
                         <div class="bg-blue-100 rounded-lg p-4 mb-6">
                             <h2 class="text-lg font-semibold text-blue-800 mb-2">Informasi Pemilihan</h2>
-                            <p><strong>Wilayah:</strong> {{ $candidate->region->name }}</p>
+                            <p><strong>Wilayah:</strong><a class="text-base font-semibold text-secondary mb-2"
+                                    href="{{ route('regions.show', $candidate->region) }}">
+                                    {{ $candidate->region->full_name }}</p></a>
                             <p><strong>Media Sosial:</strong> {{ $candidate->akun }}</p>
                             {{-- <p><strong>Tanggal Pemilihan:</strong> {{ $candidate->election_date->format('d F Y') }}</p> --}}
                         </div>
@@ -57,7 +60,7 @@
                                 <p class="text-gray-600 mb-4">{{ $candidate->region->full_name }}</p>
                                 <a href="{{ route('pairs.show', $candidate->pasanganWakil ? $candidate->pasanganWakil : $candidate->pasanganKetua) }}"
                                     class="text-primary hover:underline">Lihat
-                                     lebih lengkap</a>
+                                    lebih lengkap</a>
                             </div>
                         </div>
                     </div>
