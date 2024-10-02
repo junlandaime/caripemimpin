@@ -70,7 +70,7 @@ class PairSeeder extends Seeder
 
 
 
-            ['nomor_urut' => '1', 'party' => 'GOLKAR, PKS', 'region_id' => 3, 'pemimpin_id' => 27, 'wakil_id' => 29, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Bandung Menawan: Terwujudnya, Bandung yang maju edukatif, nyaman, agamis, wibawa, adil dan nyata (Menawan)', 'misi' => '1. Meningkatkan laju perekonomian daerah berbasis potensi daerah yang produktif, inovatif, maju, mandiri, kolaboratif, dan unggul yang terselenggara dengan prinsip pembangunan berkelanjutan, adil, merata dengan mendorong peran-serta masyarakat, upaya mewujudkan kemakmuran dan kesejahteraan. 
+            ['nomor_urut' => '1', 'party' => 'Golkar, PKS, PPP, Partai Ummat, Partai Hanura', 'region_id' => 3, 'pemimpin_id' => 27, 'wakil_id' => 29, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Bandung Menawan: Terwujudnya, Bandung yang maju edukatif, nyaman, agamis, wibawa, adil dan nyata (Menawan)', 'misi' => '1. Meningkatkan laju perekonomian daerah berbasis potensi daerah yang produktif, inovatif, maju, mandiri, kolaboratif, dan unggul yang terselenggara dengan prinsip pembangunan berkelanjutan, adil, merata dengan mendorong peran-serta masyarakat, upaya mewujudkan kemakmuran dan kesejahteraan. 
 
 2. Meningkatkan sumber daya manusia yang maju dan unggul berbasis kekuatan iman dan taqwa. 
 
@@ -80,7 +80,7 @@ class PairSeeder extends Seeder
 
 5. Mewujudkan pemerataan pembangunan berbasis pedesaan yang berkeadilan sesuai dengan daya dukung potensi daerah. ', 'image_url' => 'pairs/sahgun.jpeg', 'election_date' => '2024-11-11'],
 
-            ['nomor_urut' => '2', 'party' => 'PKB, PDIP', 'region_id' => 3, 'pemimpin_id' => 28, 'wakil_id' => 30, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Kabupaten Bandung lebih bedas, maju, dan berkelanjutan menuju Indonesia emas
+            ['nomor_urut' => '2', 'party' => 'PKB, Gerindra, Nasdem, Demokrat, PAN dan PDIP', 'region_id' => 3, 'pemimpin_id' => 28, 'wakil_id' => 30, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Kabupaten Bandung lebih bedas, maju, dan berkelanjutan menuju Indonesia emas
 ', 'misi' => '1. Meningkatkan kualitas sumber daya manusia berakhlak dan berkarakter dengan didukung keberpihakan penguatan kesetaraan gender melalui pemberdayaan perempuan dan mendorong perlindungan bagi anak.  
 
 2. Meningkatkan pembangunan ekonomi yang inklusif dan berkeadilan serta mendorong ketahanan pangan melalui produksi pangan lokal yang berkelanjutan. 
@@ -158,7 +158,7 @@ class PairSeeder extends Seeder
 8. Mewujudkan Pembangunan yang Berkesinambungan.', 'image_url' => 'pairs/arfi-rena.jpg', 'election_date' => '2024-11-11'],
 
 
-            ['nomor_urut' => '1', 'party' => '', 'region_id' => 2, 'pemimpin_id' => 31, 'wakil_id' => 34, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Bersatu Menuju Cimahi Maju', 'misi' => '1. Bersatu mewujudkan masyarakat yang harmonis dan berbudaya.
+            ['nomor_urut' => '1', 'party' => 'Nasdem, Golkar, PKS, dan Demokrat', 'region_id' => 2, 'pemimpin_id' => 31, 'wakil_id' => 34, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Bersatu Menuju Cimahi Maju', 'misi' => '1. Bersatu mewujudkan masyarakat yang harmonis dan berbudaya.
 
 2. Bersatu mewujudkan iklim perekonomian kota yang produktif serta mewujudkan pertumbuhan ekonomi.
 
@@ -170,7 +170,7 @@ class PairSeeder extends Seeder
 
 6. Bersatu mewujudkan tata kelola pemerintahan yang adaptif, responsif, san solutif serta berintegritas berlandaskan prinsip good governance.', 'image_url' => 'pairs/dikdik-bagja.jpg', 'election_date' => '2024-11-11'],
 
-            ['nomor_urut' => '2', 'party' => '', 'region_id' => 2, 'pemimpin_id' => 33, 'wakil_id' => 36, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Mewujudkan Cimahi Mantap melalui Kolaborasi Antar Generasi yang Maju, Unggul, dan Berkelanjutan', 'misi' => '1. Pemerintahan bersih dan transparan.
+            ['nomor_urut' => '2', 'party' => 'PKB, Gerindra, PAN, PPP, PSI, PKN, dan Perindo', 'region_id' => 2, 'pemimpin_id' => 33, 'wakil_id' => 36, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Mewujudkan Cimahi Mantap melalui Kolaborasi Antar Generasi yang Maju, Unggul, dan Berkelanjutan', 'misi' => '1. Pemerintahan bersih dan transparan.
 
 2. Pemberdayaan ekonomi dan UMKM.
 
@@ -195,7 +195,7 @@ class PairSeeder extends Seeder
 12. Ekonomi pesantren', 'image_url' => 'pairs/ngatiyana-adhi.jpeg', 'election_date' => '2024-11-11'],
 
 
-            ['nomor_urut' => '3', 'party' => '', 'region_id' => 2, 'pemimpin_id' => 32, 'wakil_id' => 35, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Akselerasi Kota Cimahi menjadi Kota yang Produktif', 'misi' => '1. Mewujudkan Cimahi yang nyaman dengan mengembangkan infrastruktur
+            ['nomor_urut' => '3', 'party' => 'PDI Perjuangan, Garuda, Partai Buruh, PKB, Gelora, dan Partai Ummat', 'region_id' => 2, 'pemimpin_id' => 32, 'wakil_id' => 35, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Akselerasi Kota Cimahi menjadi Kota yang Produktif', 'misi' => '1. Mewujudkan Cimahi yang nyaman dengan mengembangkan infrastruktur
 
 2. Menciptakan ekonomi kerakyatan yang mandiri dan berdaya saing
 
@@ -234,7 +234,7 @@ class PairSeeder extends Seeder
 
 6. Mewujudkan kondisi yang harmonis di masyarakat dan pemerintahan berdasarkan kearifan lokal budaya.', 'image_url' => 'pairs/jeje-asep.jpg', 'election_date' => '2024-11-11'],
 
-            ['nomor_urut' => '3', 'party' => 'PDIP, NASDEM', 'region_id' => 4, 'pemimpin_id' => 21, 'wakil_id' => 26, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Terwujudnya Kabupaten Bandung Barat HADE (Harmoni, Akselerasi, Daya Saing SDM, Ekologi Keberlanjutan) sebagai daerah yang maju, berkeadilan dan sejahtera melalui pembangunan berkelanjutan berbasis pada potensi lokal dan pemberdayaan masyarakat', 'misi' => '1. Unggul dan kompetitif
+            ['nomor_urut' => '3', 'party' => 'Partai Buruh, Partai Perindo, PPP', 'region_id' => 4, 'pemimpin_id' => 21, 'wakil_id' => 26, 'short_bio' => '-', 'full_bio' => '-', 'visi' => 'Terwujudnya Kabupaten Bandung Barat HADE (Harmoni, Akselerasi, Daya Saing SDM, Ekologi Keberlanjutan) sebagai daerah yang maju, berkeadilan dan sejahtera melalui pembangunan berkelanjutan berbasis pada potensi lokal dan pemberdayaan masyarakat', 'misi' => '1. Unggul dan kompetitif
 
 2. Mewujudkan perekonomian yang berdaya saing berkelanjutan upaya peningkatan pendapatan
 
