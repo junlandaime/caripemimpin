@@ -179,17 +179,19 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Resources</h3>
                     <ul class="space-y-2">
-                        <li><a href="{{ route('candidates.index') }}" class="hover:text-blue-300">Kandidat</a></li>
-                        <li><a href="{{ route('regions.index') }}" class="hover:text-blue-300">Wilayah</a></li>
+                        <li><a href="{{ route('pasangan.index') }}" class="hover:text-blue-300">Kandidat Pasangan</a>
+                        </li>
+                        <li><a href="{{ route('candidates.index') }}" class="hover:text-blue-300">Kandidat
+                                Perorang</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Tentang Kami</h3>
                     <ul class="space-y-2">
-                        <li><a href="{{ route('home') }}" class="hover:text-blue-300">Apa itu CariPemimpin</a></li>
-                        <li><a href="{{ route('candidates.index') }}" class="hover:text-blue-300">Visi & Misi</a>
+                        <li><a href="{{ route('about') }}" class="hover:text-blue-300">Apa itu CariPemimpin</a></li>
+                        <li><a href="{{ route('about') }}" class="hover:text-blue-300">Visi & Misi</a>
                         </li>
-                        <li><a href="{{ route('regions.index') }}" class="hover:text-blue-300">Sejarah</a></li>
+                        <li><a href="{{ route('about') }}" class="hover:text-blue-300">Sejarah</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-blue-300">Tim Kami</a></li>
                     </ul>
                 </div>
@@ -197,7 +199,7 @@
                     <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
                     <ul class="space-y-2">
                         <li><a href="{{ route('home') }}" class="hover:text-blue-300">Beranda</a></li>
-                        <li><a href="{{ route('candidates.index') }}" class="hover:text-blue-300">Kandidat</a></li>
+                        <li><a href="{{ route('kuis') }}" class="hover:text-blue-300">Kuis</a></li>
                         <li><a href="{{ route('regions.index') }}" class="hover:text-blue-300">Wilayah</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-blue-300">Tentang</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-blue-300">Kontak</a></li>
@@ -206,7 +208,7 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Hubungi Kami</h3>
 
-                    <p>Email: info@pilkada.caripemimpin.id</p>
+                    <p>Email: pilkada.caripemimpin@gmail.com</p>
                     <p>Telepon: (022) 123-4567</p>
                     <div class="mt-4 flex space-x-4">
                         <a href="#" class="text-secondary hover:text-primary">

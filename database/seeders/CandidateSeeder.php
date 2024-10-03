@@ -139,7 +139,7 @@ Ketua Umum Ikatan Saudagar Muslim se-Indonesia (ISMI) 2012–2017, 2018–2023
 
 ', 'akun' => '@erwansetiawan54', 'nominal' => 'Rp22.865.000.000 (2022)', 'partai' => 'Partai Golongan Karya', 'foto' => 'candidates/image18.jpg', 'region_id' => 5, 'position' => 'Wakil Gubernur'],
 
-            ['prename' => 'Hj.', 'name' => 'mais Dwi Natarina', 'aftername' => ', S.Pd.M.Sos.', 'ttl' => 'Garut, 10 Oktober 1985', 'domisili' => 'Pasirwangi, Kab, Garut', 'agama' => 'Islam', 'riwayatpen' => 'Seni Musik UPI
+            ['prename' => 'Hj.', 'name' => 'Gitalis Dwi Natarina', 'aftername' => ', S.Pd.M.Sos.', 'ttl' => 'Garut, 10 Oktober 1985', 'domisili' => 'Pasirwangi, Kab, Garut', 'agama' => 'Islam', 'riwayatpen' => 'Seni Musik UPI
 Dakwah dan Penyiaran UIN Bandung
 
 ', 'prestasi' => '1993 Juara 1 Lomba Nyanyi Solo Pekan Olahraga dan Seni - PORSENI Kabupaten Garut 

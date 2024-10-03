@@ -70,7 +70,7 @@
                 @foreach ($regions as $region)
                     <button @click="activeTab = '{{ $region->id }}'"
                         :class="{ 'bg-primary text-white': activeTab === '{{ $region->id }}', 'bg-gray-200 text-gray-700': activeTab !== '{{ $region->id }}' }"
-                        class="px-6 py-3 rounded-full font-semibold transition duration-300 inline lg:inline-block">{{ $region->full_name }}</button>
+                        class="px-6 py-3 my-1 rounded-full font-semibold transition duration-300 inline lg:inline-block">{{ $region->full_name }}</button>
                 @endforeach
 
             </div>
@@ -188,7 +188,7 @@
                             <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Pencarian Mudah</p>
                         </dt>
                         <dd class="mt-2 text-base text-gray-500">
-                            Temukan kandidat berdasarkan nama, daerah, atau posisi dengan mudah dan cepat.
+                            Temukan kandidat berdasarkan nama, atau daerah dengan mudah dan cepat.
                         </dd>
                     </div>
 
@@ -204,7 +204,8 @@
                             <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Profil Lengkap</p>
                         </dt>
                         <dd class="mt-2 text-base text-gray-500">
-                            Lihat profil lengkap kandidat, termasuk visi, misi, dan track record mereka.
+                            Lihat profil lengkap kandidat pasangan maupun kandidat perorang, termasuk visi, misi, dan data
+                            lainnya.
                         </dd>
                     </div>
 
@@ -220,7 +221,7 @@
                             <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Perbandingan Kandidat</p>
                         </dt>
                         <dd class="mt-2 text-base text-gray-500">
-                            Bandingkan kandidat side-by-side untuk membantu Anda membuat keputusan yang tepat.
+                            Bandingkan kandidat dari data yang tersedia untuk membantu Anda membuat keputusan yang tepat.
                         </dd>
                     </div>
 
@@ -233,10 +234,10 @@
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Informasi Terkini</p>
+                            <p class="mt-5 text-lg leading-6 font-medium text-gray-900">Kuis Seru</p>
                         </dt>
                         <dd class="mt-2 text-base text-gray-500">
-                            Dapatkan update terbaru tentang kampanye dan aktivitas kandidat.
+                            Ikuti Keseruan Games Kuis Wilayah untuk melihat seberapa wilayah kamu.
                         </dd>
                     </div>
                 </dl>
@@ -299,9 +300,9 @@
         </div>
 
         <div class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">Berita dan Pengumuman Terbaru</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {{-- @foreach ($latestNews as $news)
+            {{-- <h2 class="text-3xl font-bold mb-6">Berita dan Pengumuman Terbaru</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> --}}
+            {{-- @foreach ($latestNews as $news)
                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
                         <img src="{{ $news->image_url }}" alt="{{ $news->title }}" class="w-full h-48 object-cover">
                         <div class="p-4">
@@ -312,27 +313,27 @@
                         </div>
                     </div>
                 @endforeach --}}
-            </div>
-            {{-- <a href="{{ route('news.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat semua
+        </div>
+        {{-- <a href="{{ route('news.index') }}" class="mt-4 inline-block text-blue-600 hover:underline">Lihat semua
                 berita</a> --}}
-        </div>
+    </div>
 
-        <div>
-            <h2 class="text-3xl font-bold mb-6">Panduan Pemilih</h2>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <p class="mb-4">Penting untuk memahami proses dan hak Anda sebagai pemilih. Berikut beberapa panduan
-                    penting:</p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>Pastikan Anda terdaftar sebagai pemilih</li>
-                    <li>Kenali kandidat dan program mereka</li>
-                    <li>Periksa waktu dan lokasi TPS Anda</li>
-                    <li>Bawa identitas yang diperlukan saat memilih</li>
-                    <li>Jaga kerahasiaan suara Anda</li>
-                </ul>
-                {{-- <a href="{{ route('voter.guide') }}" class="mt-4 inline-block text-blue-600 hover:underline">Baca panduan
+    <div>
+        <h2 class="text-3xl font-bold mb-6">Panduan Pemilih</h2>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <p class="mb-4">Penting untuk memahami proses dan hak Anda sebagai pemilih. Berikut beberapa panduan
+                penting:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Pastikan Anda terdaftar sebagai pemilih</li>
+                <li>Kenali kandidat dan program mereka</li>
+                <li>Periksa waktu dan lokasi TPS Anda</li>
+                <li>Bawa identitas yang diperlukan saat memilih</li>
+                <li>Jaga kerahasiaan suara Anda</li>
+            </ul>
+            {{-- <a href="{{ route('voter.guide') }}" class="mt-4 inline-block text-blue-600 hover:underline">Baca panduan
                     lengkap</a> --}}
-            </div>
         </div>
+    </div>
     </div>
 @endsection
 

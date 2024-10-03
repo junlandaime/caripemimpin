@@ -29,6 +29,9 @@
                     @endphp
                     {{ $region->full_name }} periode 2024-2029
                 </p>
+                <button class="px-6 py-3 my-1 rounded-full font-semibold transition duration-300 inline lg:inline-block"
+                    x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })"><a href="{{ route('kuis.mulai', $region) }}">Seberapa
+                        {{ $region->full_name }} Kamu?</a></button>
             </div>
         </section>
 
@@ -37,21 +40,23 @@
                 <div class="mb-8 flex md:flex-row flex-col justify-center space-x-4" x-data x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2 })">
                     <button @click="activeTab = 'profil'"
                         :class="{ 'bg-primary text-white': activeTab === 'profil', 'bg-gray-200 text-gray-700': activeTab !== 'profil' }"
-                        class="px-6 py-2 rounded-full font-semibold transition duration-300">Profil
+                        class="px-6 py-2 rounded-full my-1 font-semibold transition duration-300">Profil
                         {{ $region->full_name }}</button>
                     <button @click="activeTab = 'kandidatpasangan'"
                         :class="{ 'bg-primary text-white': activeTab === 'kandidatpasangan', 'bg-gray-200 text-gray-700': activeTab !== 'kandidatpasangan' }"
-                        class="px-6 py-2 rounded-full font-semibold transition duration-300">Kandidat Pasangan</button>
+                        class="px-6 py-2 rounded-full my-1 font-semibold transition duration-300">Kandidat Pasangan</button>
                     <button @click="activeTab = 'kandidat'"
                         :class="{ 'bg-primary text-white': activeTab === 'kandidat', 'bg-gray-200 text-gray-700': activeTab !== 'kandidat' }"
-                        class="px-6 py-2 rounded-full font-semibold transition duration-300">Kandidat Perorangan</button>
+                        class="px-6 py-2 rounded-full my-1 font-semibold transition duration-300">Kandidat
+                        Perorangan</button>
                     <button @click="activeTab = 'jadwal'"
                         :class="{ 'bg-primary text-white': activeTab === 'jadwal', 'bg-gray-200 text-gray-700': activeTab !== 'jadwal' }"
-                        class="px-6 py-2 rounded-full font-semibold transition duration-300">Fakta Lainnya</button>
+                        class="px-6 py-2 rounded-full my-1 font-semibold transition duration-300">Fakta Lainnya</button>
                     <button @click="activeTab = 'statistik'"
                         :class="{ 'bg-primary text-white': activeTab === 'statistik', 'bg-gray-200 text-gray-700': activeTab !== 'statistik' }"
-                        class="px-6 py-2 rounded-full font-semibold transition duration-300">Data Kepemimpinan Saat
+                        class="px-6 py-2 rounded-full my-1 font-semibold transition duration-300">Data Kepemimpinan Saat
                         Ini</button>
+
                 </div>
 
                 <div x-show="activeTab === 'profil'" x-transition:enter="transition ease-out duration-300"
@@ -88,9 +93,9 @@
                         </div>
                         <div class="flex justify-center items-center">
                             <img src="{{ Storage::url($region->bendera) }}" alt="Bendera {{ $region->full_name }}"
-                                class="rounded-lg shadow-md mx-10">
+                                class="rounded-lg shadow-md mx-0 lg:mx-10">
                             <img src="{{ Storage::url($region->lambang) }}" alt="Lambang {{ $region->full_name }}"
-                                class="rounded-lg shadow-md mx-10">
+                                class="rounded-lg shadow-md mx-0 lg:mx-10">
                         </div>
                     </div>
 

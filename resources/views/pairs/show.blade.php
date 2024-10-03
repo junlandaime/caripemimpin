@@ -173,12 +173,14 @@
                         </p>
                     </div>
                     <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                        <div class="text-4xl font-bold text-green-600 mb-2">10+</div>
-                        <div class="text-xl font-semibold mb-2">Biografi Pasangan</div>
-                        <p class="text-gray-600">{{ $pair->full_bio }}</p>
+                        <div class="text-4xl font-bold text-green-600 mb-2">
+                            {{ count(explode('<br />', nl2br(e($pair->misi)))) - floor(count(explode('<br />', nl2br(e($pair->misi)))) / 2) }}
+                        </div>
+                        <div class="text-xl font-semibold mb-2">Misi Utama</div>
+                        {{-- <p class="text-gray-600">{{ $pair->full_bio }}</p> --}}
                     </div>
                     <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                        <div class="text-4xl font-bold text-purple-600 mb-2">10+</div>
+                        {{-- <div class="text-4xl font-bold text-purple-600 mb-2">10+</div> --}}
                         <div class="text-xl font-semibold mb-2">Program Unggulan</div>
                         <p class="text-gray-600">{{ $pair->program }}</p>
                     </div>
