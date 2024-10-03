@@ -20,7 +20,7 @@
     <meta name="description"
         content="CariPemimpin.id adalah platform edukasi politik yang menyediakan informasi netral dan transparan tentang calon kepala daerah di Indonesia. Cerdas memilih untuk masa depan yang lebih baik.">
     <meta name="keywords"
-        content="caripemimpin, Cari Pemimpin, caripemimpinid, Cari Pemimpin id, caripemimpinid, pilkada Kota Bandung, pilkada Jawa Barat, pilkada Kota Cimahi, pilkada Kabupaten Bandung, pilkada Kabupaten Bandung, edukasi politik, calon kepala daerah, pemilihan umum, demokrasi Indonesia, informasi kandidat">
+        content="caripemimpin, Cari Pemimpin, caripemimpinid, Cari Pemimpin id, caripemimpinid, pilkada Kota Bandung, Jawa Barat, Kota Cimahi, Kabupaten Bandung, Kabupaten Bandung, edukasi politik, calon kepala daerah, pemilihan umum, demokrasi Indonesia, informasi kandidat">
     <meta name="author" content="Tim CariPemimpin.id">
 
     <!-- Open Graph / Facebook -->
@@ -36,6 +36,12 @@
     <meta property="og:image" content="https://caripemimpin.id/back.jpg">
     <meta property="og:url" content="https://caripemimpin.id">
     <meta name="twitter:card" content="summary_large_image"> --}}
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="@yield('og_title', 'CariPemimpin.id - Informasi Transparan Calon Kepala Daerah')">
+    <meta property="twitter:description" content="@yield('og_description', 'Temukan informasi lengkap dan netral tentang calon kepala daerah di Indonesia. Buat keputusan cerdas untuk memilih pemimpin masa depan.')">
+    <meta property="twitter:image" content="@yield('og_image', 'https://caripemimpin.id/back.jpg')">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

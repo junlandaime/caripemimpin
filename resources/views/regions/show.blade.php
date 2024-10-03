@@ -2,6 +2,22 @@
 
 @section('title', $region->full_name)
 
+@section('meta_description')
+    {{ Str::limit($region->motto, 160) }}
+@endsection
+
+@section('og_title', $region->full_name . ' - Cari Pemimpin')
+
+@section('og_description')
+    {{ Str::limit($region->motto, 200) }}
+@endsection
+
+@section('og_image', 'https://caripemimpin.id/storage/' . $region->bendera)
+
+@section('additional_meta_tags')
+
+@endsection
+
 @section('content')
     <div class="container mx-auto px-4 py-8" x-data="{ activeTab: 'profil' }">
 
