@@ -34,7 +34,7 @@ class CandidateController extends Controller
             // ->upcoming()
             ->inRandomOrder()
             // ->orderBy('name', 'ASC')
-            ->paginate(9);
+            ->paginate(12);
 
         $regions = Region::all();
         return view('candidates.index', compact('candidates', 'regions'));
