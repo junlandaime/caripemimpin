@@ -44,6 +44,18 @@ class HomeController extends Controller
         return view('about');
     }
 
+    public function collab()
+    {
+        // $regions = Region::withCount('candidates')->paginate(15);
+        return view('collab');
+    }
+
+    public function amki_salman()
+    {
+        // $regions = Region::withCount('candidates')->paginate(15);
+        return view('amki_salman');
+    }
+
     public function kuis()
     {
         $regions = Region::withCount('questions')->get();

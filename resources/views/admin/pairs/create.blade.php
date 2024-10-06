@@ -1,5 +1,142 @@
 @extends('layouts.admin')
 
+@section('content')
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Create New Pair</h3>
+            </div>
+            <div class="card-body">
+                <form action="{{ route('admin.pairs.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="form-group">
+                        <label for="nomor_urut">Nomor Urut</label>
+                        <select name="nomor_urut" class="form-control @error('nomor_urut') is-invalid @enderror">
+                            @foreach (['1', '2', '3', '4', '5'] as $number)
+                                <option value="{{ $number }}" {{ old('nomor_urut') == $number ? 'selected' : '' }}>
+                                    {{ $number }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('nomor_urut')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="party">Party</label>
+                        <input type="text" name="party" class="form-control @error('party') is-invalid @enderror"
+                            value="{{ old('party') }}">
+                        @error('party')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region_id">Region</label>
+                        <select name="region_id" class="form-control @error('region_id') is-invalid @enderror">
+                            @foreach ($regions as $region)
+                                <option value="{{ $region->id }}" {{ old('region_id') == $region->id ? 'selected' : '' }}>
+                                    {{ $region->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('region_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pemimpin_id">Pemimpin</label>
+                        <select name="pemimpin_id" class="form-control @error('pemimpin_id') is-invalid @enderror">
+                            @foreach ($candidates as $candidate)
+                                <option value="{{ $candidate->id }}"
+                                    {{ old('pemimpin_id') == $candidate->id ? 'selected' : '' }}>
+                                    {{ $candidate->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('pemimpin_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wakil_id">Wakil</label>
+                        <select name="wakil_id" class="form-control @error('wakil_id') is-invalid @enderror">
+                            @foreach ($candidates as $candidate)
+                                <option value="{{ $candidate->id }}"
+                                    {{ old('wakil_id') == $candidate->id ? 'selected' : '' }}>
+                                    {{ $candidate->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('wakil_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="short_bio">Short Bio</label>
+                        <textarea name="short_bio" class="form-control @error('short_bio') is-invalid @enderror">{{ old('short_bio') }}</textarea>
+                        @error('short_bio')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="full_bio">Full Bio</label>
+                        <textarea name="full_bio" class="form-control @error('full_bio') is-invalid @enderror">{{ old('full_bio') }}</textarea>
+                        @error('full_bio')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visi">Visi</label>
+                        <textarea name="visi" class="form-control @error('visi') is-invalid @enderror">{{ old('visi') }}</textarea>
+                        @error('visi')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="misi">Misi</label>
+                        <textarea name="misi" class="form-control @error('misi') is-invalid @enderror">{{ old('misi') }}</textarea>
+                        @error('misi')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="election_date">Election Date</label>
+                        <input type="date" name="election_date"
+                            class="form-control @error('election_date') is-invalid @enderror"
+                            value="{{ old('election_date') }}">
+                        @error('election_date')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create Pair</button>
+                    <a href="{{ route('admin.pairs.index') }}" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+{{-- @extends('layouts.admin')
+
 @section('title', 'Tambah Pasangan Baru')
 
 @section('content')
@@ -183,4 +320,4 @@
     <script>
         // Tambahkan script JavaScript untuk validasi form client-side jika diperlukan
     </script>
-@endpush
+@endpush --}}

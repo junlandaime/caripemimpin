@@ -2,31 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pair extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        // 'name',
         'nomor_urut',
         'party',
+        'slug',
+        'region_id',
         'pemimpin_id',
         'wakil_id',
-        'region_id',
         'short_bio',
         'full_bio',
-        'image_url',
         'visi',
         'misi',
+        'image_url',
         'election_date',
-
+        'views'
     ];
 
     protected $casts = [
         'election_date' => 'date',
+        'views' => 'integer'
     ];
 
     public function scopeUpcoming($query)
@@ -34,17 +36,17 @@ class Pair extends Model
         return $query->where('election_date', '>', now());
     }
 
-    public function pemimpin()
+    public function pemimpin(): BelongsTo
     {
         return $this->belongsTo(Candidate::class, 'pemimpin_id');
     }
 
-    public function wakil()
+    public function wakil(): BelongsTo
     {
         return $this->belongsTo(Candidate::class, 'wakil_id');
     }
 
-    public function region()
+    public function region(): BelongsTo
     {
         return $this->belongsTo(Region::class);
     }

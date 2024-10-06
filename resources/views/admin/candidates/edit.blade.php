@@ -1,5 +1,97 @@
 @extends('layouts.admin')
 
+@section('content')
+    <div class="container">
+        <h1>Edit Candidate</h1>
+        <form action="{{ route('admin.candidates.update', $candidate) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <div class="form-group">
+                <label for="prename">Prename</label>
+                <input type="text" name="prename" id="prename" class="form-control"
+                    value="{{ old('prename', $candidate->prename) }}">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control"
+                    value="{{ old('name', $candidate->name) }}" required>
+            </div>
+            <div class="form-group">
+                <label for="aftername">Aftername</label>
+                <input type="text" name="aftername" id="aftername" class="form-control"
+                    value="{{ old('aftername', $candidate->aftername) }}">
+            </div>
+            <div class="form-group">
+                <label for="ttl">TTL</label>
+                <input type="text" name="ttl" id="ttl" class="form-control"
+                    value="{{ old('ttl', $candidate->ttl) }}">
+            </div>
+            <div class="form-group">
+                <label for="domisili">Domisili</label>
+                <input type="text" name="domisili" id="domisili" class="form-control"
+                    value="{{ old('domisili', $candidate->domisili) }}">
+            </div>
+            <div class="form-group">
+                <label for="agama">Agama</label>
+                <input type="text" name="agama" id="agama" class="form-control"
+                    value="{{ old('agama', $candidate->agama) }}" required>
+            </div>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" name="position" id="position" class="form-control"
+                    value="{{ old('position', $candidate->position) }}" required>
+            </div>
+            <div class="form-group">
+                <label for="partai">Partai</label>
+                <input type="text" name="partai" id="partai" class="form-control"
+                    value="{{ old('partai', $candidate->partai) }}" required>
+            </div>
+            <div class="form-group">
+                <label for="region_id">Region</label>
+                <select name="region_id" id="region_id" class="form-control" required>
+                    @foreach ($regions as $region)
+                        <option value="{{ $region->id }}" {{ $candidate->region_id == $region->id ? 'selected' : '' }}>
+                            {{ $region->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="riwayatpen">Riwayat Pendidikan</label>
+                <textarea name="riwayatpen" id="riwayatpen" class="form-control">{{ old('riwayatpen', $candidate->riwayatpen) }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="prestasi">Prestasi</label>
+                <textarea name="prestasi" id="prestasi" class="form-control">{{ old('prestasi', $candidate->prestasi) }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="karir">Karir</label>
+                <textarea name="karir" id="karir" class="form-control">{{ old('karir', $candidate->karir) }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="akun">Akun</label>
+                <input type="text" name="akun" id="akun" class="form-control"
+                    value="{{ old('akun', $candidate->akun) }}">
+            </div>
+            <div class="form-group">
+                <label for="nominal">Nominal</label>
+                <input type="text" name="nominal" id="nominal" class="form-control"
+                    value="{{ old('nominal', $candidate->nominal) }}">
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto</label>
+                <input type="file" name="foto" id="foto" class="form-control-file">
+                @if ($candidate->foto)
+                    <img src="{{ asset('storage/' . $candidate->foto) }}" alt="{{ $candidate->name }}" class="mt-2"
+                        style="max-width: 200px;">
+                @endif
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+@endsection
+
+{{-- @extends('layouts.admin')
+
 @section('title', 'Edit Kandidat')
 
 @section('content')
@@ -133,4 +225,4 @@
     <script>
         // Tambahkan script JavaScript untuk validasi form client-side jika diperlukan
     </script>
-@endpush
+@endpush --}}

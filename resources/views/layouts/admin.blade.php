@@ -69,13 +69,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.elections.index') }}"
-                                    class="flex items-center {{ request()->routeIs('admin.elections.*') ? 'bg-yellow-200 text-yellow-900' : 'bg-white hover:bg-yellow-50 text-gray-900' }} rounded-xl font-bold text-sm py-3 px-4">
+                                <a href="{{ route('admin.questions.index') }}"
+                                    class="flex items-center {{ request()->routeIs('admin.questions.*') ? 'bg-yellow-200 text-yellow-900' : 'bg-white hover:bg-yellow-50 text-gray-900' }} rounded-xl font-bold text-sm py-3 px-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                         fill="currentColor" class="text-lg mr-4" viewBox="0 0 16 16">
                                         <path
                                             d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                    </svg>Pemilihan
+                                    </svg>Pertanyaan Kuis
                                 </a>
                             </li>
                         </ul>

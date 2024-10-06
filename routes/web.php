@@ -4,18 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PairController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ElectionController;
-use App\Http\Controllers\CandidateController;
-use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\QuestionController;
 // use App\Http\Controllers\Admin\RegionController as AdminRegionController;
-use App\Http\Controllers\Admin\ElectionController as AdminElectionController;
+use App\Http\Controllers\CandidateController;
 // use App\Http\Controllers\Admin\CandidateController as AdminCandidateController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\ElectionController as AdminElectionController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\PairController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ use App\Http\Controllers\PairController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/cek', [HomeController::class, 'cek'])->name('cek');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/collab', [HomeController::class, 'collab'])->name('about.collab');
+Route::get('/amki-salman', [HomeController::class, 'amki_salman'])->name('about.amki-salman');
 Route::get('/kuis', [HomeController::class, 'kuis'])->name('kuis');
 Route::get('/kuis/{region:slug}', [HomeController::class, 'kuismulai'])->name('kuis.mulai');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
@@ -72,6 +75,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('candidates', CandidateController::class)->names('candidates');
     Route::resource('pairs', PairController::class)->names('pairs');
     Route::resource('regions', RegionController::class)->names('regions');
+    Route::resource('questions', QuestionController::class)->names('questions');
 
     // Route::resource('candidates', AdminCandidateController::class);
     // Route::resource('regions', AdminRegionController::class);

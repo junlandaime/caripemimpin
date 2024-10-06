@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Region extends Model
 {
@@ -11,11 +12,59 @@ class Region extends Model
 
     protected $fillable = [
         'name',
-        'type', // 'Kota' or 'Kabupaten'
-        'population',
-        'area',
-        'description',
+        'type',
+        'bendera',
+        'lambang',
+        'julukan',
+        'motto',
+        'semboyan',
+        'lokasi',
+        'latitude',
+        'longitude',
+        'dashum',
+        'harjad',
+        'harjadate',
+        'ibukota',
+        'kepdar',
+        'wakepdar',
+        'sekda',
+        'ketdprd',
+        'luasdaerah',
+        'totalpopulasi',
+        'kepadatanpop',
+        'agama',
+        'bahasa',
+        'ipm',
+        'zonwak',
+        'kodebps',
+        'kodepos',
+        'pelatken',
+        'kodeiso3166',
+        'kodekemendagri',
+        'apbd',
+        'pad',
+        'dau',
+        'lagudaerah',
+        'rumahadat',
+        'senjata',
+        'flora',
+        'fauna',
+        'situs'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($region) {
+            $region->slug = Str::slug($region->name);
+        });
+    }
+
+    public function getImageUrlAttribute($type)
+    {
+        return $this->$type ? asset('storage/' . $this->$type) : null;
+    }
 
     /**
      * Get the candidates for the region.

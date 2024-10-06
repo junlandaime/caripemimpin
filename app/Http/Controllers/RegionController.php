@@ -6,6 +6,8 @@ use App\Models\Region;
 use App\Models\Candidate;
 use App\Models\RegionView;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegionRequest;
+use Illuminate\Support\Facades\Storage;
 
 class RegionController extends Controller
 {
@@ -26,17 +28,19 @@ class RegionController extends Controller
         return view('admin.regions.create');
     }
 
-    public function store(Request $request)
+    public function store(RegionRequest $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:regions',
-            'type' => 'required|in:Kota,Kabupaten',
-            'population' => 'required|integer|min:0',
-            'area' => 'required|numeric|min:0',
-            'description' => 'nullable|string',
-        ]);
+        $data = $request->validated();
 
-        Region::create($validatedData);
+        if ($request->hasFile('bendera')) {
+            $data['bendera'] = $request->file('bendera')->store('regions', 'public');
+        }
+
+        if ($request->hasFile('lambang')) {
+            $data['lambang'] = $request->file('lambang')->store('regions', 'public');
+        }
+
+        Region::create($data);
 
         return redirect()->route('admin.regions.index')->with('success', 'Wilayah berhasil ditambahkan.');
     }
@@ -46,17 +50,25 @@ class RegionController extends Controller
         return view('admin.regions.edit', compact('region'));
     }
 
-    public function update(Request $request, Region $region)
+    public function update(RegionRequest $request, Region $region)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|max:255|unique:regions,name,' . $region->id,
-            'type' => 'required|in:Kota,Kabupaten',
-            'population' => 'required|integer|min:0',
-            'area' => 'required|numeric|min:0',
-            'description' => 'nullable|string',
-        ]);
+        $data = $request->validated();
 
-        $region->update($validatedData);
+        if ($request->hasFile('bendera')) {
+            if ($region->bendera) {
+                Storage::disk('public')->delete($region->bendera);
+            }
+            $data['bendera'] = $request->file('bendera')->store('regions', 'public');
+        }
+
+        if ($request->hasFile('lambang')) {
+            if ($region->lambang) {
+                Storage::disk('public')->delete($region->lambang);
+            }
+            $data['lambang'] = $request->file('lambang')->store('regions', 'public');
+        }
+
+        $region->update($data);
 
         return redirect()->route('admin.regions.index')->with('success', 'Wilayah berhasil diperbarui.');
     }
@@ -180,8 +192,16 @@ class RegionController extends Controller
                     'message' => 'Tidak dapat menghapus wilayah karena masih ada kandidat yang terkait.'
                 ], 422);
             }
+            if ($region->bendera) {
+                Storage::disk('public')->delete($region->bendera);
+            }
+            if ($region->lambang) {
+                Storage::disk('public')->delete($region->lambang);
+            }
+
             $region->delete();
-            return response()->json(['success' => true]);
+            return response()->json(['success' => true])->redirect()->route('admin.regions.index')
+                ->with('success', 'Region deleted successfully');
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }

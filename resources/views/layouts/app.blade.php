@@ -103,8 +103,30 @@
                                     Wilayah</a></li>
                         </ul>
                     </div>
-                    <a href="{{ route('about') }}"
-                        class=" {{ request()->routeIs('about') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Tentang</a>
+                    {{-- <a href="{{ route('about') }}"
+                        class=" {{ request()->routeIs('about') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Tentang</a> --}}
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.away="open = false"
+                            class="{{ request()->routeIs('regions.*') ? 'font-bold' : 'hover:bg-slate-400' }} hover:bg-slate-400 px-3 py-2 rounded">
+                            About Us
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul x-show="open" x-transition
+                            class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg z-50">
+                            <li><a href="{{ route('about') }}" class="block px-4 py-2 hover:bg-gray-100">Tentang
+                                    CariPemimpin
+                                </a></li>
+                            <li><a href="{{ route('about.collab') }}"
+                                    class="block px-4 py-2 hover:bg-gray-100">Tentang Kolaborasi Kami</a></li>
+                            <li><a href="{{ route('about.amki-salman') }}"
+                                    class="block px-4 py-2 hover:bg-gray-100">AMKI dan Salman</a></li>
+                        </ul>
+
+                    </div>
                     <a href="{{ route('contact') }}"
                         class=" {{ request()->routeIs('contact') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Kontak</a>
                 </nav>
@@ -159,8 +181,29 @@
                         </li>
                     </ul>
                 </div>
-                <a href="{{ route('about') }}"
-                    class="block py-2 {{ request()->routeIs('about') ? 'font-bold' : 'hover:bg-slate-400' }}">Tentang</a>
+                {{-- <a href="{{ route('about') }}"
+                    class="block py-2 {{ request()->routeIs('about') ? 'font-bold' : 'hover:bg-slate-400' }}">Tentang</a> --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="{{ request()->routeIs('about.*') ? 'font-bold' : 'hover:bg-slate-400' }} w-full text-left py-2 hover:bg-slate-400">
+                        About Us
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <ul x-show="open" class="pl-4">
+                        <li><a href="{{ route('about') }}" class="block py-2 hover:bg-slate-400">Tentang
+                                Caripemipin</a></li>
+                        <li><a href="{{ route('about.collab') }}" class="block py-2 hover:bg-slate-400">Tentang
+                                Kolaborasi Kami</a>
+                        </li>
+                        <li><a href="{{ route('about.amki-salman') }}" class="block py-2 hover:bg-slate-400">AMKI dan
+                                Salman</a>
+                        </li>
+                    </ul>
+                </div>
                 <a href="{{ route('contact') }}"
                     class="block py-2 {{ request()->routeIs('contact') ? 'font-bold' : 'hover:bg-slate-400' }}">Kontak</a>
             </div>
@@ -214,7 +257,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Hubungi Kami</h3>
 
-                    <p>Email: pilkada.caripemimpin@gmail.com</p>
+                    <a href=https://mail.google.com/mail/?view=cm&amp;source=mailto&amp;to=info@caripemimpin.id&amp;body=Tulis%20pesan%20Anda&amp;su=Hi%20CariPemimpin%20"
+                        target="_blank">
+                        <p>Email: info@caripemimpin.id</p>
+                    </a>
                     <p>Telepon: (022) 123-4567</p>
                     <div class="mt-4 flex space-x-4">
                         <a href="#" class="text-secondary hover:text-primary">

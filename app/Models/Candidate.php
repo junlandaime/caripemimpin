@@ -12,20 +12,20 @@ class Candidate extends Model
     protected $fillable = [
         'prename',
         'name',
+        'slug',
         'aftername',
         'ttl',
         'domisili',
-        'region_id',
         'agama',
         'position',
         'partai',
+        'region_id',
         'riwayatpen',
         'prestasi',
         'karir',
         'akun',
         'nominal',
         'foto',
-        // 'election_date',
     ];
 
     public function region()
