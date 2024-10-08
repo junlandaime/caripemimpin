@@ -2,6 +2,21 @@
 
 @section('title', 'Tentang Kami - CariPemimpin')
 
+@push('skrip')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPRDHTM1M1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TPRDHTM1M1');
+    </script>
+@endpush
+
 @section('content')
     <!-- Hero Section -->
     <section class="bg-primary text-white py-20 rounded-b-3xl mb-12" x-data>

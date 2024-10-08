@@ -2,6 +2,21 @@
 
 @section('title', 'Kuis Kuis - Pilkada Jawa Barat')
 
+@push('skrip')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPRDHTM1M1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TPRDHTM1M1');
+    </script>
+@endpush
+
 @section('content')
 
     <body class="font-sans bg-gray-100 lg:px-36">

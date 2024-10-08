@@ -54,6 +54,8 @@
     @stack('styles')
 </head>
 
+@stack('skrip')
+
 <body class="font-sans antialiased bg-gray-100">
     <header x-data="{ mobileMenuOpen: false, servicesOpen: false }" class="bg-white text-black lg:px-36">
         <div class="container mx-auto px-4 py-6">
