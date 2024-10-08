@@ -31,7 +31,6 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/cek', [HomeController::class, 'cek'])->name('cek');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/collab', [HomeController::class, 'collab'])->name('about.collab');
 Route::get('/amki-salman', [HomeController::class, 'amki_salman'])->name('about.amki-salman');
@@ -39,7 +38,7 @@ Route::get('/kuis', [HomeController::class, 'kuis'])->name('kuis');
 Route::get('/kuis/{region:slug}', [HomeController::class, 'kuismulai'])->name('kuis.mulai');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
-Route::get('/voter-guide', [HomeController::class, 'voterGuide'])->name('voter.guide');
+// Route::get('/voter-guide', [HomeController::class, 'voterGuide'])->name('voter.guide');
 
 Route::get('/candidates', [CandidateController::class, 'frontindex'])->name('candidates.index');
 Route::get('/candidates/{candidate:slug}', [CandidateController::class, 'show'])->name('candidates.show');
@@ -55,11 +54,11 @@ Route::get('/regions/type/{type}', [RegionController::class, 'byType'])->name('r
 Route::get('/regions/search', [RegionController::class, 'search'])->name('regions.search');
 Route::get('/regions/statistics', [RegionController::class, 'statistics'])->name('regions.statistics');
 
-Route::get('/elections', [ElectionController::class, 'index'])->name('elections.index');
-Route::get('/elections/{election}', [ElectionController::class, 'show'])->name('elections.show');
+// Route::get('/elections', [ElectionController::class, 'index'])->name('elections.index');
+// Route::get('/elections/{election}', [ElectionController::class, 'show'])->name('elections.show');
 
-Route::get('/news', [NewsController::class, 'index'])->name('news.index');
-Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
+// Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+// Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
 
 
 Route::middleware('auth')->group(function () {
@@ -79,8 +78,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 
     // Route::resource('candidates', AdminCandidateController::class);
     // Route::resource('regions', AdminRegionController::class);
-    Route::resource('elections', AdminElectionController::class);
-    Route::resource('news', AdminNewsController::class);
+    // Route::resource('elections', AdminElectionController::class);
+    // Route::resource('news', AdminNewsController::class);
 });
 
 // Authentication routes (assuming you're using Laravel Breeze)

@@ -76,28 +76,4 @@ class HomeController extends Controller
 
         return view('kuis', compact('questions', 'region'));
     }
-
-    public function cek()
-    {
-        // Get upcoming elections
-        $upcomingElections = Candidate::select('region_id', 'position', 'election_date')
-            ->distinct()
-            ->where('election_date', '>', now())
-            ->orderBy('election_date')
-            ->take(5)
-            ->get();
-
-        // Get featured candidates
-        $featuredCandidates = Candidate::inRandomOrder()
-            ->take(4)
-            ->get();
-
-        // Get list of regions
-        $regions = Region::all();
-
-        // Get total candidates count
-        $totalCandidates = Candidate::count();
-
-        return view('cek', compact('upcomingElections', 'featuredCandidates', 'regions', 'totalCandidates'));
-    }
 }
