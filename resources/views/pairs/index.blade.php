@@ -122,9 +122,9 @@
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                 Lihat
                             </button>
-                            <span class="text-sm text-gray-500">
+                            {{-- <span class="text-sm text-gray-500">
                                 {{ $candidate->election_date->format('d M Y') }}
-                            </span>
+                            </span> --}}
                         </div>
                     </div>
 
@@ -172,7 +172,7 @@
                                                 x-html="candidateData.visi || 'Loading candidate information...'">
                                             </p>
                                             <p class="mt-2 text-sm text-gray-500"
-                                                x-text="`Election Date: ${candidateData.election_date || ''}`"></p>
+                                                x-text="`Election Date: 27 November 2024`"></p>
                                         </div>
                                         <div class="mt-4 flex justify-end">
                                             <a href="{{ route('pairs.show', $candidate) }}" class="mr-2">
