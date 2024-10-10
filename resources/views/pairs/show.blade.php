@@ -140,8 +140,8 @@
                             class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 -mt-6">
                             1</div>
                         <div class="bg-white p-6 rounded-lg shadow-lg ml-8 md:ml-0 md:w-1/2 md:transform md:-translate-x-8">
-                            <h3 class="text-xl font-semibold mb-2">Pendaftaran Calon</h3>
-                            <p class="text-gray-600">1 - 7 Agustus 2024</p>
+                            <h3 class="text-xl font-semibold mb-2">Penetapan Pasangan Calon</h3>
+                            <p class="text-gray-600">22 September 2024</p>
                         </div>
                     </div>
                     <div class="relative z-10 mb-16">
@@ -151,7 +151,7 @@
                         <div
                             class="bg-white p-6 rounded-lg shadow-lg mr-8 md:mr-0 md:w-1/2 md:transform md:translate-x-8 md:ml-auto">
                             <h3 class="text-xl font-semibold mb-2">Masa Kampanye</h3>
-                            <p class="text-gray-600">14 Agustus - 13 November 2024</p>
+                            <p class="text-gray-600">25 September - 23 November 2024</p>
                         </div>
                     </div>
                     <div class="relative z-10 mb-16">

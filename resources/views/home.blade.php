@@ -53,8 +53,8 @@
                     x-show="show" x-transition:enter="transition ease-out duration-1000"
                     x-transition:enter-start="opacity-0 transform -translate-x-12"
                     x-transition:enter-end="opacity-100 transform translate-x-0">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Suarakan Aspirasi</h1>
-                    <p class="text-xl mb-8">Wujudkan Perubahan</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Kenali dengan Tepat</h1>
+                    <p class="text-xl mb-8">Pilih yang Terhebat</p>
                     @foreach ($regions as $region)
                         <a href="{{ route('regions.show', $region) }}"
                             class="bg-primary text-slate-200 px-8 py-3 my-1 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 inline-block">{{ $region->full_name }}</a>
