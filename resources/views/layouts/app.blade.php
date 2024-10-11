@@ -203,7 +203,7 @@
                     </button>
                     <ul x-show="open" class="pl-4">
                         <li><a href="{{ route('about') }}" class="block py-2 hover:bg-slate-400">Tentang
-                                Caripemipin</a></li>
+                                Caripemimpin</a></li>
                         <li><a href="{{ route('about.collab') }}" class="block py-2 hover:bg-slate-400">Tentang
                                 Kolaborasi Kami</a>
                         </li>

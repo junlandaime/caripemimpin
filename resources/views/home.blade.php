@@ -78,14 +78,30 @@
 
     </x-animations.slide-in>
 
-    <section id="calon" class="py-20 bg-gray-100" x-data="{ activeTab: 'jawabarat' }">
+    <section id="calon" class="py-20 bg-gray-100" x-data="{ activeTab: '5' }">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16" x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1, scrollTrigger: { trigger: $el, start: 'top 80%' } })">Pasangan Calon</h2>
-            <div class="mb-8 flex md:flex-row flex-col justify-center space-x-4" x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
+            <div class="mb-8 flex md:flex-row flex-col justify-center" x-init="gsap.from($el.children, { opacity: 0, y: 30, duration: 0.6, stagger: 0.2, scrollTrigger: { trigger: $el, start: 'top 80%' } })">
                 @foreach ($regions as $region)
                     <button @click="activeTab = '{{ $region->id }}'"
                         :class="{ 'bg-primary text-white': activeTab === '{{ $region->id }}', 'bg-gray-200 text-gray-700': activeTab !== '{{ $region->id }}' }"
-                        class="px-6 py-3 my-1 rounded-full font-semibold transition duration-300 inline lg:inline-block">{{ $region->full_name }}</button>
+                        class="px-6 py-3 my-1 mx-1 rounded-full font-semibold transition duration-300 inline lg:inline-block">
+                        @php
+                            switch ($region->type) {
+                                case 'Kabupaten':
+                                    echo 'Bupati';
+                                    break;
+
+                                case 'Kota':
+                                    echo 'Walikota';
+                                    break;
+
+                                default:
+                                    echo 'Gubernur';
+                                    break;
+                            }
+                        @endphp
+                        {{ $region->name }}</button>
                 @endforeach
 
             </div>

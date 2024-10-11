@@ -63,6 +63,9 @@
                 <button class="px-6 py-3 my-1 rounded-full font-semibold transition duration-300 inline lg:inline-block"
                     x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })"><a href="{{ route('kuis.mulai', $region) }}">Seberapa
                         {{ $region->full_name }} Kamu?</a></button>
+                <button class="px-6 py-3 my-1 rounded-full font-semibold transition duration-300 inline lg:inline-block"
+                    x-data x-init="gsap.from($el, { opacity: 0, y: 30, duration: 1, delay: 0.5 })"><a href="{{ route('issues.show', $region) }}">Sampaikan isu-isu
+                        {{ $region->full_name }} disini</a></button>
             </div>
         </section>
 
