@@ -10,7 +10,8 @@ class IssueController extends Controller
 {
     public function index()
     {
-        $regions = Region::withCount('issues')->get();
+        // $regions = Region::withCount('issues')->get();
+        $regions = Region::get();
         $issues = Issue::with(['comments.votes', 'votes', 'region'])->latest()->get();
         return view('issues.index', compact('issues', 'regions'));
     }

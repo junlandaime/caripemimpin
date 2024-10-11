@@ -84,10 +84,10 @@ class Region extends Model
         return $this->hasMany(Question::class);
     }
 
-    public function issues()
-    {
-        return $this->hasMany(issue::class);
-    }
+    // public function issues()
+    // {
+    //     return $this->hasMany(issue::class);
+    // }
 
     /**
      * Get the upcoming elections for the region.
