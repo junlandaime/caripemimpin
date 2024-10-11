@@ -47,7 +47,7 @@ class IssueController extends Controller
         // Check if user has voted in the last 5 minutes
         $recentVote = $issue->votes()
             ->where('ip_address', $ip)
-            ->where('created_at', '>=', now()->subMinutes(100))
+            ->where('created_at', '>=', now()->subMinutes(100000))
             ->exists();
 
         // if ($recentVote) {
@@ -67,5 +67,11 @@ class IssueController extends Controller
             'message' => 'Vote berhasil ditambahkan',
             'votes_count' => $issue->votes()->count()
         ]);
+    }
+
+    public function destroy(Issue $issue)
+    {
+        $issue->delete();
+        return redirect()->back()->with('success', 'Issue deleted successfully');
     }
 }

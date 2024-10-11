@@ -85,6 +85,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::resource('pairs', PairController::class)->names('pairs');
     Route::resource('regions', RegionController::class)->names('regions');
     Route::resource('questions', QuestionController::class)->names('questions');
+    Route::resource('issues', IssueController::class)->names('issues');
+    Route::resource('comments', CommentController::class)->names('comments');
 
     // Route::resource('candidates', AdminCandidateController::class);
     // Route::resource('regions', AdminRegionController::class);

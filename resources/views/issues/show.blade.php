@@ -102,6 +102,17 @@
                                 class="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-600">
                                 Vote
                             </button>
+
+                            @auth
+                                <form action="{{ route('admin.issues.destroy', $issue) }}" method="POST" class="inline-block">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-red-600 hover:text-red-900"
+                                        onclick="return confirm('Are you sure you want to delete this issue?')">Delete</button>
+                                </form>
+                            @else
+                            @endauth
+
                         </div>
                     </div>
 
@@ -118,6 +129,17 @@
                                             class="text-sm bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
                                             Vote
                                         </button>
+
+                                        @auth
+                                            <form action="{{ route('admin.comments.destroy', $comment) }}" method="POST"
+                                                class="inline-block">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="text-red-600 hover:text-red-900"
+                                                    onclick="return confirm('Are you sure you want to delete this comment?')">Delete</button>
+                                            </form>
+                                        @else
+                                        @endauth
                                     </div>
                                 </div>
                             @endforeach
@@ -175,7 +197,8 @@
                     showNotification(data.message, true);
                 }
             } catch (error) {
-                showNotification('Terjadi kesalahan saat memproses vote', true);
+                showNotification('Vote sudah dikirimkan, muat ulang untuk melihat hasil', true);
+                // showNotification('Terjadi kesalahan saat memproses vote', true);
             }
         }
 
@@ -200,7 +223,8 @@
                     showNotification(data.message, true);
                 }
             } catch (error) {
-                showNotification('Terjadi kesalahan saat memproses vote', true);
+                showNotification('Vote sudah dikirimkan, muat ulang untuk melihat hasil', true);
+                // showNotification('Terjadi kesalahan saat memproses vote', true);
             }
         }
     </script>

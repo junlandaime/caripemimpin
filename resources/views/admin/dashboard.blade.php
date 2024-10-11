@@ -22,8 +22,8 @@
             <div class="bg-white rounded-lg shadow-md p-6">
                 <h2 class="text-xl font-semibold mb-2">Pemilihan Akan Datang</h2>
                 {{-- <p class="text-3xl font-bold text-purple-600">{{ $upcomingElections }}</p> --}}
-                <a href="{{ route('admin.elections.index') }}"
-                    class="text-purple-500 hover:underline mt-2 inline-block">Kelola Pemilihan</a>
+                {{-- <a href="{{ route('admin.elections.index') }}"
+                    class="text-purple-500 hover:underline mt-2 inline-block">Kelola Pemilihan</a> --}}
             </div>
         </div>
 

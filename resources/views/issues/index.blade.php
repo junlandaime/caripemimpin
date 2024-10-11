@@ -23,8 +23,7 @@
 
         <section class="relative h-screen flex items-center bg-gray-900 overflow-hidden rounded-3xl">
             <div class="absolute inset-0 z-0">
-                <img src="{{ asset('backuis.jpg') }}" alt="Background"
-                    class="w-full h-full object-cover opacity-50 rounded-3xl">
+                <img src="{{ asset('bgisu.jpg') }}" alt="Background" class="w-full h-full object-cover opacity-50 rounded-3xl">
             </div>
             <div
                 class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
@@ -45,7 +44,7 @@
                         x-show="show" x-transition:enter="transition ease-out duration-1000"
                         x-transition:enter-start="opacity-0 transform scale-50"
                         x-transition:enter-end="opacity-100 transform scale-100"></div>
-                    <img src="{{ asset('quiz.png') }}" alt="Featured Image"
+                    <img src="{{ asset('isu.png') }}" alt="Featured Image"
                         class="md:w-full w-1/2 rounded-3xl shadow-2xl relative z-10" x-show="show"
                         x-transition:enter="transition ease-out duration-1000 delay-300"
                         x-transition:enter-start="opacity-0 transform translate-y-12"

@@ -30,7 +30,7 @@ class CommentController extends Controller
         // Check if user has voted in the last 5 minutes
         $recentVote = $comment->votes()
             ->where('ip_address', $ip)
-            ->where('created_at', '>=', now()->subMinutes(100))
+            ->where('created_at', '>=', now()->subMinutes(100000))
             ->exists();
 
         if ($recentVote) {
@@ -45,5 +45,11 @@ class CommentController extends Controller
             'message' => 'Vote berhasil ditambahkan',
             'votes_count' => $comment->votes()->count()
         ]);
+    }
+
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+        return redirect()->back()->with('success', 'comment deleted successfully');
     }
 }
