@@ -6,14 +6,16 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PairController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\IssueController;
 use App\Http\Controllers\RegionController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ElectionController;
-use App\Http\Controllers\QuestionController;
 // use App\Http\Controllers\Admin\RegionController as AdminRegionController;
-use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\ElectionController;
 // use App\Http\Controllers\Admin\CandidateController as AdminCandidateController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\ElectionController as AdminElectionController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
@@ -53,6 +55,14 @@ Route::get('/regions/{region:slug}', [RegionController::class, 'show'])->name('r
 Route::get('/regions/type/{type}', [RegionController::class, 'byType'])->name('regions.byType');
 Route::get('/regions/search', [RegionController::class, 'search'])->name('regions.search');
 Route::get('/regions/statistics', [RegionController::class, 'statistics'])->name('regions.statistics');
+
+
+Route::get('/issues', [IssueController::class, 'index'])->name('issues.index');
+Route::get('/issues/{region:slug}', [IssueController::class, 'show'])->name('issues.show');
+Route::post('/issues', [IssueController::class, 'store'])->name('issues.store');
+Route::post('/issues/{issue}/vote', [IssueController::class, 'vote'])->name('issues.vote');
+Route::post('/issues/{issue}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::post('/comments/{comment}/vote', [CommentController::class, 'vote'])->name('comments.vote');
 
 // Route::get('/elections', [ElectionController::class, 'index'])->name('elections.index');
 // Route::get('/elections/{election}', [ElectionController::class, 'show'])->name('elections.show');

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kuis - Pilkada Jawa Barat')
+@section('title', 'Isu Isu - Pilkada Jawa Barat')
 
 @push('skrip')
     <!-- Google tag (gtag.js) -->
@@ -17,29 +17,7 @@
     </script>
 @endpush
 
-@push('styles')
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-
-        @keyframes slide-in {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-    </style>
-@endpush
-
 @section('content')
-    <!-- Hero Section -->
-
 
     <x-animations.slide-in direction="right" class="mb-3">
 
@@ -54,11 +32,11 @@
                     x-show="show" x-transition:enter="transition ease-out duration-1000"
                     x-transition:enter-start="opacity-0 transform -translate-x-12"
                     x-transition:enter-end="opacity-100 transform translate-x-0">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Mari Bermain</h1>
-                    <p class="text-xl mb-8">Tunjukan Seberapa Bandung Raya Kamu</p>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Isu untuk Perubahan</h1>
+                    <p class="text-xl mb-8">Coba Isu apa saja yang ada di daerahmu</p>
                     @foreach ($regions as $region)
-                        <a href="{{ route('kuis.mulai', $region) }}"
-                            class="bg-primary text-slate-200 px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 inline-block mb-3">Kuis
+                        <a href="{{ route('issues.show', $region) }}"
+                            class="bg-primary text-slate-200 px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 inline-block mb-3">Isu
                             {{ $region->full_name }}</a>
                     @endforeach
                 </div>
@@ -79,7 +57,4 @@
         </section>
 
     </x-animations.slide-in>
-
-
-    </div>
 @endsection

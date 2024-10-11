@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kuis Kuis - Pilkada Jawa Barat')
+@section('title', 'Kuis ' . $region->full_name . ' - Pilkada Jawa Barat')
 
 @push('skrip')
     <!-- Google tag (gtag.js) -->

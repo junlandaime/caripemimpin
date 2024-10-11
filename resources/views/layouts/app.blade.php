@@ -104,6 +104,8 @@
                                     Wilayah</a></li>
                             <li><a href="{{ route('kuis') }}" class="block px-4 py-2 hover:bg-gray-100">Games Kuis
                                     Wilayah</a></li>
+                            <li><a href="{{ route('issues.index') }}" class="block px-4 py-2 hover:bg-gray-100">Isu
+                                    Wilayah</a></li>
                         </ul>
                     </div>
                     {{-- <a href="{{ route('about') }}"
@@ -180,6 +182,9 @@
                         <li><a href="{{ route('regions.index') }}" class="block py-2 hover:bg-slate-400">Daftar
                                 Wilayah</a></li>
                         <li><a href="{{ route('kuis') }}" class="block py-2 hover:bg-slate-400">Games Kuis
+                                Wilayah</a>
+                        </li>
+                        <li><a href="{{ route('issues.index') }}" class="block py-2 hover:bg-slate-400">Isu
                                 Wilayah</a>
                         </li>
                     </ul>
