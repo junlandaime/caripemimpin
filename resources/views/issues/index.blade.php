@@ -2,6 +2,8 @@
 
 @section('title', 'Isu Isu - Pilkada Jawa Barat')
 
+@section('og_image', 'https://caripemimpin.id/isuu.png')
+
 @push('skrip')
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TPRDHTM1M1"></script>

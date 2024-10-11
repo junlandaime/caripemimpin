@@ -29,7 +29,7 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="@yield('og_title', 'CariPemimpin.id - Informasi Transparan Calon Kepala Daerah')">
     <meta property="og:description" content="@yield('og_description', 'Temukan informasi lengkap dan netral tentang calon kepala daerah di Indonesia. Buat keputusan cerdas untuk memilih pemimpin masa depan.')">
-    <meta property="og:image" content="@yield('og_image', 'https://caripemimpin.id/back.jpg')">
+    <meta property="og:image" content="@yield('og_image', 'https://caripemimpin.id/home.png')">
     {{-- 
     <meta property="og:title" content="">
     <meta property="og:description"
@@ -42,7 +42,7 @@
     <meta property="twitter:url" content="{{ url()->current() }}">
     <meta property="twitter:title" content="@yield('og_title', 'CariPemimpin.id - Informasi Transparan Calon Kepala Daerah')">
     <meta property="twitter:description" content="@yield('og_description', 'Temukan informasi lengkap dan netral tentang calon kepala daerah di Indonesia. Buat keputusan cerdas untuk memilih pemimpin masa depan.')">
-    <meta property="twitter:image" content="@yield('og_image', 'https://caripemimpin.id/back.jpg')">
+    <meta property="twitter:image" content="@yield('og_image', 'https://caripemimpin.id/home.png')">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
