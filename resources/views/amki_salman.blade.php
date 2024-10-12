@@ -20,7 +20,7 @@
 @section('content')
     <!-- Hero Section -->
 
-    <section class="bg-primary text-white py-20" x-data>
+    <section class="bg-primary text-white rounded-3xl py-20" x-data>
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6" x-data x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1 })">
                 Profil Organisasi

@@ -112,7 +112,7 @@
                         class=" {{ request()->routeIs('about') ? 'font-bold' : 'hover:bg-slate-400' }} px-3 py-2 rounded">Tentang</a> --}}
                     <div class="relative" x-data="{ open: false }">
                         <button @click="open = !open" @click.away="open = false"
-                            class="{{ request()->routeIs('about.*') ? 'font-bold' : 'hover:bg-slate-400' }} hover:bg-slate-400 px-3 py-2 rounded">
+                            class="{{ request()->routeIs('about*') ? 'font-bold' : 'hover:bg-slate-400' }} hover:bg-slate-400 px-3 py-2 rounded">
                             About Us
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -193,7 +193,7 @@
                     class="block py-2 {{ request()->routeIs('about') ? 'font-bold' : 'hover:bg-slate-400' }}">Tentang</a> --}}
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="{{ request()->routeIs('about.*') ? 'font-bold' : 'hover:bg-slate-400' }} w-full text-left py-2 hover:bg-slate-400">
+                        class="{{ request()->routeIs('about*') ? 'font-bold' : 'hover:bg-slate-400' }} w-full text-left py-2 hover:bg-slate-400">
                         About Us
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-1" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -227,11 +227,10 @@
             <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div>
                     {{-- <h3 class="text-lg font-semibold mb-4">Tentang Kami</h3> --}}
-                    <a href="{{ route('home') }}" class="text-2xl font-bold"><img class="h-8 w-40"
+                    <a href="{{ route('home') }}" class="text-2xl font-bold"><img class="h-8 w-44"
                             src="{{ asset('logo.png') }}" alt=""></a>
-                    <p class="my-10">pilkada.caripemimpin adalah platform informasi untuk membantu masyarakat Jawa
-                        Barat dalam memilih
-                        pemimpin daerah.</p>
+                    <p class="my-6">CariPemimpin adalah platform edukasi politik berbasis website yang didedikasikan
+                        untuk memberikan informasi lengkap dan terpercaya tentang para calon pemimpin di Indonesia. </p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Resources</h3>
@@ -258,8 +257,9 @@
                     <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
                     <ul class="space-y-2">
                         <li><a href="{{ route('home') }}" class="hover:text-blue-300">Beranda</a></li>
-                        <li><a href="{{ route('kuis') }}" class="hover:text-blue-300">Kuis</a></li>
                         <li><a href="{{ route('regions.index') }}" class="hover:text-blue-300">Wilayah</a></li>
+                        <li><a href="{{ route('kuis') }}" class="hover:text-blue-300">Kuis</a></li>
+                        <li><a href="{{ route('issues.index') }}" class="hover:text-blue-300">Isu Wilayah</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-blue-300">Tentang</a></li>
                         <li><a href="{{ route('contact') }}" class="hover:text-blue-300">Kontak</a></li>
                     </ul>

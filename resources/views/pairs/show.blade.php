@@ -35,7 +35,7 @@
 
 @section('content')
 
-    <main x-data="{ activeTab: 'jawabarat' }">
+    <main class="px-6">
         <section id="hero" class=" text-primary flex items-center">
             <div class="container mx-auto px-4 text-center relative overflow-hidden">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, y: 30, ease: 'back' })">
@@ -44,9 +44,11 @@
                 <p class="text-xl md:text-2xl mb-8 opacity-0" x-init="gsap.to($el, { opacity: 1, duration: 1, delay: 0.5, y: 30, ease: 'back' })">{{ $pair->visi }}
                 </p>
 
-                <div class="mx-auto h-full w-full max-w-4xl my-10">
-                    <img src="{{ Storage::url($pair->image_url) }}" alt="Ilustrasi Pilkada"
-                        class="w-full h-full rounded-t-3xl shadow-2xl ">
+                <div class="mx-auto h-full w-full max-w-4xl mt-20">
+                    <img src="{{ Storage::url($pair->image_url) }}"
+                        alt="Foto Pasangan {{ $pair->pemimpin->name }} -
+                    {{ $pair->wakil->name }}"
+                        class="w-full h-full rounded-3xl shadow-2xl ">
                 </div>
             </div>
         </section>

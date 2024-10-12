@@ -19,7 +19,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="bg-primary text-white py-20 rounded-b-3xl mb-12" x-data>
+    <section class="bg-primary text-white py-20 rounded-3xl mb-12" x-data>
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6" x-data x-init="gsap.from($el, { opacity: 0, y: 50, duration: 1 })">
                 Latar Belakang

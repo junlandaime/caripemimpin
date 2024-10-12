@@ -102,15 +102,15 @@
                                 x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                 class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
-                                <div class="flex">
-                                    <!-- Left side: Image -->
-                                    <div class="w-1/2">
-                                        <img class="w-full h-full object-cover" src="{{ Storage::url($candidate->foto) }}"
-                                            alt="{{ $candidate->name }}">
+                                <div class="flex flex-col sm:flex-row">
+                                    <!-- Image -->
+                                    <div class="w-full sm:w-1/2">
+                                        <img class="w-full h-full sm:h-full object-cover"
+                                            src="{{ Storage::url($candidate->foto) }}" alt="{{ $candidate->name }}">
                                     </div>
 
-                                    <!-- Right side: Text information -->
-                                    <div class="w-1/2 bg-white p-6">
+                                    <!-- Text information -->
+                                    <div class="w-full sm:w-1/2 bg-white p-6">
                                         <h3 class="text-lg leading-6 font-medium text-gray-900"
                                             x-text="candidateData.name || 'Loading...'"></h3>
                                         <div class="mt-2">
@@ -121,8 +121,6 @@
                                             <p class="mt-2 text-sm text-gray-700"
                                                 x-html="candidateData.karir || 'Loading candidate information...'">
                                             </p>
-                                            {{-- <p class="mt-2 text-sm text-gray-500"
-                                                x-text="`Election Date: ${candidateData.election_date || ''}`"></p> --}}
                                         </div>
                                         <div class="mt-4 flex justify-end">
                                             <a href="{{ route('candidates.show', $candidate->slug) }}" class="mr-2">
