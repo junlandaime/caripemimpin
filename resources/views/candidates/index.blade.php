@@ -72,7 +72,7 @@
                         {{-- <p class="text-sm mt-2">{{ Str::limit($candidate->short_bio, 100) }}</p> --}}
                         <div class="mt-4 flex justify-between items-center">
                             <button @click="openModal()"
-                                class="bg-slate-200 hover:bg-slate-300 text-gray-400 font-semibold py-2 px-4 rounded mx-auto">
+                                class="bg-primary hover:bg-secondary text-white font-semibold py-2 px-4 rounded mx-auto">
                                 Lihat Profil
                             </button>
                             {{-- <span class="text-sm text-gray-500">
