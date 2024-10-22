@@ -119,7 +119,7 @@
                         <p class="text-sm mt-2">{{ Str::limit($candidate->party, 200) }}</p>
                         <div class="mt-4 flex justify-between items-center">
                             <button @click="openModal()"
-                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded">
                                 Lihat
                             </button>
                             {{-- <span class="text-sm text-gray-500">

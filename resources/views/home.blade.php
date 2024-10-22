@@ -35,6 +35,38 @@
             }
         }
     </style>
+
+    <style>
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -120,7 +152,7 @@
                                 <h3 class="text-2xl font-semibold mb-2">{{ $candidate->pasangan }}</h3>
                                 <p class="text-gray-600 mb-4">Visi: {{ $candidate->visi }}</p>
                                 <a href="{{ route('pairs.show', $candidate) }}"
-                                    class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition duration-300">Profil
+                                    class="inline-block bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-secondary transition duration-300">Profil
                                     Lengkap</a>
                             </div>
                         </div>
@@ -181,6 +213,75 @@
                     class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary">
                     Lihat Semua Kandidat
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gradient-to-br from-primary to-secondary min-h-screen flex items-center justify-center rounded-3xl">
+        <div x-data="{
+            countdown: {
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0
+            },
+            init() {
+                this.countdown = this.calculateCountdown();
+                setInterval(() => {
+                    this.countdown = this.calculateCountdown();
+                }, 1000);
+            },
+            calculateCountdown() {
+                const pilkadaDate = new Date('November 27, 2024 00:00:00').getTime();
+                const now = new Date().getTime();
+                const distance = pilkadaDate - now;
+        
+                return {
+                    days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                    minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                    seconds: Math.floor((distance % (1000 * 60)) / 1000)
+                };
+            }
+        }" class="text-center">
+            <div class="mb-8 animate-float">
+                <img src="{{ asset('logo.png') }}" alt="Logo Caripemimpin.id"
+                    class="mx-auto rounded-full shadow-lg mb-4 w-3/4 lg:w-1/2">
+                {{-- <h1 class="text-4xl font-bold text-white mb-2 tracking-wider">CARIPEMIMPIN.ID</h1> --}}
+                <p class="text-xl text-blue-200">Menuju Pilkada Serentak 2024</p>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4 max-w-4xl mx-auto p-6">
+                <template
+                    x-for="(value, unit) in [
+                    { number: countdown.days, label: 'Hari' },
+                    { number: countdown.hours, label: 'Jam' },
+                    { number: countdown.minutes, label: 'Menit' },
+                    { number: countdown.seconds, label: 'Detik' }
+                ]">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-4 w-full hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105">
+                            <div class="text-4xl font-bold text-white mb-2"
+                                x-text="value.number.toString().padStart(2, '0')"></div>
+                            <div class="text-blue-200 text-sm uppercase tracking-wide" x-text="value.label"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="mt-12 space-y-4">
+                <p class="text-white text-xl animate-pulse">Mari Gunakan Hak Pilih Anda!</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="{{ route('issues.index') }}" target="_blank" rel="noopener noreferrer"><button
+                            class="bg-white hover:bg-primary text-primary hover:text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                            Info Isu
+                        </button></a>
+                    <a href="{{ route('kuis') }}" target="_blank" rel="noopener noreferrer"><button
+                            class="bg-white hover:bg-secondary text-primary hover:text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                            Yuk Main Game
+                        </button></a>
+                </div>
             </div>
         </div>
     </div>
