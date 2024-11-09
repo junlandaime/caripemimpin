@@ -18,7 +18,7 @@ class IssueController extends Controller
 
     public function show(Region $region)
     {
-        $issues = Issue::where('region_id', $region->id)->with(['comments.votes', 'votes', 'region'])->latest()->get();
+        $issues = Issue::where('region_id', $region->id)->with(['comments.votes', 'votes', 'region'])->withCount('votes')->orderBy('votes_count', 'desc')->get();
 
         return view('issues.show', compact('issues', 'region'));
 
