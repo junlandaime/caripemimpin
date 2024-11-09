@@ -217,6 +217,84 @@
         </div>
     </div>
 
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Trending Issues</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach ($topIssues as $issue)
+                <div x-data="{ showFullDescription: false }"
+                    class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <!-- Issue Header -->
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                {{ $issue->region->full_name }}
+                            </span>
+                            <div class="flex items-center space-x-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="font-semibold text-gray-900">{{ $issue->votes_count }}</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ $issue->title }}</h3>
+
+                        <div class="text-gray-600">
+                            <p x-show="!showFullDescription">{{ Str::limit($issue->description, 150) }}</p>
+                            <p x-show="showFullDescription">{{ $issue->description }}</p>
+
+                            @if (strlen($issue->description) > 150)
+                                <button @click="showFullDescription = !showFullDescription"
+                                    class="text-blue-600 hover:text-blue-800 text-sm mt-2 focus:outline-none"
+                                    x-text="showFullDescription ? 'Show less' : 'Read more'"></button>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!-- Top Comment Section -->
+                    @if ($issue->comments->isNotEmpty())
+                        <div class="border-t border-gray-200 bg-gray-50 p-6">
+                            <h4 class="text-sm font-medium text-gray-900 mb-2">Top Comment</h4>
+                            <div x-data="{ showFullComment: false }" class="space-y-2">
+                                <p class="text-gray-600 text-sm">
+                                    <span x-show="!showFullComment">
+                                        {{ Str::limit($issue->comments->first()->content, 100) }}
+                                    </span>
+                                    <span x-show="showFullComment">
+                                        {{ $issue->comments->first()->content }}
+                                    </span>
+                                </p>
+
+                                @if (strlen($issue->comments->first()->content) > 100)
+                                    <button @click="showFullComment = !showFullComment"
+                                        class="text-blue-600 hover:text-blue-800 text-xs focus:outline-none"
+                                        x-text="showFullComment ? 'Show less' : 'Read more'"></button>
+                                @endif
+
+                                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                    </svg>
+                                    <span>{{ $issue->comments->first()->votes_count }} votes</span>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+        <div class="mt-12 text-center">
+            <a href="{{ route('issues.index') }}"
+                class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary">
+                Lihat Semua Issue
+            </a>
+        </div>
+    </div>
+
     <div class="bg-gradient-to-br from-primary to-secondary min-h-screen flex items-center justify-center rounded-3xl">
         <div x-data="{
             countdown: {

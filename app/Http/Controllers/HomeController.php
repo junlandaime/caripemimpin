@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Issue;
 use App\Models\Region;
 use App\Models\Question;
 use App\Models\Candidate;
+use App\Models\CommentVote;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -35,7 +37,20 @@ class HomeController extends Controller
         // Get total candidates count
         $totalCandidates = Candidate::count();
 
-        return view('home', compact('featuredCandidates', 'regions', 'totalCandidates'));
+        $topIssues = Issue::withCount('votes')
+            ->with(['comments' => function ($query) {
+                $query->withCount('votes')
+                    ->orderByDesc(
+                        CommentVote::selectRaw('count(*)')
+                            ->whereColumn('comment_votes.comment_id', 'comments.id')
+                    )
+                    ->limit(1);
+            }, 'region'])
+            ->orderBy('votes_count', 'desc')
+            ->take(3)
+            ->get();
+
+        return view('home', compact('featuredCandidates', 'regions', 'totalCandidates', 'topIssues'));
     }
 
     public function about()
